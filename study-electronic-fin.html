@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electronic Fin Design — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="studies.html" class="active">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="studies.html">Academic Studies</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Electronic Fin Design</span>
+      </div>
+
+      <p class="page-hero__label">Mechanical Design</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Electronic Fin Design</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:0.5rem;">A mechanical design study exploring the design and evaluation of an electronic fin concept.</p>
+
+      <div style="margin:2rem 0; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="pdfs/electronic-fin-design.pdf" target="_blank" class="btn btn--primary">Open PDF ↗</a>
+        <a href="pdfs/electronic-fin-design.pdf" download class="btn btn--secondary">Download PDF</a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Area</p><p class="project-meta-item__value">Mechanical Design</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Type</p><p class="project-meta-item__value">Design Study</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Domain</p><p class="project-meta-item__value">Electronics / Fins</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Context</p><p class="project-meta-item__value">BYU–Idaho Coursework</p></div>
+      </div>
+
+      <iframe class="study-pdf-embed" src="pdfs/electronic-fin-design.pdf" title="Electronic Fin Design — Ankit Dhital"></iframe>
+
+      <div class="project-body">
+        <h2>Topic Overview</h2>
+        <p>This study covers the mechanical design and evaluation of an electronic fin concept — examining geometry, material selection, and integration constraints relevant to fin-based electronic systems.</p>
+
+        <h2>Objective</h2>
+        <p>Develop and document a fin design that meets both structural and thermal/electronic performance requirements, using engineering analysis to support design decisions.</p>
+
+        <h2>Method</h2>
+        <p>The study applies mechanical design principles to evaluate fin geometry and configuration against performance criteria, drawing on coursework in materials and design methodology.</p>
+
+        <h2>Key Insight</h2>
+        <p>Designing fins for electronic applications requires balancing competing constraints — surface area for thermal management, structural rigidity for mounting, and form factor for integration — making it a useful exercise in constraint-driven mechanical design.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">Mechanical Design</span>
+        <span class="tag">Fin Design</span>
+        <span class="tag">Electronics</span>
+        <span class="tag">Thermal Management</span>
+        <span class="tag">Design Study</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="study-cpr-pulsemate.html" class="btn btn--secondary">← CPR PulseMate</a>
+        <a href="study-elastic-behaviour.html" class="btn btn--secondary">Elastic Behaviour →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

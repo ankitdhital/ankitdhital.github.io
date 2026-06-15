@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluid Dynamics Study — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="studies.html" class="active">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="studies.html">Academic Studies</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Fluid Dynamics Experiment</span>
+      </div>
+
+      <p class="page-hero__label">ME 111 · Fluid Dynamics · April 29, 2025</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Water Flow from Jar to Straw</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:0.5rem;">Analyzing Head Loss, Velocity, and Flow Regime &nbsp;·&nbsp; ME 111</p>
+
+      <div style="margin:2rem 0; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" target="_blank" class="btn btn--primary">Open PDF ↗</a>
+        <a href="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" download class="btn btn--secondary">Download PDF</a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Course</p><p class="project-meta-item__value">ME 111</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Type</p><p class="project-meta-item__value">Experimental Study</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Date</p><p class="project-meta-item__value">April 29, 2025</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Result</p><p class="project-meta-item__value">Re = 2828 · Transitional</p></div>
+      </div>
+
+      <iframe class="study-pdf-embed" src="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" title="Fluid Dynamics Experiment — Ankit Dhital"></iframe>
+
+      <div class="project-body">
+        <h2>Topic Overview</h2>
+        <p>An experimental study of water draining through a glass straw from a sealed 500&nbsp;mL jar, used to compute flow rate, exit velocity, head loss, and flow regime from real measurements.</p>
+
+        <h2>Objective</h2>
+        <p>Compute the volume flow rate, exit velocity, head loss, pressure difference, and Reynolds number for the jar-to-straw system, and classify the flow as laminar, transitional, or turbulent.</p>
+
+        <h2>Method</h2>
+        <p>The setup used a 500&nbsp;mL jar sealed at the top draining through a smooth glass straw of 0.295&nbsp;in (0.00749&nbsp;m) diameter, with a 0.3642&nbsp;m drop from water surface to straw exit and water at 20°C. Measured volume and drain time fed an energy balance using Bernoulli's equation, with minor losses and a Reynolds number calculation determining the flow regime.</p>
+
+        <h2>Key Insight</h2>
+        <p>Measured flow rate was 1.67×10⁻⁵ m³/s at an exit velocity of 0.378 m/s, with total head losses of 0.0182 m. The Reynolds number came out to 2828 — placing the flow in the transitional band but behaving close to laminar because of the smooth glass surface. The takeaway: a simple gravity-driven system can be analyzed accurately with Bernoulli and Reynolds relations, and minor losses, while small, are measurable.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">Fluid Dynamics</span>
+        <span class="tag">Head Loss</span>
+        <span class="tag">Bernoulli</span>
+        <span class="tag">Reynolds Number</span>
+        <span class="tag">Experimental</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="study-waste-heat.html" class="btn btn--secondary">← Waste Heat Recovery</a>
+        <a href="study-cpr-pulsemate.html" class="btn btn--secondary">Next: CPR PulseMate →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

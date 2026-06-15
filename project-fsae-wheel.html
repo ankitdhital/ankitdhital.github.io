@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSAE Wheel & Suspension — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="projects.html">Projects</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>FSAE Wheel & Suspension</span>
+      </div>
+      <p class="page-hero__label">Automotive · Team Build</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">FSAE Wheel & Suspension</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">Hands-on time with a San José State Formula SAE team, helping assemble and organize the wheel and suspension area of a student-built race car.</p>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Context</p><p class="project-meta-item__value">San José State FSAE</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Role</p><p class="project-meta-item__value">Team Member</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Focus</p><p class="project-meta-item__value">Wheel · Suspension</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Duration</p><p class="project-meta-item__value">~6 months</p></div>
+      </div>
+
+      <div class="project-images">
+        <img src="assets/fsae-car.jpg" alt="FSAE Race Car" />
+        <img src="assets/fsae-wheel.jpg" alt="FSAE Wheel Assembly" />
+        <img src="assets/fsae-suspension.jpg" alt="FSAE Suspension" />
+        <img src="assets/fsae-chassis.jpg" alt="FSAE Chassis" />
+      </div>
+
+      <div class="project-body">
+        <h2>Overview</h2>
+        <p>Formula SAE is a student engineering competition where teams design, build, and race a small open-wheel car. During my year at San José State, I spent about six months on the FSAE team, helping assemble and organize parts in the wheel and suspension area during the build phase. The photos show the car, a wheel and tire assembly, suspension components, and the chassis.</p>
+
+        <h2>My Contributions</h2>
+        <p>I was one member of a large team, focused on the wheel and suspension area during the build. My hands-on work was mostly assembly and organization — fitting and putting components together and keeping parts and the workspace in order so the build could keep moving. It wasn't a design-lead role, but being in the shop on a real race-car build taught me a lot about how the pieces come together.</p>
+
+        <h2>What I learned</h2>
+        <p>FSAE made clear how mechanical systems interact across subsystem boundaries — suspension geometry affects the tire contact patch, which affects handling, which affects how loads run through the chassis. Working on a large, multi-person build also showed how much consistent measurement, organization, and documentation matter when many people touch the same car.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">FSAE</span>
+        <span class="tag">Suspension</span>
+        <span class="tag">Wheel Assembly</span>
+        <span class="tag">Team Build</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="project-mailbox.html" class="btn btn--secondary">← Mailbox</a>
+        <a href="project-hanger.html" class="btn btn--secondary">Next: Hanger →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mailbox Fabrication — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="projects.html">Projects</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Mailbox Fabrication</span>
+      </div>
+      <p class="page-hero__label">Sheet Metal · Fabrication</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Mailbox Fabrication</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A working aluminum mailbox fabricated from flat sheet stock and paired with a wooden stand — an exercise in metal forming, fastening, and holding a finished part to ±1/32-inch tolerances.</p>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Material</p><p class="project-meta-item__value">Aluminum Sheet</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Process</p><p class="project-meta-item__value">Forming · Fastening</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Context</p><p class="project-meta-item__value">SJSU Machine Shop</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Deliverable</p><p class="project-meta-item__value">Final Assembly</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Tolerance</p><p class="project-meta-item__value">±1/32 in</p></div>
+      </div>
+
+      <div class="project-images">
+        <img src="assets/mailbox-final.jpg" alt="Mailbox — Final Assembly" />
+      </div>
+
+      <!-- Key Specs -->
+      <div class="project-body">
+        <h2>Key Specs</h2>
+        <ul>
+          <li>Material: aluminum sheet + wooden stand</li>
+          <li>Operations: cutting, bending, drilling, fastening</li>
+          <li>Tolerance: held to ±1/32 in</li>
+          <li>Assembly: screws for the metal · screws and wood glue for the stand</li>
+          <li>Result: fully functional — door opens and closes cleanly</li>
+        </ul>
+      </div>
+
+      <div class="project-body">
+        <h2>Overview</h2>
+        <p>A working aluminum mailbox fabricated from flat sheet stock as a hands-on fabrication exercise. I cut, bent, and drilled the sheet into its final form, fastened it together, and built a separate wooden stand to mount it. The focus was on clean metal forming, solid fastening, and producing a finished, functional part held to tolerance.</p>
+
+        <h2>Process</h2>
+        <p>I laid out the aluminum sheet, then cut, bent, and drilled it into its mailbox form before fastening the pieces together. I built the wooden stand separately and assembled it with screws and wood glue. Throughout, I checked the part against its intended dimensions, holding tolerances to about ±1/32 inch. The finished mailbox works as intended — the door opens and closes cleanly.</p>
+
+        <h2>What I learned</h2>
+        <p>Sheet-metal work leaves little room for layout error — a misplaced bend or hole carries through every step that follows. Planning the cut, bend, and drill sequence and verifying dimensions before committing is what keeps the part from needing rework. Pairing the metal body with a wooden stand also meant getting two different materials and fastening methods to line up into one clean assembly.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">Sheet Metal</span>
+        <span class="tag">Metal Forming</span>
+        <span class="tag">Fabrication</span>
+        <span class="tag">Dimensional Inspection</span>
+        <span class="tag">Aluminum</span>
+        <span class="tag">Woodworking</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="project-thermogate.html" class="btn btn--secondary">← Thermogate</a>
+        <a href="project-fsae-wheel.html" class="btn btn--secondary">Next: FSAE →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

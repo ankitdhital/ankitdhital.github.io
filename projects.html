@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div style="padding:4rem 0 3rem; border-bottom:1px solid var(--border);">
+    <div class="container">
+      <p class="page-hero__label">Portfolio</p>
+      <h1 class="page-hero__title">Projects</h1>
+      <p class="page-hero__desc">Seven projects spanning CAD design, physical fabrication, and hardware-software integration. Each page includes images, process notes, and tools used.</p>
+    </div>
+  </div>
+
+  <!-- ===== PROJECT GRID ===== -->
+  <section>
+    <div class="container">
+
+      <div class="grid-3">
+
+        <a href="project-planetary-gear.html" class="card" style="text-decoration:none;">
+          <img class="card__image" src="assets/planetary-gear-assembly.png" alt="Planetary Gear System" />
+          <div class="card__body">
+            <p class="card__eyebrow">CAD · Fabrication</p>
+            <h3 class="card__title">Planetary Gear System</h3>
+            <p class="card__desc">Full SolidWorks design and physical assembly of a planetary gearbox with exploded-view engineering documentation.</p>
+            <div class="card__footer">
+              <div class="tags">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Gears</span>
+                <span class="tag">Assembly</span>
+              </div>
+              <span class="btn btn--ghost">View →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-rat-trap.html" class="card" style="text-decoration:none;">
+          <img class="card__image" src="assets/rat-trap-exterior.jpg" alt="Automated Rat Trap" />
+          <div class="card__body">
+            <p class="card__eyebrow">Mechatronics · Team</p>
+            <h3 class="card__title">Automated Rat Trap</h3>
+            <p class="card__desc">Briefcase-style enclosure with an electronic trigger, push-rod release, and locking hinges. A 15-part SolidWorks assembly with full BOM.</p>
+            <div class="card__footer">
+              <div class="tags">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Electronics</span>
+                <span class="tag">Team</span>
+              </div>
+              <span class="btn btn--ghost">View →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-thermogate.html" class="card" style="text-decoration:none;">
+          <img class="card__image" src="assets/thermogate-front.jpg" alt="Thermogate" />
+          <div class="card__body">
+            <p class="card__eyebrow">Electronics Integration</p>
+            <h3 class="card__title">Thermogate</h3>
+            <p class="card__desc">Temperature-actuated gate with live sensor feedback, organized interior wiring, and annotated component placement for maintenance access.</p>
+            <div class="card__footer">
+              <div class="tags">
+                <span class="tag">Sensors</span>
+                <span class="tag">Wiring</span>
+                <span class="tag">Hardware</span>
+              </div>
+              <span class="btn btn--ghost">View →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-mailbox.html" class="card" style="text-decoration:none;">
+          <img class="card__image" src="assets/mailbox-final.jpg" alt="Mailbox Fabrication" />
+          <div class="card__body">
+            <p class="card__eyebrow">Sheet Metal · Fabrication</p>
+            <h3 class="card__title">Mailbox Fabrication</h3>
+            <p class="card__desc">Sheet-metal mailbox fabricated to dimensional tolerances. Demonstrates metal bending, fastening, and dimensional inspection technique.</p>
+            <div class="card__footer">
+              <div class="tags">
+                <span class="tag">Sheet Metal</span>
+                <span class="tag">Fabrication</span>
+              </div>
+              <span class="btn btn--ghost">View →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-fsae-wheel.html" class="card" style="text-decoration:none;">
+          <img class="card__image" src="assets/fsae-car.jpg" alt="FSAE Race Car" />
+          <div class="card__body">
+            <p class="card__eyebrow">Automotive · Team Build</p>
+            <h3 class="card__title">FSAE Wheel & Suspension</h3>
+            <p class="card__desc">Team contribution to wheel assembly, suspension geometry, and chassis construction on a student-built Formula SAE race car.</p>
+            <div class="card__footer">
+              <div class="tags">
+                <span class="tag">FSAE</span>
+                <span class="tag">Suspension</span>
+                <span class="tag">Team</span>
+              </div>
+              <span class="btn btn--ghost">View →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-hanger.html" class="card" style="text-decoration:none;">
+          <img class="card__image" src="assets/hanger-cad.png" alt="Hanger CAD Model" />
+          <div class="card__body">
+            <p class="card__eyebrow">CAD Modeling</p>
+            <h3 class="card__title">Hanger — CAD to Part</h3>
+            <p class="card__desc">Precision SolidWorks model verified against a physical prototype. Demonstrates parametric modeling and CAD-to-part dimensional accuracy.</p>
+            <div class="card__footer">
+              <div class="tags">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Parametric</span>
+              </div>
+              <span class="btn btn--ghost">View →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-laser-cut-pattern.html" class="card" style="text-decoration:none;">
+          <img class="card__image" src="assets/tiger-finished.jpg" alt="Laser-Cut Sheet Metal Pattern" />
+          <div class="card__body">
+            <p class="card__eyebrow">CAD · Sheet Metal · Fabrication</p>
+            <h3 class="card__title">Laser-Cut Sheet Metal Pattern</h3>
+            <p class="card__desc">Pattern designed in SolidWorks, laid out in sheet metal, and precision laser cut. Demonstrates the full CAD-to-fabrication workflow for flat-pattern manufacturing.</p>
+            <div class="card__footer">
+              <div class="tags">
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Sheet Metal</span>
+                <span class="tag">Laser Cutting</span>
+              </div>
+              <span class="btn btn--ghost">View →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="studies.html">Studies</a>
+          <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="motion.js" defer></script>
+</body>
+</html>

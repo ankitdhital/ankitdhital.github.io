@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Studies — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="studies.html" class="active">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div style="padding:4rem 0 3rem; border-bottom:1px solid var(--border);">
+    <div class="container">
+      <p class="page-hero__label">Coursework</p>
+      <h1 class="page-hero__title">Academic Studies</h1>
+      <p class="page-hero__desc">Papers and presentations from BYU–Idaho mechanical engineering coursework — thermodynamics, fluid dynamics, product design, and mechanical design.</p>
+    </div>
+  </div>
+
+  <!-- ===== STUDY LIST ===== -->
+  <section>
+    <div class="container">
+      <div style="display:flex; flex-direction:column; gap:1.5rem; max-width:860px;">
+
+        <!-- Study 1 -->
+        <a href="study-waste-heat.html" style="text-decoration:none;">
+          <article class="card" style="display:grid; grid-template-columns:1fr auto; align-items:center; padding:2rem 2rem; gap:2rem;">
+            <div>
+              <p class="card__eyebrow">ME-113 · Thermodynamics · May 2025</p>
+              <h2 style="font-size:1.125rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">Waste Heat Recovery from Industry</h2>
+              <p style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.65; margin-bottom:1rem;">A thermodynamics review of industrial waste heat recovery across cement, steel, and food sectors. Compares heat exchangers, Organic Rankine Cycle systems, and regenerators against real case data — including a cement plant meeting 30% of its electricity need from kiln exhaust.</p>
+              <div class="tags">
+                <span class="tag">Thermodynamics</span>
+                <span class="tag">Heat Transfer</span>
+                <span class="tag">Industrial Systems</span>
+                <span class="tag">PDF</span>
+              </div>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <span class="btn btn--primary">Read Study →</span>
+            </div>
+          </article>
+        </a>
+
+        <!-- Study 2 -->
+        <a href="study-fluid-dynamics.html" style="text-decoration:none;">
+          <article class="card" style="display:grid; grid-template-columns:1fr auto; align-items:center; padding:2rem 2rem; gap:2rem;">
+            <div>
+              <p class="card__eyebrow">ME 111 · Fluid Dynamics · April 2025</p>
+              <h2 style="font-size:1.125rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">Fluid Dynamics Experiment: Water Flow from Jar to Straw</h2>
+              <p style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.65; margin-bottom:1rem;">An experimental analysis of water draining from a sealed jar through a glass straw. Measured a flow rate of 1.67×10⁻⁵ m³/s and a Reynolds number of 2828 — transitional flow behaving close to laminar — using Bernoulli and Reynolds relations.</p>
+              <div class="tags">
+                <span class="tag">Fluid Dynamics</span>
+                <span class="tag">Head Loss</span>
+                <span class="tag">Experimental</span>
+                <span class="tag">PDF</span>
+              </div>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <span class="btn btn--primary">Read Study →</span>
+            </div>
+          </article>
+        </a>
+
+        <!-- Study 3 -->
+        <a href="study-cpr-pulsemate.html" style="text-decoration:none;">
+          <article class="card" style="display:grid; grid-template-columns:1fr auto; align-items:center; padding:2rem 2rem; gap:2rem;">
+            <div>
+              <p class="card__eyebrow">ME 380 · Product Design</p>
+              <h2 style="font-size:1.125rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">CPR PulseMate — Low-Cost Device Proposal</h2>
+              <p style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.65; margin-bottom:1rem;">A product design proposal for a compact, low-cost CPR assistance device for untrained bystanders. Positions the concept against the LUCAS 3 ($10k–$20k, hospital-only) to define a clear set of cost and usability constraints.</p>
+              <div class="tags">
+                <span class="tag">Product Design</span>
+                <span class="tag">Medical Device</span>
+                <span class="tag">Concept Proposal</span>
+                <span class="tag">PDF</span>
+              </div>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <span class="btn btn--primary">Read Study →</span>
+            </div>
+          </article>
+        </a>
+
+        <!-- Study 4 -->
+        <a href="study-electronic-fin.html" style="text-decoration:none;">
+          <article class="card" style="display:grid; grid-template-columns:1fr auto; align-items:center; padding:2rem 2rem; gap:2rem;">
+            <div>
+              <p class="card__eyebrow">Mechanical Design</p>
+              <h2 style="font-size:1.125rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">Electronic Fin Design</h2>
+              <p style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.65; margin-bottom:1rem;">A mechanical design study exploring the design and evaluation of an electronic fin concept.</p>
+              <div class="tags">
+                <span class="tag">Mechanical Design</span>
+                <span class="tag">Fin Design</span>
+                <span class="tag">Electronics</span>
+                <span class="tag">PDF</span>
+              </div>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <span class="btn btn--primary">Read Study →</span>
+            </div>
+          </article>
+        </a>
+
+        <!-- Study 5 -->
+        <a href="study-elastic-behaviour.html" style="text-decoration:none;">
+          <article class="card" style="display:grid; grid-template-columns:1fr auto; align-items:center; padding:2rem 2rem; gap:2rem;">
+            <div>
+              <p class="card__eyebrow">ME 370 · Machine Design</p>
+              <h2 style="font-size:1.125rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">Elastic Behaviour of Rigidly Constrained Structure</h2>
+              <p style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.65; margin-bottom:1rem;">Experimental and analytical study of bending deflection in a fixed-fixed structural member, validated across hand calculations, singularity functions, and FEA.</p>
+              <div class="tags">
+                <span class="tag">Machine Design</span>
+                <span class="tag">Beam Deflection</span>
+                <span class="tag">FEA</span>
+                <span class="tag">PDF</span>
+              </div>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <span class="btn btn--primary">Read Study →</span>
+            </div>
+          </article>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="studies.html">Studies</a>
+          <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="motion.js" defer></script>
+</body>
+</html>

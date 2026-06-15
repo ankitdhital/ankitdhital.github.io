@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laser-Cut Sheet Metal Pattern — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="projects.html">Projects</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Laser-Cut Sheet Metal Pattern</span>
+      </div>
+      <p class="page-hero__label">CAD · Sheet Metal · Fabrication</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Laser-Cut Sheet Metal Pattern</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A detailed tiger traced into SolidWorks from a reference image, laser cut from quarter-inch steel, and hand-finished where the laser couldn't reach — a CAD-to-fabrication art piece.</p>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Design Tool</p><p class="project-meta-item__value">SolidWorks</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Material</p><p class="project-meta-item__value">1/4 in Steel</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Process</p><p class="project-meta-item__value">Laser Cutting + Hand Finishing</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Context</p><p class="project-meta-item__value">BYU–Idaho Coursework</p></div>
+      </div>
+
+      <div class="project-images">
+        <img src="assets/tiger-finished.jpg" alt="Laser-Cut Sheet Metal Pattern — Finished" />
+        <img src="assets/tiger-snow.jpeg" alt="Laser-Cut Sheet Metal Pattern — Detail" />
+      </div>
+
+      <!-- Key Specs -->
+      <div class="project-body">
+        <h2>Key Specs</h2>
+        <ul>
+          <li>Source: traced in SolidWorks from a reference image</li>
+          <li>Material: ~1/4 in steel sheet</li>
+          <li>Cutting: laser cut, with fine detail finished by hand</li>
+          <li>Finishing: hand-sawn detail, sanded smooth</li>
+          <li>Type: art piece / course assignment (planned orange color coat)</li>
+        </ul>
+      </div>
+
+      <div class="project-body">
+        <h2>Overview</h2>
+        <p>A laser-cut steel tiger that runs the full path from image to finished part. I took a tiger reference image, imported it into SolidWorks, and traced it into a clean cut path, then had it laser cut from quarter-inch steel. Because the laser couldn't capture every fine detail in material that thick, I finished the tricky areas by hand and sanded the piece smooth. It started as a course assignment, but I picked something deliberately complex because I wanted to push the detail.</p>
+
+        <h2>Process</h2>
+        <p>I imported a tiger PNG into SolidWorks and traced over it to build the geometry, then prepared the cut path for the laser cutter. The laser handled most of the outline, but at quarter-inch thickness it couldn't leave all the fine internal details clean — so I cut and refined those by hand with a saw and sanded the whole piece for a smoother finish. The plan is to color-coat it orange to finish the look.</p>
+
+        <h2>What I learned</h2>
+        <p>The biggest takeaway was that a laser cutter has limits, and material thickness drives them — fine detail that looks clean on screen doesn't always survive a thick cut. Knowing when to hand the rest of the job to hand tools, and planning for that from the start, is part of designing for real fabrication. Tracing a complex image into clean CAD geometry also taught me how much patience precise sketch work takes.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">Sheet Metal</span>
+        <span class="tag">Laser Cutting</span>
+        <span class="tag">Hand Finishing</span>
+        <span class="tag">CAD to Fabrication</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="project-hanger.html" class="btn btn--secondary">← Hanger</a>
+        <a href="projects.html" class="btn btn--secondary">All Projects →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

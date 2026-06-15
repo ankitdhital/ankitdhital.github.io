@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanger CAD Model — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="projects.html">Projects</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Hanger — CAD Model</span>
+      </div>
+      <p class="page-hero__label">CAD Modeling · Fabrication</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Hanger — CAD to Part</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A hanger component I designed in SolidWorks and then machined myself on the mill and lathe, holding tolerances to within 0.001 inch — a full CAD-to-part workflow from model to finished 6061 aluminum piece.</p>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Tools</p><p class="project-meta-item__value">SolidWorks · Mill · Lathe</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Type</p><p class="project-meta-item__value">Design + Machining</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Tolerance</p><p class="project-meta-item__value">0.001 in</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Material</p><p class="project-meta-item__value">6061 Aluminum</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Context</p><p class="project-meta-item__value">SJSU Machine Shop</p></div>
+      </div>
+
+      <div class="project-images">
+        <img src="assets/hanger-cad.png" alt="Hanger — SolidWorks CAD Model" />
+        <img src="assets/hanger-physical.jpg" alt="Hanger — Physical Prototype" />
+      </div>
+
+      <!-- Key Specs -->
+      <div class="project-body">
+        <h2>Key Specs</h2>
+        <ul>
+          <li>Workflow: designed in SolidWorks, then machined by hand</li>
+          <li>Machining: mill and lathe</li>
+          <li>Tolerance: held to within 0.001 in</li>
+          <li>Material: 6061 aluminum</li>
+          <li>Context: SJSU machine shop</li>
+        </ul>
+      </div>
+
+      <div class="project-body">
+        <h2>Overview</h2>
+        <p>A screw-mounted hanger component I took from a SolidWorks model all the way to a finished metal part — a base plate with mounting holes and a central post. I designed it in CAD, then machined it myself on the mill and lathe out of 6061 aluminum, holding tolerances to within 0.001 inch. It's a direct test of whether a model on screen can become a precise, real-world part.</p>
+
+        <h2>Challenge</h2>
+        <p>Machining to a thousandth of an inch leaves almost no margin. Every cut on the mill and lathe had to match the modeled dimensions exactly, because at that tolerance a small mistake means scrapping the part and starting over. The challenge was translating clean CAD geometry into a sequence of machining operations that could actually hold that precision by hand.</p>
+
+        <h2>Process</h2>
+        <p>I modeled the hanger in SolidWorks, defining the dimensions and features that would drive the machining. Then I worked it on the mill and lathe at the SJSU machine shop, cutting to the modeled geometry and checking dimensions as I went to stay within 0.001 inch. The finished 6061 aluminum part matched the model.</p>
+
+        <h2>What I learned</h2>
+        <p>Designing a part and then making it yourself closes a loop most coursework never does — you feel exactly which dimensions matter, where tolerances are realistic, and which features are easy or hard to cut. Holding 0.001 inch by hand taught me how much discipline real precision takes, and how a CAD model is only as good as your ability to turn it into a part.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">Parametric Modeling</span>
+        <span class="tag">Precision Machining</span>
+        <span class="tag">Mill &amp; Lathe</span>
+        <span class="tag">Dimensional Verification</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="project-fsae-wheel.html" class="btn btn--secondary">← FSAE</a>
+        <a href="project-laser-cut-pattern.html" class="btn btn--secondary">Laser-Cut Pattern →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermogate — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="projects.html">Projects</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Thermogate</span>
+      </div>
+      <p class="page-hero__label">Electronics Integration</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Thermogate</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C. Designed in SolidWorks, 3D printed, and programmed end-to-end, with keypad control, an LCD, and color-coded feedback.</p>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Type</p><p class="project-meta-item__value">Electronics Integration</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Sensing</p><p class="project-meta-item__value">Temperature Sensor</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Output</p><p class="project-meta-item__value">Gate Actuation</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Status</p><p class="project-meta-item__value">Live / Functional</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Accuracy</p><p class="project-meta-item__value">±2°C</p></div>
+      </div>
+
+      <div class="project-images">
+        <img src="assets/thermogate-front.jpg" alt="Thermogate — Front View (Live)" />
+        <img src="assets/thermogate-interior.jpg" alt="Thermogate — Interior Wiring" />
+        <img src="assets/thermogate-annotated.png" alt="Thermogate — Annotated Component Diagram" />
+        <img src="assets/thermogate-sketch.jpg" alt="Thermogate — Concept Sketch" />
+      </div>
+
+      <!-- Key Specs -->
+      <div class="project-body">
+        <h2>Key Specs</h2>
+        <ul>
+          <li>Build: solo — CAD, 3D printing, wiring, and code</li>
+          <li>Controller: Arduino Uno R3 · ~10 components</li>
+          <li>Control: closed-loop feedback — continuously senses and corrects</li>
+          <li>Sensing &amp; accuracy: thermistor, ±2°C</li>
+          <li>Actuation: DC fan — rotation direction sets heating vs. cooling</li>
+          <li>Interface: keypad input · LCD readout · RGB status light (red / yellow / green)</li>
+          <li>Extras: digital clock, alarm, music player, °C↔°F converter</li>
+          <li>Use cases: room ventilation, electronics cooling, greenhouse climate control</li>
+        </ul>
+      </div>
+
+      <div class="project-body">
+        <h2>Overview</h2>
+        <p>Thermogate is a temperature-controlled vent system I designed and built entirely on my own — from the SolidWorks enclosure and 3D-printed parts to the wiring and the Arduino code. A thermistor reads the ambient temperature, and the Arduino drives a DC fan in a closed feedback loop to hold a target setpoint within ±2°C, continuously comparing the live reading against the setpoint and correcting; the fan's rotation direction determines whether it works to raise or lower the temperature. The user sets the target on a keypad, an LCD shows the time, setpoint, and live reading, and an RGB LED signals status at a glance — red for hot, yellow as it approaches, green once it's at temperature. It's built to be useful anywhere temperature matters: room ventilation, electronics cooling, or greenhouse climate control.</p>
+
+        <h2>Problem</h2>
+        <p>The goal was a single device that could sense temperature and respond to it automatically, accurately, and clearly enough for someone to actually use. That meant tying a live sensor reading to a physical action in a closed feedback loop, giving the user a simple way to set and monitor the target, and packing everything into a compact, serviceable enclosure.</p>
+
+        <h2>Process</h2>
+        <p>I started from a concept sketch, modeled the enclosure in SolidWorks, and 3D printed the parts with tolerances in mind. I wired roughly ten components around an Arduino Uno R3 — thermistor, DC fan, LCD, keypad, and RGB LED — and wrote the control logic myself, leaning on AI to write and debug code as I went. Beyond the core temperature control, I layered in extra features to make it more useful and engaging: a digital clock, an alarm, a music player, and a °C-to-°F converter, with the RGB LED also pulsing to the music's pitch.</p>
+
+        <h2>What I learned</h2>
+        <p>Three things turned out harder than they looked. Fitting all the wiring and components into a compact housing took careful planning. The thermistor had to stick out just far enough to read the room's temperature rather than the heat building up inside the enclosure — a small placement detail with a big effect on accuracy. And the closed-loop control had to spin the fan clockwise or counter-clockwise depending on whether the system needed to raise or lower the temperature. Getting all three right is what turned a wiring diagram into a device that actually holds a setpoint.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">Temperature Sensing</span>
+        <span class="tag">Actuation</span>
+        <span class="tag">Wiring</span>
+        <span class="tag">Control Logic</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">SolidWorks</span>
+        <span class="tag">3D Printing</span>
+        <span class="tag">AI-Assisted</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="project-rat-trap.html" class="btn btn--secondary">← Rat Trap</a>
+        <a href="project-mailbox.html" class="btn btn--secondary">Next: Mailbox →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

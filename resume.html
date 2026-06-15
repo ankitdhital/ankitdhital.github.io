@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résumé — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html" class="active">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div style="padding:4rem 0 3rem; border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
+        <div>
+          <p class="page-hero__label">Résumé</p>
+          <h1 class="page-hero__title">Ankit Dhital</h1>
+          <p class="page-hero__desc">Mechanical Engineering Student &nbsp;·&nbsp; BYU–Idaho &nbsp;·&nbsp; Rexburg, Idaho</p>
+        </div>
+        <div style="display:flex; gap:0.75rem; padding-top:1rem; flex-wrap:wrap; align-items:center;">
+          <!-- Replace href with actual resume PDF path when available -->
+          <a href="pdfs/resume.pdf" download class="btn btn--primary">Download PDF</a>
+          <a href="contact.html" class="btn btn--secondary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESUME BODY ===== -->
+  <section>
+    <div class="container" style="max-width:860px;">
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:3rem;">
+
+        <!-- Note: Replace this section with your actual resume PDF embed or content -->
+        <div style="background:var(--accent-light); border:1px solid rgba(29,78,216,0.15); border-radius:var(--radius); padding:1rem 1.25rem; margin-bottom:2.5rem; font-size:0.875rem; color:var(--text-secondary);">
+          <strong style="color:var(--accent);">To update:</strong> Replace <code>pdfs/resume.pdf</code> with your actual resume file. You can also embed it below by uncommenting the iframe.
+        </div>
+
+        <!-- ===== EDUCATION ===== -->
+        <div class="resume-section">
+          <h2 class="resume-section__title">Education</h2>
+          <div class="resume-entry">
+            <div>
+              <p class="resume-entry__title">BYU–Idaho</p>
+              <p class="resume-entry__sub">Bachelor of Science, Mechanical Engineering</p>
+            </div>
+            <p class="resume-entry__date">Rexburg, ID</p>
+            <ul>
+              <li>Coursework: Thermodynamics (ME-113), Fluid Dynamics (ME 111), Product Design (ME 380)</li>
+              <li>Hands-on lab experience in fabrication, CAD modeling, and mechatronics</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== SKILLS ===== -->
+        <div class="resume-section">
+          <h2 class="resume-section__title">Technical Skills</h2>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem 2rem;">
+            <div>
+              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">CAD & Design</p>
+              <p class="resume-entry__sub">SolidWorks (part, assembly, drawing), Parametric modeling, Engineering drawings, BOM generation</p>
+            </div>
+            <div>
+              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Electronics & Software</p>
+              <p class="resume-entry__sub">Arduino, Sensor and trigger integration, Wiring layout</p>
+            </div>
+            <div>
+              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Fabrication</p>
+              <p class="resume-entry__sub">Sheet metal forming, Metal fastening, Dimensional inspection, Assembly</p>
+            </div>
+            <div>
+              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Engineering Analysis</p>
+              <p class="resume-entry__sub">Thermodynamic cycle concepts, Fluid dynamics, Head-loss and Reynolds analysis, Bernoulli energy balance</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== PROJECTS ===== -->
+        <div class="resume-section">
+          <h2 class="resume-section__title">Selected Projects</h2>
+
+          <div class="resume-entry">
+            <div>
+              <p class="resume-entry__title">Planetary Gear System</p>
+              <p class="resume-entry__sub">CAD Design &amp; Fabrication</p>
+            </div>
+            <p class="resume-entry__date">BYU–Idaho</p>
+            <ul>
+              <li>Modeled all components of a planetary gearbox in SolidWorks from scratch</li>
+              <li>Produced exploded-view engineering drawings with full bill of materials</li>
+              <li>Physically assembled and verified the gearbox against CAD tolerances</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div>
+              <p class="resume-entry__title">Automated Rat Trap</p>
+              <p class="resume-entry__sub">Mechatronics · Team Project</p>
+            </div>
+            <p class="resume-entry__date">BYU–Idaho</p>
+            <ul>
+              <li>Designed a 15-part briefcase-style enclosure and release mechanism in SolidWorks</li>
+              <li>Integrated an electronic trigger with a push-rod and locking-hinge system</li>
+              <li>Produced a formal engineering drawing with named components and a bill of materials</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div>
+              <p class="resume-entry__title">Thermogate</p>
+              <p class="resume-entry__sub">Electronics Integration</p>
+            </div>
+            <p class="resume-entry__date">BYU–Idaho</p>
+            <ul>
+              <li>Built a temperature-actuated gate system with live sensor feedback</li>
+              <li>Managed interior wiring layout and labeled components for serviceability</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div>
+              <p class="resume-entry__title">FSAE Race Car — Wheel &amp; Suspension</p>
+              <p class="resume-entry__sub">Team Build</p>
+            </div>
+            <p class="resume-entry__date">BYU–Idaho</p>
+            <ul>
+              <!-- TODO Ankit: replace with your specific contribution once confirmed -->
+              <li>Contributed to the wheel, suspension, and chassis areas during a student Formula SAE build</li>
+              <li>Worked as part of a multi-person engineering team on a competitive vehicle</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== ACADEMIC STUDIES ===== -->
+        <div class="resume-section">
+          <h2 class="resume-section__title">Academic Papers</h2>
+          <div class="resume-entry">
+            <div><p class="resume-entry__title">Waste Heat Recovery from Industry</p><p class="resume-entry__sub">ME-113 Thermodynamics · Dr. Ernest Thurlow</p></div>
+            <p class="resume-entry__date">May 2025</p>
+          </div>
+          <div class="resume-entry">
+            <div><p class="resume-entry__title">Fluid Dynamics Experiment: Water Flow from Jar to Straw</p><p class="resume-entry__sub">ME 111 Fluid Dynamics</p></div>
+            <p class="resume-entry__date">April 2025</p>
+          </div>
+          <div class="resume-entry">
+            <div><p class="resume-entry__title">CPR PulseMate — Device Proposal</p><p class="resume-entry__sub">ME 380 Product Design</p></div>
+            <p class="resume-entry__date">BYU–Idaho</p>
+          </div>
+        </div>
+
+        <!-- ===== CONTACT ===== -->
+        <div class="resume-section">
+          <h2 class="resume-section__title">Contact</h2>
+          <p class="resume-entry__sub">
+            Rexburg, Idaho &nbsp;·&nbsp;
+            <a href="contact.html" style="color:var(--accent);">Contact form</a> &nbsp;·&nbsp;
+            <a href="https://www.linkedin.com/in/ankitdhital" target="_blank" rel="noopener" style="color:var(--accent);">LinkedIn</a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Optional: embed PDF here when available
+      <iframe src="pdfs/resume.pdf" style="width:100%; height:900px; border:1px solid var(--border); border-radius:var(--radius-lg); margin-top:2rem;"></iframe>
+      -->
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="studies.html">Studies</a>
+          <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="motion.js" defer></script>
+</body>
+</html>

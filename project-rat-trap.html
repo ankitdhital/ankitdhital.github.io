@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated Rat Trap — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENT ===== -->
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+
+      <div class="breadcrumb">
+        <a href="projects.html">Projects</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Automated Rat Trap</span>
+      </div>
+
+      <p class="page-hero__label">Mechatronics · Team Project</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Automated Rat Trap</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A self-resetting rat trap built into a discreet briefcase-style case. A rat enters through a one-way door, completes a circuit on an electrified plate, and receives a lethal shock; a magnetic disposal door lets the user clear it without seeing or touching it. Modeled in SolidWorks, 3D printed, and wired as a team.</p>
+
+      <!-- Meta grid -->
+      <div class="project-meta-grid">
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Tool</p>
+          <p class="project-meta-item__value">SolidWorks</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Form Factor</p>
+          <p class="project-meta-item__value">Briefcase Enclosure</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Cost</p>
+          <p class="project-meta-item__value">Under $120</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Context</p>
+          <p class="project-meta-item__value">Team Project</p>
+        </div>
+      </div>
+
+      <!-- Image gallery -->
+      <div class="project-images">
+        <img src="assets/rat-trap-exterior.jpg" alt="Rat Trap — Exterior View" />
+        <img src="assets/rat-trap-interior.jpg" alt="Rat Trap — Interior Mechanism" />
+        <img src="assets/rat-trap-cad-expanded.png" alt="Rat Trap — SolidWorks Expanded View" />
+        <img src="assets/rat-trap-team.jpg" alt="Rat Trap — Team Photo" />
+      </div>
+
+      <!-- Key Specs -->
+      <div class="project-body">
+        <h2>Key Specs</h2>
+        <ul>
+          <li>Form factor: briefcase enclosure, 7.5 × 10 × 3 in · 3D printed</li>
+          <li>Entry: one-way door — rat enters, can't escape</li>
+          <li>Kill: humane electric shock (contact plate)</li>
+          <li>Disposal: hands-free magnetic drop door — nothing to see or touch</li>
+          <li>Maintenance: detachable base plate for easy cleaning</li>
+          <li>Safety: power disconnects when the case is opened</li>
+          <li>Indicator: LED kill light · auto-resets after disposal</li>
+          <li>Cost: built for under $120</li>
+        </ul>
+      </div>
+
+      <!-- Body -->
+      <div class="project-body">
+
+        <h2>Overview</h2>
+        <p>The automated rat trap is a humane, hands-off pest device built into a briefcase-style case that doesn't look like a trap. A rat enters through a one-way door, steps onto an electrified plate, and completes a circuit designed to deliver a lethal shock; an LED signals the kill. To clear it, the user pushes a manual rod that opens a magnetic disposal door underneath, dropping the rat out without anyone seeing or touching it. The base plate detaches for cleaning, and a safety interlock cuts power whenever the case is opened. Once emptied, the trap resets itself for the next catch.</p>
+
+        <h2>Problem</h2>
+        <p>Standard rat traps are unpleasant in every way — you see the kill, touch the carcass, and reset the mechanism by hand, and most of them obviously look like traps. We set out to design something touchless, discreet, and automated: a device that kills quickly and humanely, hides the result, resets on its own, and looks like an ordinary case so it can sit out in a living space.</p>
+
+        <h2>Constraints</h2>
+        <p>The design had to solve several problems at once. The entrance needed to let a rat in but never back out, which meant a reliable one-way mechanism. The bait had to sit where it would draw the rat fully onto the contact plate. The base had to detach for cleaning between uses. And for safety, the live contacts couldn't stay powered while the case was open. All of this had to fit inside a compact 7.5 × 10 × 3-inch enclosure that still looked like an ordinary briefcase.</p>
+
+        <h2>My Role</h2>
+        <p>This was a team project, but I was the most invested member and worked across nearly every part of it. I handled CAD modeling of the case and mechanism, background research, the patent search, the project proposal, and the bill of materials. Being involved end-to-end meant I saw how the mechanical design, the electronics, and the documentation all had to line up for the device to work.</p>
+
+        <h2>Process</h2>
+        <p>We modeled the enclosure and internal components in SolidWorks, and the hardest parts weren't the electronics — they were the mechanical details. We designed a one-way entrance so a rat could enter but not escape, iterated on bait placement until it reliably drew the rat onto the contact plate, and made the base plate detachable so the trap could be emptied and cleaned. We also added a safety interlock that disconnects power whenever the case is opened from the top, so the live contacts are never exposed while someone is handling it. We ran a patent search to check prior art, documented the full assembly in a bill of materials, and brought the whole device together for under $120.</p>
+
+        <h2>What I learned</h2>
+        <p>The real challenge wasn't packing in the electronics — it was the mechanical design around them. A dependable one-way entrance, the right bait placement, and an easy-to-clean base each took several iterations. The detail we're most proud of is the safety interlock: cutting power the moment the case opens turned a live electrical device into something safe to handle. We validated the trap through the mechanism rather than on a live animal, but the full sequence — enter, shock, indicate, dispose, reset — worked as designed.</p>
+
+      </div>
+
+      <!-- Tags -->
+      <div class="tags mt-4">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">Mechatronics</span>
+        <span class="tag">Team Project</span>
+        <span class="tag">Enclosure Design</span>
+        <span class="tag">BOM</span>
+        <span class="tag">3D Printing</span>
+        <span class="tag">Patent Search</span>
+      </div>
+
+      <!-- Navigation -->
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="project-planetary-gear.html" class="btn btn--secondary">← Planetary Gear</a>
+        <a href="project-thermogate.html" class="btn btn--secondary">Next: Thermogate →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="studies.html">Studies</a>
+          <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="motion.js" defer></script>
+</body>
+</html>

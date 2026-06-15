@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waste Heat Recovery — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="studies.html" class="active">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+      <div class="breadcrumb">
+        <a href="studies.html">Academic Studies</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Waste Heat Recovery</span>
+      </div>
+
+      <p class="page-hero__label">ME-113 · Thermodynamics · May 12, 2025</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Waste Heat Recovery from Industry</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:0.5rem;">Instructor: Dr. Ernest Thurlow &nbsp;·&nbsp; Course: ME-113 Thermodynamics</p>
+
+      <div style="margin:2rem 0; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="pdfs/WASTE_HEAT_RECOVERY_FROM_INDUSTRIES_1.pdf" target="_blank" class="btn btn--primary">Open PDF ↗</a>
+        <a href="pdfs/WASTE_HEAT_RECOVERY_FROM_INDUSTRIES_1.pdf" download class="btn btn--secondary">Download PDF</a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="project-meta-item"><p class="project-meta-item__label">Course</p><p class="project-meta-item__value">ME-113 Thermodynamics</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Topic</p><p class="project-meta-item__value">Waste Heat Recovery</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Date</p><p class="project-meta-item__value">May 12, 2025</p></div>
+        <div class="project-meta-item"><p class="project-meta-item__label">Format</p><p class="project-meta-item__value">Research Paper</p></div>
+      </div>
+
+      <iframe class="study-pdf-embed" src="pdfs/WASTE_HEAT_RECOVERY_FROM_INDUSTRIES_1.pdf" title="Waste Heat Recovery from Industry — Ankit Dhital"></iframe>
+
+      <div class="project-body">
+        <h2>Topic Overview</h2>
+        <p>Up to 50% of industrial energy is lost as waste heat through exhaust gases and hot surfaces. This study surveys how three sectors — cement, steel, and food — recover that heat to cut fuel use and emissions, framed as a direct application of the Second Law of thermodynamics.</p>
+
+        <h2>Objective</h2>
+        <p>Assess the current status, established technologies, and viability of industrial waste heat recovery (WHR), then make sector-specific recommendations.</p>
+
+        <h2>Method</h2>
+        <p>A literature-based review comparing three WHR technologies — heat exchangers (most widely used and economical), Organic Rankine Cycle systems (suited to medium-temperature 150–230°C waste heat), and regenerators (for high-temperature cyclic operations) — against real industry case data.</p>
+
+        <h2>Key Insights</h2>
+        <p>Cement kiln exhaust and clinker coolers can meet roughly 30% of a plant's internal electricity needs, generating 5–9 MW per plant. In steel, ORI Martin in Italy recovers electric-arc-furnace exhaust to generate 2.2 MW. Across sectors, WHR retrofits typically pay back within 3–5 years, making the case as much economic as thermodynamic.</p>
+      </div>
+
+      <div class="tags mt-4">
+        <span class="tag">Thermodynamics</span>
+        <span class="tag">Heat Recovery</span>
+        <span class="tag">ORC Cycles</span>
+        <span class="tag">Industrial Systems</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="studies.html" class="btn btn--secondary">← All Studies</a>
+        <a href="study-fluid-dynamics.html" class="btn btn--secondary">Next: Fluid Dynamics →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a><a href="projects.html">Projects</a><a href="studies.html">Studies</a><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+  <script src="motion.js" defer></script>
+</body>
+</html>

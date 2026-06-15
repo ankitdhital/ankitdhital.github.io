@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planetary Gear System — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENT ===== -->
+  <div style="padding:3rem 0 5rem;">
+    <div class="container--narrow">
+
+      <div class="breadcrumb">
+        <a href="projects.html">Projects</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>Planetary Gear System</span>
+      </div>
+
+      <p class="page-hero__label">CAD · Fabrication</p>
+      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Planetary Gear System</h1>
+      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A complete SolidWorks design and physical build of a 4:1 planetary gearbox — from individual part models to a working assembly and exploded-view drawing.</p>
+
+      <!-- Meta grid -->
+      <div class="project-meta-grid">
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Tool</p>
+          <p class="project-meta-item__value">SolidWorks</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Type</p>
+          <p class="project-meta-item__value">CAD + Physical Build</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Deliverable</p>
+          <p class="project-meta-item__value">Assembly + Drawing</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Context</p>
+          <p class="project-meta-item__value">BYU–Idaho Coursework</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-item__label">Ratio</p>
+          <p class="project-meta-item__value">4:1 Reduction</p>
+        </div>
+      </div>
+
+      <!-- Image gallery -->
+      <div class="project-images">
+        <img src="assets/planetary-gear-cad.png" alt="Planetary Gear — SolidWorks CAD Model" />
+        <img src="assets/planetary-gear-exploded.jpg" alt="Planetary Gear — Exploded View" />
+        <img src="assets/planetary-gear-assembly.png" alt="Planetary Gear — Final Assembly" />
+        <img src="assets/me-with-planetary-gear.jpeg" alt="Working in lab with Planetary Gear" />
+      </div>
+
+      <!-- Key Specs -->
+      <div class="project-body">
+        <h2>Key Specs</h2>
+        <ul>
+          <li>Gear ratio: 4:1 reduction (ring fixed, sun input, carrier output)</li>
+          <li>Tooth counts: 12T sun · 12T planets · 36T ring</li>
+          <li>Materials: PETG gears (3D printed) · laser-cut acrylic housing</li>
+          <li>Assembly: 12 parts plus shaft, keys, and fasteners</li>
+          <li>Deliverable: working assembly · exploded-view drawing · bill of materials</li>
+        </ul>
+      </div>
+
+      <!-- Body -->
+      <div class="project-body">
+
+        <h2>Overview</h2>
+        <p>I designed every component of a planetary gearbox in SolidWorks, assembled them into a working model, and produced formal engineering documentation. The final deliverable was a hand-cranked physical assembly plus an exploded-view drawing with a bill of materials. With the ring gear fixed, a 12-tooth sun gear drives the carrier through 12-tooth planets meshing inside a 36-tooth ring — a clean 4:1 reduction.</p>
+
+        <h2>Problem</h2>
+        <p>Planetary systems pack high-torque reduction into a compact, coaxial package — but the geometry is unforgiving. The sun, planets, ring, and carrier all share one tooth module, so every mesh has to stay geometrically consistent or the gears bind. The real challenge was making sure a design that worked on screen could actually be built and turned by hand.</p>
+
+        <h2>Process</h2>
+        <p>I modeled each component individually in SolidWorks, then mated them into an assembly reflecting the real relationships between sun, planets, ring, and carrier. The exploded view and bill of materials came straight from the assembly file. I 3D printed the gears in PETG for strength and durability and laser-cut the acrylic housing — 12 printed and cut parts in total, plus the shaft, keys, and fasteners. The physical build tested whether the tolerances held: I checked fit and mesh by cranking the carrier and watching for binding.</p>
+
+        <h2>What I learned</h2>
+        <p>A planetary system only works if the gear geometry stays consistent across every mating part, so the modeling has to be disciplined from the first sketch. The build also forced one real fix — my original screw holes left the heads sticking out, so I redesigned them with the right chamfer to sit flush. It's a small change, but it's the kind of detail that only surfaces once a model becomes a physical part. That's exactly the gap coursework alone doesn't teach.</p>
+
+      </div>
+
+      <!-- Tags -->
+      <div class="tags mt-4">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">Gear Design</span>
+        <span class="tag">Assembly Modeling</span>
+        <span class="tag">Engineering Drawing</span>
+        <span class="tag">BOM</span>
+        <span class="tag">3D Printing</span>
+      </div>
+
+      <!-- Navigation -->
+      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="projects.html" class="btn btn--secondary">← All Projects</a>
+        <a href="project-rat-trap.html" class="btn btn--secondary">Next: Rat Trap →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="studies.html">Studies</a>
+          <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="motion.js" defer></script>
+</body>
+</html>
