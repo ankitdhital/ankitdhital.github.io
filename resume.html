@@ -51,24 +51,15 @@
 
       <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:3rem;">
 
-        <!-- Note: Replace this section with your actual resume PDF embed or content -->
-        <div style="background:var(--accent-light); border:1px solid rgba(29,78,216,0.15); border-radius:var(--radius); padding:1rem 1.25rem; margin-bottom:2.5rem; font-size:0.875rem; color:var(--text-secondary);">
-          <strong style="color:var(--accent);">To update:</strong> Replace <code>pdfs/resume.pdf</code> with your actual resume file. You can also embed it below by uncommenting the iframe.
-        </div>
-
         <!-- ===== EDUCATION ===== -->
         <div class="resume-section">
           <h2 class="resume-section__title">Education</h2>
           <div class="resume-entry">
             <div>
-              <p class="resume-entry__title">BYU–Idaho</p>
+              <p class="resume-entry__title">Brigham Young University–Idaho</p>
               <p class="resume-entry__sub">Bachelor of Science, Mechanical Engineering</p>
             </div>
-            <p class="resume-entry__date">Rexburg, ID</p>
-            <ul>
-              <li>Coursework: Thermodynamics (ME-113), Fluid Dynamics (ME 111), Product Design (ME 380)</li>
-              <li>Hands-on lab experience in fabrication, CAD modeling, and mechatronics</li>
-            </ul>
+            <p class="resume-entry__date">Expected December 2026</p>
           </div>
         </div>
 
@@ -77,104 +68,111 @@
           <h2 class="resume-section__title">Technical Skills</h2>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem 2rem;">
             <div>
-              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">CAD & Design</p>
-              <p class="resume-entry__sub">SolidWorks (part, assembly, drawing), Parametric modeling, Engineering drawings, BOM generation</p>
-            </div>
-            <div>
-              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Electronics & Software</p>
-              <p class="resume-entry__sub">Arduino, Sensor and trigger integration, Wiring layout</p>
+              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">CAD &amp; Design</p>
+              <p class="resume-entry__sub">SolidWorks (CSWA), GD&amp;T, DFM, FEA, Engineering Drawings, Tolerance Analysis</p>
             </div>
             <div>
               <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Fabrication</p>
-              <p class="resume-entry__sub">Sheet metal forming, Metal fastening, Dimensional inspection, Assembly</p>
+              <p class="resume-entry__sub">CNC Mill/Lathe, Manual Machining, 3D Printing, Laser Cutting, Plasma Cutting, Sheet Metal, Welding (basic)</p>
             </div>
             <div>
-              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Engineering Analysis</p>
-              <p class="resume-entry__sub">Thermodynamic cycle concepts, Fluid dynamics, Head-loss and Reynolds analysis, Bernoulli energy balance</p>
+              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Programming &amp; Analysis</p>
+              <p class="resume-entry__sub">Python, MATLAB, Arduino/C++</p>
+            </div>
+            <div>
+              <p class="resume-entry__sub" style="font-weight:600; margin-bottom:0.375rem; color:var(--text-primary);">Systems</p>
+              <p class="resume-entry__sub">Mechatronics, Closed-Loop Control, Sensor Integration, Embedded Systems</p>
             </div>
           </div>
         </div>
 
         <!-- ===== PROJECTS ===== -->
         <div class="resume-section">
-          <h2 class="resume-section__title">Selected Projects</h2>
+          <h2 class="resume-section__title">Projects</h2>
 
           <div class="resume-entry">
             <div>
-              <p class="resume-entry__title">Planetary Gear System</p>
-              <p class="resume-entry__sub">CAD Design &amp; Fabrication</p>
+              <p class="resume-entry__title">Briefcase Rat Trap</p>
+              <p class="resume-entry__sub">Product Design</p>
             </div>
             <p class="resume-entry__date">BYU–Idaho</p>
             <ul>
-              <li>Modeled all components of a planetary gearbox in SolidWorks from scratch</li>
-              <li>Produced exploded-view engineering drawings with full bill of materials</li>
-              <li>Physically assembled and verified the gearbox against CAD tolerances</li>
+              <li>Identified failure modes of commercial traps and designed a fully enclosed, battery-powered electric rat trap with a trigger-actuated disposal door and kill indicator — eliminating user-to-rodent contact entirely.</li>
+              <li>Led full product design cycle: Pugh matrix for concept selection, 15-part SolidWorks assembly with interlocking disposal mechanism, and physical prototype that achieved all 4 design targets.</li>
+              <li>Delivered working prototype within a $200 budget constraint, driving material selection and manufacturing method decisions throughout.</li>
             </ul>
           </div>
 
           <div class="resume-entry">
             <div>
-              <p class="resume-entry__title">Automated Rat Trap</p>
-              <p class="resume-entry__sub">Mechatronics · Team Project</p>
+              <p class="resume-entry__title">Thermo-Gate Climate Control</p>
+              <p class="resume-entry__sub">Mechatronics</p>
             </div>
             <p class="resume-entry__date">BYU–Idaho</p>
             <ul>
-              <li>Designed a 15-part briefcase-style enclosure and release mechanism in SolidWorks</li>
-              <li>Integrated an electronic trigger with a push-rod and locking-hinge system</li>
-              <li>Produced a formal engineering drawing with named components and a bill of materials</li>
+              <li>Achieved ±2°C setpoint accuracy across 3 prototype iterations of a closed-loop temperature control system — thermistor reads ambient temp, microcontroller compares to user-defined value (keypad + LCD), and drives a servo-actuated vent to modulate airflow.</li>
+              <li>Designed full enclosure in SolidWorks, 3D-printed and iterated across prototypes; integrated mechanical actuation, embedded firmware, and HMI in a single compact housing.</li>
+              <li>Owned full build cycle from hand sketch to working device, integrating 5 subsystems as a solo project.</li>
             </ul>
           </div>
 
           <div class="resume-entry">
             <div>
-              <p class="resume-entry__title">Thermogate</p>
-              <p class="resume-entry__sub">Electronics Integration</p>
+              <p class="resume-entry__title">Planetary Gear Assembly</p>
+              <p class="resume-entry__sub">Mechanical Design</p>
             </div>
             <p class="resume-entry__date">BYU–Idaho</p>
             <ul>
-              <li>Built a temperature-actuated gate system with live sensor feedback</li>
-              <li>Managed interior wiring layout and labeled components for serviceability</li>
-            </ul>
-          </div>
-
-          <div class="resume-entry">
-            <div>
-              <p class="resume-entry__title">FSAE Race Car — Wheel &amp; Suspension</p>
-              <p class="resume-entry__sub">Team Build</p>
-            </div>
-            <p class="resume-entry__date">BYU–Idaho</p>
-            <ul>
-              <!-- TODO Ankit: replace with your specific contribution once confirmed -->
-              <li>Contributed to the wheel, suspension, and chassis areas during a student Formula SAE build</li>
-              <li>Worked as part of a multi-person engineering team on a competitive vehicle</li>
+              <li>Hand-calculated all three gear configurations for a 3-planet system (sun: 12T, planet: 12T, ring: 36T); primary ring-fixed configuration yields 4:1 torque reduction; modeled full assembly in SolidWorks.</li>
+              <li>Manufactured via 3D-printed gears and laser-cut acrylic planet carrier; validated physical output speed against calculated ratio.</li>
             </ul>
           </div>
         </div>
 
-        <!-- ===== ACADEMIC STUDIES ===== -->
+        <!-- ===== EXPERIENCE ===== -->
         <div class="resume-section">
-          <h2 class="resume-section__title">Academic Papers</h2>
+          <h2 class="resume-section__title">Experience</h2>
+
           <div class="resume-entry">
-            <div><p class="resume-entry__title">Waste Heat Recovery from Industry</p><p class="resume-entry__sub">ME-113 Thermodynamics · Dr. Ernest Thurlow</p></div>
-            <p class="resume-entry__date">May 2025</p>
+            <div>
+              <p class="resume-entry__title">Technical Writer Intern — Basic American Foods</p>
+              <p class="resume-entry__sub">Blackfoot, ID</p>
+            </div>
+            <p class="resume-entry__date">April 2026 – September 2026</p>
+            <ul>
+              <li>Documented operational procedures for heavy manufacturing equipment across the plant floor — working directly with engineers and operators to capture machine-level process knowledge using Lean and A3 frameworks.</li>
+            </ul>
           </div>
+
           <div class="resume-entry">
-            <div><p class="resume-entry__title">Fluid Dynamics Experiment: Water Flow from Jar to Straw</p><p class="resume-entry__sub">ME 111 Fluid Dynamics</p></div>
-            <p class="resume-entry__date">April 2025</p>
+            <div>
+              <p class="resume-entry__title">CAD Tutor, ME 372 Advanced Design — BYU–Idaho</p>
+              <p class="resume-entry__sub">Rexburg, ID</p>
+            </div>
+            <p class="resume-entry__date">January 2026 – Present</p>
+            <ul>
+              <li>Mentor 40+ students per semester in advanced SolidWorks modeling, multi-part assemblies, and engineering drawings to ASME Y14.5 standards.</li>
+              <li>Diagnose modeling failures and guide students through DFM principles, mating strategies, and iterative design improvements.</li>
+            </ul>
           </div>
-          <div class="resume-entry">
-            <div><p class="resume-entry__title">CPR PulseMate — Device Proposal</p><p class="resume-entry__sub">ME 380 Product Design</p></div>
-            <p class="resume-entry__date">BYU–Idaho</p>
-          </div>
+        </div>
+
+        <!-- ===== COMPETITIONS ===== -->
+        <div class="resume-section">
+          <h2 class="resume-section__title">Competitions &amp; Activities</h2>
+          <ul style="margin:0; padding-left:1.25rem;">
+            <li><strong>ASME Pumpkin Launch Competition | Logan, UT</strong> — Placed 2nd out of 22 teams as part of ASME BYU–Idaho; co-designed launch mechanism achieving 163-yard total flight distance.</li>
+            <li><strong>Formula SAE</strong> — Former team member, San José State University; contributed to chassis fabrication, suspension geometry, and race car build cycles.</li>
+          </ul>
         </div>
 
         <!-- ===== CONTACT ===== -->
         <div class="resume-section">
           <h2 class="resume-section__title">Contact</h2>
           <p class="resume-entry__sub">
-            Rexburg, Idaho &nbsp;·&nbsp;
-            <a href="contact.html" style="color:var(--accent);">Contact form</a> &nbsp;·&nbsp;
-            <a href="https://www.linkedin.com/in/ankitdhital" target="_blank" rel="noopener" style="color:var(--accent);">LinkedIn</a>
+            (925) 440-9611 &nbsp;·&nbsp;
+            <a href="mailto:ankit.dhital@icloud.com" style="color:var(--accent);">ankit.dhital@icloud.com</a> &nbsp;·&nbsp;
+            <a href="https://www.linkedin.com/in/ankitdhital" target="_blank" rel="noopener" style="color:var(--accent);">linkedin.com/in/ankitdhital</a>
           </p>
         </div>
 
