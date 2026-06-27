@@ -1023,3 +1023,47 @@ section + section { padding-top: 0; }
     animation: none !important;
   }
 }
+
+/* ============================================================
+   WORKBENCH
+   ============================================================ */
+.workbench__entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.workbench__date {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.workbench__status {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.125rem 0.625rem;
+  border-radius: 999px;
+}
+
+/* In Progress — accent fill (same tokens as the "Current" pill in about.html) */
+.workbench__status--in-progress {
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid rgba(29,78,216,0.2);
+}
+
+/* Completed — outline only */
+.workbench__status--completed {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* On Hold — neutral muted */
+.workbench__status--on-hold {
+  background: var(--tag-bg);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}

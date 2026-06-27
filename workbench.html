@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workbench — Ankit Dhital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-motion");</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="workbench.html" class="active">Workbench</a></li>
+        <li><a href="studies.html">Academic Studies</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <div style="padding:4rem 0 3rem; border-bottom:1px solid var(--border);">
+    <div class="container">
+      <p class="page-hero__label">Active Builds</p>
+      <h1 class="page-hero__title">Workbench</h1>
+      <p class="page-hero__desc">Things I'm building, learning, and tinkering with — outside the featured projects. Updated as builds progress.</p>
+    </div>
+  </div>
+
+  <!-- ===== ENTRY LIST ===== -->
+  <section>
+    <div class="container">
+      <div style="display:flex; flex-direction:column; gap:1.5rem; max-width:860px;">
+
+        <!-- TEMPLATE: copy this block to add a new entry. Update status pill, date, title, body, image, tags. -->
+
+        <!-- Entry 1 — In Progress -->
+        <article class="card workbench__entry">
+          <div class="card__body">
+            <div class="workbench__entry-header">
+              <span class="workbench__status workbench__status--in-progress">In Progress</span>
+              <span class="workbench__date">June 2026</span>
+            </div>
+            <h3 class="card__title">[Current Build Title]</h3>
+            <p class="card__desc">[Placeholder: 2–3 sentences describing what this build is, what problem it solves or skill it exercises, and where it currently stands. Replace with real details — do not invent specs.]</p>
+            <div class="tags mt-2">
+              <span class="tag">[Tool]</span>
+              <span class="tag">[Tool]</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Entry 2 — Completed -->
+        <article class="card workbench__entry">
+          <img class="card__image" src="assets/hanger-physical.jpg" alt="[Recent Small Build]" />
+          <div class="card__body">
+            <div class="workbench__entry-header">
+              <span class="workbench__status workbench__status--completed">Completed</span>
+              <span class="workbench__date">May 2026</span>
+            </div>
+            <h3 class="card__title">[Recent Small Build]</h3>
+            <p class="card__desc">[Placeholder: 2–3 sentences describing what this build was, what process or skill it exercised, and the outcome. Replace with real details when ready.]</p>
+            <div class="tags mt-2">
+              <span class="tag">[Tool]</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Entry 3 — On Hold -->
+        <article class="card workbench__entry">
+          <div class="card__body">
+            <div class="workbench__entry-header">
+              <span class="workbench__status workbench__status--on-hold">On Hold</span>
+              <span class="workbench__date">April 2026</span>
+            </div>
+            <h3 class="card__title">[Shelved Idea]</h3>
+            <p class="card__desc">[Placeholder: 2–3 sentences describing the original idea, why it was paused, and whether you plan to return to it. Replace with real details when ready.]</p>
+            <div class="tags mt-2">
+              <span class="tag">[Tool]</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Ankit Dhital</span>
+        <nav class="footer__links">
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="workbench.html">Workbench</a>
+          <a href="studies.html">Studies</a>
+          <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">BYU–Idaho · Mechanical Engineering</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="motion.js" defer></script>
+</body>
+</html>
