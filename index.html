@@ -44,259 +44,296 @@
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== SECTION 1: HERO ===== -->
   <section class="hero">
     <div class="container">
-      <p class="hero__eyebrow fade-up fade-up-1">Mechanical Engineering · BYU–Idaho</p>
-      <h1 class="hero__title fade-up fade-up-2">
-        Ready for any challenge.<br><em>Driven by root-cause analysis.</em>
-      </h1>
-      <p class="hero__desc fade-up fade-up-3">
-        I approach technical challenges with a strict diagnostic mindset. Whether it's diagnosing a system failure, optimizing a process, or building a physical mechanism, I focus on identifying the root cause and executing the solution.
-      </p>
-      <div class="hero__actions fade-up fade-up-4">
-        <a href="projects.html" class="btn btn--primary">View Projects</a>
-        <a href="resume.html" class="btn btn--secondary">Download Résumé</a>
-      </div>
-      <div class="hero__meta fade-up fade-up-4">
-        <div>
-          <p class="hero__stat-label">Core Analytical Methodologies</p>
-          <p class="hero__stat-value">Root-Cause Analysis (RCA) · Systems-Level Thinking · Failure Diagnostics · Process Optimization · Data-Driven Problem Solving</p>
+      <div class="hero__grid">
+
+        <!-- Left: copy + metrics -->
+        <div class="hero__left">
+          <p class="hero__eyebrow fade-up fade-up-1">Mechanical Engineering · BYU–Idaho</p>
+          <h1 class="hero__title fade-up fade-up-2">
+            Ready for any challenge.<br><em>Driven by root-cause analysis.</em>
+          </h1>
+          <p class="hero__desc fade-up fade-up-3">
+            I approach technical challenges with a strict diagnostic mindset. Whether it's diagnosing a system failure, optimizing a process, or building a physical mechanism, I focus on identifying the root cause and executing the solution.
+          </p>
+          <div class="hero__actions fade-up fade-up-4">
+            <a href="projects.html" class="btn btn--primary">View Projects</a>
+            <a href="resume.html" class="btn btn--secondary">Download Résumé</a>
+          </div>
+
+          <!-- 4 key metrics -->
+          <div class="hero-metrics fade-up fade-up-4" aria-label="Key stats">
+            <div class="hero-metric">
+              <div class="hero-metric__value">7</div>
+              <div class="hero-metric__label">Projects built</div>
+            </div>
+            <div class="hero-metric">
+              <div class="hero-metric__value">4:1</div>
+              <div class="hero-metric__label">Gear reduction</div>
+            </div>
+            <div class="hero-metric">
+              <div class="hero-metric__value">±2°C</div>
+              <div class="hero-metric__label">Control accuracy</div>
+            </div>
+            <div class="hero-metric">
+              <div class="hero-metric__value">2nd</div>
+              <div class="hero-metric__label">22-team ASME comp</div>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="hero__stat-label">AI &amp; Computational Leverage</p>
-          <p class="hero__stat-value">Local AI Deployment (Ollama) · Python Workflow Automation · Advanced Prompt Engineering · Computational Efficiency</p>
+
+        <!-- Right: photo plate -->
+        <div class="hero__right fade-up fade-up-3" aria-hidden="true">
+          <div class="hero-plate">
+            <!-- Main headshot — z-index 1, behind artifacts -->
+            <div class="hero-plate__main">
+              <img src="assets/headshot.jpg" alt="Ankit Dhital" />
+            </div>
+            <!-- Artifact 1: top-right corner, rotated +5° -->
+            <div class="hero-plate__artifact hero-plate__artifact--1">
+              <img src="assets/planetary-gear-assembly.png" alt="" />
+            </div>
+            <!-- Artifact 2: bottom-left corner, rotated -4° -->
+            <div class="hero-plate__artifact hero-plate__artifact--2">
+              <img src="assets/rat-trap-exterior.jpg" alt="" />
+            </div>
+            <div class="hero-stamp">Open to roles</div>
+          </div>
         </div>
-        <div>
-          <p class="hero__stat-label">Mechatronics &amp; Embedded Systems</p>
-          <p class="hero__stat-value">Arduino Prototyping · Hardware-Software Interfacing · Sensor Integration · Electro-Mechanical Controls</p>
-        </div>
-        <div>
-          <p class="hero__stat-label">CAD &amp; Physical Fabrication</p>
-          <p class="hero__stat-value">SolidWorks (Advanced Modeling) · Onshape · 3D Printing (Precision Tolerancing) · Machine Shop Operations</p>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
+  <!-- ===== SECTION 2: METHOD STRIP ===== -->
+  <div class="method-strip" role="presentation">
+    <div class="method-strip__inner">
+      <div class="method-strip__item">
+        <span class="method-strip__num">01</span>
+        <span class="method-strip__word">Observe</span>
+      </div>
+      <div class="method-strip__item">
+        <span class="method-strip__num">02</span>
+        <span class="method-strip__word">Diagnose</span>
+      </div>
+      <div class="method-strip__item">
+        <span class="method-strip__num">03</span>
+        <span class="method-strip__word">Model</span>
+      </div>
+      <div class="method-strip__item">
+        <span class="method-strip__num">04</span>
+        <span class="method-strip__word">Build</span>
+      </div>
+      <div class="method-strip__item">
+        <span class="method-strip__num">05</span>
+        <span class="method-strip__word">Verify</span>
+      </div>
+      <div class="method-strip__item">
+        <span class="method-strip__num">06</span>
+        <span class="method-strip__word">Document</span>
+      </div>
+    </div>
+  </div>
 
-  <!-- ===== FEATURED PROJECTS ===== -->
-  <section>
+  <!-- ===== SECTION 3: FEATURED SHOWCASE ===== -->
+  <section class="showcase">
     <div class="container">
       <div class="section-header">
-        <p class="section-header__label">Featured Work</p>
-        <h2 class="section-header__title">Selected Projects</h2>
+        <p class="section-header__label">Selected Work</p>
+        <h2 class="section-header__title">Featured Projects</h2>
         <p class="section-header__desc">A cross-section of mechanical design, fabrication, and hardware integration work from coursework and independent builds.</p>
       </div>
 
-      <div class="grid-3">
+      <!-- Showcase item 1: Planetary Gear -->
+      <article class="showcase__item reveal">
+        <div class="showcase__index" aria-hidden="true">01</div>
+        <a href="project-planetary-gear.html" class="showcase__media" aria-label="View Planetary Gear System project">
+          <img src="assets/planetary-gear-assembly.png" alt="Planetary Gear System — Final Assembly" />
+        </a>
+        <div class="showcase__body">
+          <span class="showcase__dot" style="background: var(--blue);" aria-hidden="true"></span>
+          <p class="card__eyebrow">CAD · Fabrication · Mechanical Design</p>
+          <h3 class="showcase__title">Planetary Gear System</h3>
+          <p class="showcase__desc">Full SolidWorks design and physical assembly of a planetary gearbox, including exploded-view documentation. Hand-calculated all three gear configurations; ring-fixed configuration yields 4:1 torque reduction.</p>
+          <a href="project-planetary-gear.html" class="btn btn--primary">View project →</a>
+        </div>
+      </article>
 
-        <!-- Planetary Gear — FEATURED -->
-        <a href="project-planetary-gear.html" class="card" style="text-decoration:none;">
-          <img class="card__image" src="assets/planetary-gear-assembly.png" alt="Planetary Gear System — Final Assembly" />
-          <div class="card__body">
-            <p class="card__eyebrow">CAD · Fabrication</p>
-            <h3 class="card__title">Planetary Gear System</h3>
-            <p class="card__desc">Full SolidWorks design and physical assembly of a planetary gearbox, including exploded-view documentation.</p>
-            <div class="card__footer">
-              <div class="tags">
-                <span class="tag">SolidWorks</span>
-                <span class="tag">Gears</span>
-              </div>
-              <span class="btn btn--ghost">Learn more →</span>
+      <!-- Showcase item 2: Rat Trap -->
+      <article class="showcase__item reveal">
+        <div class="showcase__index" aria-hidden="true">02</div>
+        <a href="project-rat-trap.html" class="showcase__media" aria-label="View Automated Rat Trap project">
+          <img src="assets/rat-trap-exterior.jpg" alt="Automated Rat Trap — Exterior" />
+        </a>
+        <div class="showcase__body">
+          <span class="showcase__dot" style="background: var(--orange);" aria-hidden="true"></span>
+          <p class="card__eyebrow">Mechatronics · Team · Product Design</p>
+          <h3 class="showcase__title">Automated Rat Trap</h3>
+          <p class="showcase__desc">A self-resetting trap built into a briefcase-style case, with an electronic trigger, push-rod release, and locking hinges. Led full product design cycle: Pugh matrix, 15-part SolidWorks assembly, and physical prototype within a $200 budget.</p>
+          <a href="project-rat-trap.html" class="btn btn--primary">View project →</a>
+        </div>
+      </article>
+
+      <!-- Showcase item 3: Thermogate -->
+      <article class="showcase__item reveal">
+        <div class="showcase__index" aria-hidden="true">03</div>
+        <a href="project-thermogate.html" class="showcase__media" aria-label="View Thermogate project">
+          <img src="assets/thermogate-front.jpg" alt="Thermogate — Temperature-Controlled Gate" />
+        </a>
+        <div class="showcase__body">
+          <span class="showcase__dot" style="background: #16a34a;" aria-hidden="true"></span>
+          <p class="card__eyebrow">Electronics Integration · Mechatronics · Solo</p>
+          <h3 class="showcase__title">Thermogate</h3>
+          <p class="showcase__desc">A temperature-actuated gate system with live sensor feedback, interior wiring management, and a labeled component layout. Achieved ±2°C setpoint accuracy across 3 prototype iterations integrating 5 subsystems as a solo project.</p>
+          <a href="project-thermogate.html" class="btn btn--primary">View project →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: ATLAS PROJECT GRID ===== -->
+  <section class="atlas-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-header__label">Full Portfolio</p>
+        <h2 class="section-header__title">All Projects</h2>
+      </div>
+
+      <div class="atlas-grid">
+
+        <!-- Planetary Gear — FEATURED (span 2) -->
+        <a href="project-planetary-gear.html" class="atlas-card atlas-card--featured card">
+          <div class="atlas-card__bar" style="background: var(--blue);"></div>
+          <div class="atlas-card__media">
+            <img src="assets/planetary-gear-assembly.png" alt="Planetary Gear System — Final Assembly" />
+          </div>
+          <div class="atlas-card__body">
+            <p class="atlas-card__eyebrow">01 &mdash; CAD &middot; Fabrication</p>
+            <h3 class="atlas-card__title">Planetary Gear System</h3>
+            <p class="atlas-card__desc">Full SolidWorks design and physical assembly of a planetary gearbox, including exploded-view documentation.</p>
+            <div class="atlas-card__tags tags">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Gears</span>
+              <span class="tag">Assembly</span>
             </div>
+            <p class="atlas-card__stat">12T sun &middot; 12T planet &middot; 36T ring &middot; 4:1 reduction</p>
           </div>
         </a>
 
-        <!-- Rat Trap — FEATURED -->
-        <a href="project-rat-trap.html" class="card" style="text-decoration:none;">
-          <img class="card__image" src="assets/rat-trap-exterior.jpg" alt="Automated Rat Trap — Exterior" />
-          <div class="card__body">
-            <p class="card__eyebrow">Mechatronics · Team</p>
-            <h3 class="card__title">Automated Rat Trap</h3>
-            <p class="card__desc">A self-resetting trap built into a briefcase-style case, with an electronic trigger, push-rod release, and locking hinges.</p>
-            <div class="card__footer">
-              <div class="tags">
-                <span class="tag">SolidWorks</span>
-                <span class="tag">Electronics</span>
-              </div>
-              <span class="btn btn--ghost">Learn more →</span>
+        <!-- Rat Trap -->
+        <a href="project-rat-trap.html" class="atlas-card card">
+          <div class="atlas-card__bar" style="background: var(--orange);"></div>
+          <div class="atlas-card__media">
+            <img src="assets/rat-trap-exterior.jpg" alt="Automated Rat Trap — Exterior" />
+          </div>
+          <div class="atlas-card__body">
+            <p class="atlas-card__eyebrow">02 &mdash; Mechatronics &middot; Team</p>
+            <h3 class="atlas-card__title">Automated Rat Trap</h3>
+            <p class="atlas-card__desc">A self-resetting trap built into a briefcase-style case, with an electronic trigger and push-rod release.</p>
+            <div class="atlas-card__tags tags">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Electronics</span>
             </div>
+            <p class="atlas-card__stat">15-part assembly &middot; $200 budget</p>
           </div>
         </a>
 
         <!-- Thermogate -->
-        <a href="project-thermogate.html" class="card" style="text-decoration:none;">
-          <img class="card__image" src="assets/thermogate-front.jpg" alt="Thermogate — Temperature-Controlled Gate" />
-          <div class="card__body">
-            <p class="card__eyebrow">Electronics Integration</p>
-            <h3 class="card__title">Thermogate</h3>
-            <p class="card__desc">A temperature-actuated gate system with live sensor feedback, interior wiring management, and a labeled component layout.</p>
-            <div class="card__footer">
-              <div class="tags">
-                <span class="tag">Sensors</span>
-                <span class="tag">Hardware</span>
-              </div>
-              <span class="btn btn--ghost">Learn more →</span>
+        <a href="project-thermogate.html" class="atlas-card card">
+          <div class="atlas-card__bar" style="background: #16a34a;"></div>
+          <div class="atlas-card__media">
+            <img src="assets/thermogate-front.jpg" alt="Thermogate — Temperature-Controlled Gate" />
+          </div>
+          <div class="atlas-card__body">
+            <p class="atlas-card__eyebrow">03 &mdash; Electronics Integration</p>
+            <h3 class="atlas-card__title">Thermogate</h3>
+            <p class="atlas-card__desc">A temperature-actuated gate system with live sensor feedback and a labeled component layout.</p>
+            <div class="atlas-card__tags tags">
+              <span class="tag">Sensors</span>
+              <span class="tag">Hardware</span>
             </div>
+            <p class="atlas-card__stat">&plusmn;2&deg;C accuracy &middot; 5 integrated subsystems</p>
           </div>
         </a>
 
         <!-- Mailbox -->
-        <a href="project-mailbox.html" class="card" style="text-decoration:none;">
-          <img class="card__image" src="assets/mailbox-final.jpg" alt="Mailbox Fabrication — Final Assembly" />
-          <div class="card__body">
-            <p class="card__eyebrow">Sheet Metal · Fabrication</p>
-            <h3 class="card__title">Mailbox Fabrication</h3>
-            <p class="card__desc">A fabricated sheet-metal mailbox built to dimensional tolerances, demonstrating metal forming and fastening techniques.</p>
-            <div class="card__footer">
-              <div class="tags">
-                <span class="tag">Fabrication</span>
-                <span class="tag">Sheet Metal</span>
-              </div>
-              <span class="btn btn--ghost">Learn more →</span>
+        <a href="project-mailbox.html" class="atlas-card card">
+          <div class="atlas-card__bar" style="background: #7c3aed;"></div>
+          <div class="atlas-card__media">
+            <img src="assets/mailbox-final.jpg" alt="Mailbox Fabrication — Final Assembly" />
+          </div>
+          <div class="atlas-card__body">
+            <p class="atlas-card__eyebrow">04 &mdash; Sheet Metal &middot; Fabrication</p>
+            <h3 class="atlas-card__title">Mailbox Fabrication</h3>
+            <p class="atlas-card__desc">A fabricated sheet-metal mailbox built to dimensional tolerances, demonstrating metal forming and fastening techniques.</p>
+            <div class="atlas-card__tags tags">
+              <span class="tag">Sheet Metal</span>
+              <span class="tag">Fabrication</span>
             </div>
+            <p class="atlas-card__stat">Full dimensional inspection &middot; tolerance compliance</p>
           </div>
         </a>
 
-        <!-- FSAE Wheel -->
-        <a href="project-fsae-wheel.html" class="card" style="text-decoration:none;">
-          <img class="card__image" src="assets/fsae-car.jpg" alt="FSAE Race Car" />
-          <div class="card__body">
-            <p class="card__eyebrow">Automotive · Team Build</p>
-            <h3 class="card__title">FSAE Wheel & Suspension</h3>
-            <p class="card__desc">Contributed to wheel assembly, suspension geometry, and chassis work on a student-built Formula SAE race car.</p>
-            <div class="card__footer">
-              <div class="tags">
-                <span class="tag">FSAE</span>
-                <span class="tag">Suspension</span>
-              </div>
-              <span class="btn btn--ghost">Learn more →</span>
-            </div>
+        <!-- FSAE -->
+        <a href="project-fsae-wheel.html" class="atlas-card card">
+          <div class="atlas-card__bar" style="background: #d97706;"></div>
+          <div class="atlas-card__media">
+            <img src="assets/fsae-car.jpg" alt="FSAE Race Car" />
           </div>
-        </a>
-
-        <!-- Hanger CAD -->
-        <a href="project-hanger.html" class="card" style="text-decoration:none;">
-          <img class="card__image" src="assets/hanger-cad.png" alt="Hanger CAD Model" />
-          <div class="card__body">
-            <p class="card__eyebrow">CAD Modeling · Fabrication</p>
-            <h3 class="card__title">Hanger — CAD Model</h3>
-            <p class="card__desc">Precision SolidWorks model of a hanger component with physical prototype verification, demonstrating CAD-to-part workflow.</p>
-            <div class="card__footer">
-              <div class="tags">
-                <span class="tag">SolidWorks</span>
-              </div>
-              <span class="btn btn--ghost">Learn more →</span>
+          <div class="atlas-card__body">
+            <p class="atlas-card__eyebrow">05 &mdash; Automotive &middot; Team Build</p>
+            <h3 class="atlas-card__title">FSAE Wheel &amp; Suspension</h3>
+            <p class="atlas-card__desc">Contributed to wheel assembly, suspension geometry, and chassis work on a student-built Formula SAE race car.</p>
+            <div class="atlas-card__tags tags">
+              <span class="tag">FSAE</span>
+              <span class="tag">Suspension</span>
             </div>
+            <p class="atlas-card__stat">San Jos&eacute; State University &middot; race-ready build</p>
           </div>
         </a>
 
       </div>
 
       <div style="text-align:center; margin-top:2.5rem;">
-        <a href="projects.html" class="btn btn--secondary">View all projects</a>
+        <a href="projects.html" class="btn btn--secondary">View all 7 projects →</a>
       </div>
     </div>
   </section>
 
-  <hr class="divider" />
-
-  <!-- ===== TOOLS & SKILLS ===== -->
-  <section>
+  <!-- ===== SECTION 5: PHILOSOPHY / METHOD ===== -->
+  <section class="philosophy">
     <div class="container">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:4rem; align-items:start;">
+      <div class="philosophy__grid">
 
-        <div>
-          <div class="section-header" style="margin-bottom:2rem;">
-            <p class="section-header__label">Capabilities</p>
-            <h2 class="section-header__title">Tools & Skills</h2>
-          </div>
-          <div class="reveal-group" style="display:flex; flex-direction:column; gap:1.5rem;">
-            <div class="reveal">
-              <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">CAD &amp; Design</p>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">SolidWorks · Onshape · GD&amp;T · Design for manufacturing · 3D printing &amp; prototyping</p>
-            </div>
-            <div class="reveal">
-              <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">Electronics &amp; Controls</p>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Arduino prototyping · Temperature &amp; motion sensing · Actuation &amp; trigger systems · Circuit wiring</p>
-            </div>
-            <div class="reveal">
-              <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">Fabrication</p>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Manual machining (mill &amp; lathe) · Laser cutting · Sheet-metal forming · Welding · Assembly · Dimensional inspection</p>
-            </div>
-            <div class="reveal">
-              <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">Engineering Analysis</p>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Thermodynamics · Heat transfer · Fluid dynamics · FEA · Material selection</p>
-            </div>
-            <div class="reveal">
-              <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">AI &amp; Workflow</p>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">AI-assisted design &amp; concept generation · Engineering calculations &amp; problem-solving · Research &amp; troubleshooting</p>
-            </div>
-          </div>
+        <div class="philosophy__intro reveal">
+          <p class="section-header__label">How I Work</p>
+          <h2>Built on a diagnostic mindset.</h2>
+          <p>Every project starts the same way: with a question. What's actually failing? What does the system need? I don't build until I understand the problem — and I don't stop until the data confirms the fix.</p>
         </div>
 
-        <div>
-          <div class="section-header" style="margin-bottom:2rem;">
-            <p class="section-header__label">Academic Work</p>
-            <h2 class="section-header__title">Study Papers</h2>
+        <div class="philosophy__principles">
+          <div class="principle reveal">
+            <span class="principle__num">01</span>
+            <p class="principle__title">Start with the system</p>
+            <p class="principle__body">Understand the full context before touching any component. Symptoms live at the surface; causes live in the system.</p>
           </div>
-          <div style="display:flex; flex-direction:column; gap:1rem;">
-
-            <a href="study-waste-heat.html" style="text-decoration:none;">
-              <div class="card" style="flex-direction:row; align-items:center; padding:1.25rem 1.5rem; display:flex; gap:1rem;">
-                <div style="flex:1;">
-                  <p class="card__eyebrow" style="margin-bottom:0.25rem;">ME-113 · Thermodynamics</p>
-                  <h3 class="card__title" style="font-size:0.9375rem; margin-bottom:0;">Waste Heat Recovery from Industry</h3>
-                </div>
-                <span class="btn btn--ghost" style="white-space:nowrap;">Read →</span>
-              </div>
-            </a>
-
-            <a href="study-fluid-dynamics.html" style="text-decoration:none;">
-              <div class="card" style="flex-direction:row; align-items:center; padding:1.25rem 1.5rem; display:flex; gap:1rem;">
-                <div style="flex:1;">
-                  <p class="card__eyebrow" style="margin-bottom:0.25rem;">ME 111 · Fluid Dynamics</p>
-                  <h3 class="card__title" style="font-size:0.9375rem; margin-bottom:0;">Laminar &amp; Turbulent Flow Study</h3>
-                </div>
-                <span class="btn btn--ghost" style="white-space:nowrap;">Read →</span>
-              </div>
-            </a>
-
-            <a href="study-cpr-pulsemate.html" style="text-decoration:none;">
-              <div class="card" style="flex-direction:row; align-items:center; padding:1.25rem 1.5rem; display:flex; gap:1rem;">
-                <div style="flex:1;">
-                  <p class="card__eyebrow" style="margin-bottom:0.25rem;">ME 380 · Product Design</p>
-                  <h3 class="card__title" style="font-size:0.9375rem; margin-bottom:0;">CPR PulseMate Device Proposal</h3>
-                </div>
-                <span class="btn btn--ghost" style="white-space:nowrap;">Read →</span>
-              </div>
-            </a>
-
-            <a href="study-electronic-fin.html" style="text-decoration:none;">
-              <div class="card" style="flex-direction:row; align-items:center; padding:1.25rem 1.5rem; display:flex; gap:1rem;">
-                <div style="flex:1;">
-                  <p class="card__eyebrow" style="margin-bottom:0.25rem;">Mechanical Design</p>
-                  <h3 class="card__title" style="font-size:0.9375rem; margin-bottom:0;">Electronic Fin Design</h3>
-                </div>
-                <span class="btn btn--ghost" style="white-space:nowrap;">Read →</span>
-              </div>
-            </a>
-
-            <a href="study-elastic-behaviour.html" style="text-decoration:none;">
-              <div class="card" style="flex-direction:row; align-items:center; padding:1.25rem 1.5rem; display:flex; gap:1rem;">
-                <div style="flex:1;">
-                  <p class="card__eyebrow" style="margin-bottom:0.25rem;">ME 370 · Machine Design</p>
-                  <h3 class="card__title" style="font-size:0.9375rem; margin-bottom:0;">Elastic Behaviour of Rigidly Constrained Structure</h3>
-                </div>
-                <span class="btn btn--ghost" style="white-space:nowrap;">Read →</span>
-              </div>
-            </a>
-
+          <div class="principle reveal">
+            <span class="principle__num">02</span>
+            <p class="principle__title">Measure before cutting</p>
+            <p class="principle__body">Quantify the problem. Data first, assumptions last. A number beats an opinion every time.</p>
           </div>
-          <div style="margin-top:1rem;">
-            <a href="studies.html" class="btn btn--ghost">View all academic studies →</a>
+          <div class="principle reveal">
+            <span class="principle__num">03</span>
+            <p class="principle__title">Build to learn</p>
+            <p class="principle__body">Physical prototypes reveal constraints that CAD models hide. Iteration is the process, not the failure.</p>
+          </div>
+          <div class="principle reveal">
+            <span class="principle__num">04</span>
+            <p class="principle__title">Document the deviation</p>
+            <p class="principle__body">Anomalies are information. Record everything — the deviation you skip today becomes the root cause you chase tomorrow.</p>
           </div>
         </div>
 
@@ -304,23 +341,56 @@
     </div>
   </section>
 
-  <!-- ===== CTA BAND ===== -->
-  <section style="padding:3rem 0;">
+  <!-- ===== SECTION 6: STUDIES TICKETS ===== -->
+  <section class="tickets-section">
     <div class="container">
-      <div style="background:var(--accent-light); border:1px solid rgba(29,78,216,0.15); border-radius:var(--radius-lg); padding:3rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
-        <div>
-          <h2 style="font-size:1.375rem; margin-bottom:0.5rem;">Open to opportunities</h2>
-          <p style="color:var(--text-secondary); max-width:480px;">Seeking internships and entry-level roles in product design, CAD engineering, and mechanical engineering. Based in Rexburg, Idaho — open to relocation.</p>
-        </div>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="resume.html" class="btn btn--primary">View Résumé</a>
-          <a href="contact.html" class="btn btn--secondary">Get in Touch</a>
-        </div>
+      <div class="section-header">
+        <p class="section-header__label">Academic Work</p>
+        <h2 class="section-header__title">Study Papers</h2>
+        <p class="section-header__desc">Written analyses, design proposals, and engineering investigations from coursework.</p>
+      </div>
+
+      <div class="study-tickets">
+
+        <a href="study-waste-heat.html" class="study-ticket reveal">
+          <span class="study-ticket__code">ME-113 · Thermodynamics</span>
+          <span class="study-ticket__title">Waste Heat Recovery from Industry</span>
+          <span class="study-ticket__cta">Read →</span>
+        </a>
+
+        <a href="study-fluid-dynamics.html" class="study-ticket reveal">
+          <span class="study-ticket__code">ME 111 · Fluid Dynamics</span>
+          <span class="study-ticket__title">Laminar &amp; Turbulent Flow Study</span>
+          <span class="study-ticket__cta">Read →</span>
+        </a>
+
+        <a href="study-cpr-pulsemate.html" class="study-ticket reveal">
+          <span class="study-ticket__code">ME 380 · Product Design</span>
+          <span class="study-ticket__title">CPR PulseMate Device Proposal</span>
+          <span class="study-ticket__cta">Read →</span>
+        </a>
+
+        <a href="study-electronic-fin.html" class="study-ticket reveal">
+          <span class="study-ticket__code">Mechanical Design</span>
+          <span class="study-ticket__title">Electronic Fin Design</span>
+          <span class="study-ticket__cta">Read →</span>
+        </a>
+
+        <a href="study-elastic-behaviour.html" class="study-ticket reveal">
+          <span class="study-ticket__code">ME 370 · Machine Design</span>
+          <span class="study-ticket__title">Elastic Behaviour of Rigidly Constrained Structure</span>
+          <span class="study-ticket__cta">Read →</span>
+        </a>
+
+      </div>
+
+      <div style="text-align:center; margin-top:1.5rem;">
+        <a href="studies.html" class="btn btn--ghost">View all academic studies →</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== SECTION 7: FOOTER ===== -->
   <footer class="footer-cta">
     <div class="container">
       <div class="footer-cta__grid">
