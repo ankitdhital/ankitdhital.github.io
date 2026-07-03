@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
 <title>Thermogate — Ankit Dhital</title>
-<meta name="description" content="A compact temperature-control prototype that senses ambient conditions, compares them to a user setpoint, and drives a physical response through an Arduino-controlled gate system.">
+<meta name="description" content="A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C.">
 <meta property="og:title" content="Thermogate — Ankit Dhital">
-<meta property="og:description" content="A compact temperature-control prototype that senses ambient conditions, compares them to a user setpoint, and drives a physical response through an Arduino-controlled gate system.">
+<meta property="og:description" content="A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C.">
 <meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,25 +25,39 @@
 <main class="project-page">
 <section class="project-hero" style="--accent:#1957ff;">
   <div class="wrap project-hero__grid">
-    <div><p class="kicker reveal">Case 01 · Mechatronics · Solo Build</p><h1 data-split-text>Thermogate</h1><p class="lead reveal">A compact temperature-control prototype that senses ambient conditions, compares them to a user setpoint, and drives a physical response through an Arduino-controlled gate system.</p><div class="tag-row reveal"><span>Arduino</span><span>SolidWorks</span><span>Thermistor</span><span>Controls</span><span>3D printing</span></div></div>
-    <figure class="project-hero__image reveal"><img src="assets/webp/thermogate-front.webp" alt="Thermogate"><figcaption>±2°C setpoint target</figcaption></figure>
+    <div><p class="kicker reveal">Electronics Integration · Solo Build</p><h1 data-split-text>Thermogate</h1><p class="lead reveal">A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C. Designed in SolidWorks, 3D printed, and programmed end-to-end, with keypad control, an LCD, and color-coded feedback.</p><div class="tag-row reveal"><span>Temperature Sensing</span><span>Actuation</span><span>Control Logic</span><span>Arduino</span><span>SolidWorks</span><span>3D Printing</span></div></div>
+    <figure class="project-hero__image reveal"><img src="assets/webp/thermogate-front.webp" alt="Thermogate front view"><figcaption>±2°C setpoint accuracy</figcaption></figure>
   </div>
 </section>
-<section class="section pt-0"><div class="wrap fact-grid reveal"><article><span>Role</span><b>Solo builder</b></article><article><span>Controller</span><b>Arduino Uno R3</b></article><article><span>Interface</span><b>LCD · keypad · RGB</b></article><article><span>Target</span><b>±2°C</b></article></div></section>
+<section class="section pt-0"><div class="wrap fact-grid reveal"><article><span>Role</span><b>Solo builder</b></article><article><span>Controller</span><b>Arduino Uno R3</b></article><article><span>Interface</span><b>LCD · keypad · RGB</b></article><article><span>Accuracy</span><b>±2°C</b></article></div></section>
 <section class="section section--cream"><div class="wrap case-grid">
-  <article class="case-note reveal"><span>Problem</span><p>Build a climate-control concept that behaves like a real device, not a loose breadboard demo.</p></article>
-  <article class="case-note reveal"><span>Constraint</span><p>Package the sensor, interface, actuation, wiring, and enclosure into a compact build without corrupting the temperature reading.</p></article>
-  <article class="case-note reveal"><span>Intervention</span><p>Modeled the enclosure in SolidWorks, 3D-printed the parts, wired the thermistor/LCD/keypad/RGB status system, and programmed the Arduino feedback behavior.</p></article>
-  <article class="case-note reveal"><span>Verification</span><p>Targeted a ±2°C response window across prototype iterations while improving layout, usability, and component access.</p></article>
+  <article class="case-note reveal"><span>Problem</span><p>The goal was a single device that could sense temperature and respond to it automatically, accurately, and clearly enough for someone to actually use.</p></article>
+  <article class="case-note reveal"><span>Constraint</span><p>Tie a live sensor reading to a physical action in a closed feedback loop, give the user a simple way to set and monitor the target, and pack everything into a compact, serviceable enclosure.</p></article>
+  <article class="case-note reveal"><span>Intervention</span><p>Modeled the enclosure in SolidWorks, 3D-printed the parts, wired roughly ten components around an Arduino Uno R3, and wrote the control logic myself.</p></article>
+  <article class="case-note reveal"><span>Verification</span><p>The system holds setpoints to within ±2°C, continuously comparing the live reading against the setpoint and correcting — fan direction sets heating vs. cooling.</p></article>
 </div></section>
-<section class="section"><div class="wrap"><div class="section-head reveal"><p class="kicker">Evidence plates</p><h2>Photos, CAD, and build artifacts.</h2></div><div class="plate-grid"><figure class="plate reveal"><img src="assets/webp/thermogate-front.webp" alt="Thermogate project image"><figcaption>Thermogate Front</figcaption></figure><figure class="plate reveal"><img src="assets/webp/thermogate-annotated.webp" alt="Thermogate project image"><figcaption>Thermogate Annotated</figcaption></figure><figure class="plate reveal"><img src="assets/webp/thermogate-interior.webp" alt="Thermogate project image"><figcaption>Thermogate Interior</figcaption></figure><figure class="plate reveal"><img src="assets/webp/thermogate-sketch.webp" alt="Thermogate project image"><figcaption>Thermogate Sketch</figcaption></figure></div></div></section>
+<section class="section">
+  <div class="wrap">
+    <div class="reveal" style="max-width:72ch; line-height:1.8;">
+      <h2>Overview</h2>
+      <p>Thermogate is a temperature-controlled vent system I designed and built entirely on my own — from the SolidWorks enclosure and 3D-printed parts to the wiring and the Arduino code. A thermistor reads the ambient temperature, and the Arduino drives a DC fan in a closed feedback loop to hold a target setpoint within ±2°C, continuously comparing the live reading against the setpoint and correcting; the fan's rotation direction determines whether it works to raise or lower the temperature. The user sets the target on a keypad, an LCD shows the time, setpoint, and live reading, and an RGB LED signals status at a glance — red for hot, yellow as it approaches, green once it's at temperature. It's built to be useful anywhere temperature matters: room ventilation, electronics cooling, or greenhouse climate control.</p>
+      <h2 style="margin-top:2rem;">Problem</h2>
+      <p>The goal was a single device that could sense temperature and respond to it automatically, accurately, and clearly enough for someone to actually use. That meant tying a live sensor reading to a physical action in a closed feedback loop, giving the user a simple way to set and monitor the target, and packing everything into a compact, serviceable enclosure.</p>
+      <h2 style="margin-top:2rem;">Process</h2>
+      <p>I started from a concept sketch, modeled the enclosure in SolidWorks, and 3D printed the parts with tolerances in mind. I wired roughly ten components around an Arduino Uno R3 — thermistor, DC fan, LCD, keypad, and RGB LED — and wrote the control logic myself, leaning on AI to write and debug code as I went. Beyond the core temperature control, I layered in extra features to make it more useful and engaging: a digital clock, an alarm, a music player, and a °C-to-°F converter, with the RGB LED also pulsing to the music's pitch.</p>
+      <h2 style="margin-top:2rem;">What I learned</h2>
+      <p>Three things turned out harder than they looked. Fitting all the wiring and components into a compact housing took careful planning. The thermistor had to stick out just far enough to read the room's temperature rather than the heat building up inside the enclosure — a small placement detail with a big effect on accuracy. And the closed-loop control had to spin the fan clockwise or counter-clockwise depending on whether the system needed to raise or lower the temperature. Getting all three right is what turned a wiring diagram into a device that actually holds a setpoint.</p>
+    </div>
+  </div>
+</section>
+<section class="section"><div class="wrap"><div class="section-head reveal"><p class="kicker">Evidence plates</p><h2>Photos, CAD, and build artifacts.</h2></div><div class="plate-grid"><figure class="plate reveal"><img src="assets/webp/thermogate-front.webp" alt="Thermogate front view"><figcaption>Thermogate Front</figcaption></figure><figure class="plate reveal"><img src="assets/webp/thermogate-annotated.webp" alt="Thermogate annotated component diagram"><figcaption>Thermogate Annotated</figcaption></figure><figure class="plate reveal"><img src="assets/webp/thermogate-interior.webp" alt="Thermogate interior wiring"><figcaption>Thermogate Interior</figcaption></figure><figure class="plate reveal"><img src="assets/webp/thermogate-sketch.webp" alt="Thermogate concept sketch"><figcaption>Thermogate Sketch</figcaption></figure></div></div></section>
 <section class="section pt-0"><div class="wrap next-grid reveal"><a href="project-laser-cut-pattern.html">← Laser-Cut Steel Tiger</a><a href="projects.html">All projects</a><a href="project-planetary-gear.html">Planetary Gear System →</a></div></section>
 </main><footer class="footer">
   <div class="wrap footer__grid">
     <div>
       <p class="kicker">Open to internships and entry-level roles</p>
       <h2>Bring me a mechanical problem worth solving.</h2>
-      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
+      <p>CAD design, fabrication, mechatronics, and systematic root-cause analysis &mdash; ready to contribute from day one.</p>
     </div>
     <div class="footer__actions">
       <a class="btn btn--ink" href="contact.html">Contact</a>
