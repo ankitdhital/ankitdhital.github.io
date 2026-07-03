@@ -1,130 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R8J2Y06LGE');
-  </script>
-  <!-- End Google Analytics 4 -->
-  <title>Workbench — Ankit Dhital</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script>document.documentElement.classList.add("js-motion");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>Workbench — Ankit Dhital</title>
+<meta name="description" content="Experimental engineering notes, workflows, and build process ideas from Ankit Dhital.">
+<meta property="og:title" content="Workbench — Ankit Dhital">
+<meta property="og:description" content="Experimental engineering notes, workflows, and build process ideas from Ankit Dhital.">
+<meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5efe2">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- ===== NAV ===== -->
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="workbench.html" class="active">Workbench</a></li>
-        <li><a href="studies.html">Academic Studies</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a href="contact.html" class="nav__cta">Contact</a></li>
-      </ul>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b><em>Build Atlas</em></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="">Projects</a><a href="about.html" class="">Profile</a><a href="workbench.html" class="active">Workbench</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
+</header>
+<main class="">
+<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">Workbench</p><h1 data-split-text>Small experiments. Big signal.</h1></div><p class="lead reveal">Not every useful engineering thought becomes a full project page. This is the area for process, experiments, workflow ideas, and learning loops.</p></div></section>
+<section class="section pt-0"><div class="wrap"><div class="workbench-grid"><article class="workbench-card reveal"><span>01</span><h3>Prompt-to-prototype workflow</h3><p>Using AI as a thinking partner for concept generation, engineering checks, and documentation drafts without letting it replace the physical test.</p></article><article class="workbench-card reveal"><span>02</span><h3>SOP / A3 thinking</h3><p>Turning messy procedures and improvement goals into clear WHAT / HOW / WHY structures and measurable actions.</p></article><article class="workbench-card reveal"><span>03</span><h3>CAD-to-print tolerance notes</h3><p>Recording how printed parts actually behave compared with clean CAD intent.</p></article><article class="workbench-card reveal"><span>04</span><h3>Controls experiments</h3><p>Small Arduino and sensor studies that connect code, hardware, and environmental response.</p></article><article class="workbench-card reveal"><span>05</span><h3>Portfolio as product</h3><p>Treating the site itself as a product design challenge: audience, hierarchy, evidence, interaction, and trust.</p></article><article class="workbench-card reveal"><span>06</span><h3>Manufacturing curiosity</h3><p>Watching the difference between a part that can be modeled and a part that can be made repeatedly.</p></article></div></div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Open to internships and entry-level roles</p>
+      <h2>Bring me a mechanical problem worth solving.</h2>
+      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
     </div>
-  </nav>
-
-  <!-- ===== PAGE HERO ===== -->
-  <div style="padding:4rem 0 3rem; border-bottom:2px solid var(--ink);">
-    <div class="container">
-      <p class="page-hero__label">Active Builds</p>
-      <h1 class="page-hero__title">Workbench</h1>
-      <p class="page-hero__desc">Things I'm building, learning, and tinkering with — outside the featured projects. Updated as builds progress.</p>
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Contact</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
     </div>
   </div>
-
-  <!-- ===== ENTRY LIST ===== -->
-  <section>
-    <div class="container">
-      <div style="display:flex; flex-direction:column; gap:1.5rem; max-width:860px;">
-
-        <!-- TEMPLATE: copy this block to add a new entry. Update status pill, date, title, body, image, tags. -->
-
-        <!-- Entry 1 — In Progress -->
-        <article class="card workbench__entry">
-          <div class="card__body">
-            <div class="workbench__entry-header">
-              <span class="workbench__status workbench__status--in-progress">In Progress</span>
-              <span class="workbench__date">June 2026</span>
-            </div>
-            <h3 class="card__title">[Current Build Title]</h3>
-            <p class="card__desc">[Placeholder: 2–3 sentences describing what this build is, what problem it solves or skill it exercises, and where it currently stands. Replace with real details — do not invent specs.]</p>
-            <div class="tags mt-2">
-              <span class="tag">[Tool]</span>
-              <span class="tag">[Tool]</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Entry 2 — Completed -->
-        <article class="card workbench__entry">
-          <img class="card__image" src="assets/hanger-physical.jpg" alt="[Recent Small Build]" />
-          <div class="card__body">
-            <div class="workbench__entry-header">
-              <span class="workbench__status workbench__status--completed">Completed</span>
-              <span class="workbench__date">May 2026</span>
-            </div>
-            <h3 class="card__title">[Recent Small Build]</h3>
-            <p class="card__desc">[Placeholder: 2–3 sentences describing what this build was, what process or skill it exercised, and the outcome. Replace with real details when ready.]</p>
-            <div class="tags mt-2">
-              <span class="tag">[Tool]</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Entry 3 — On Hold -->
-        <article class="card workbench__entry">
-          <div class="card__body">
-            <div class="workbench__entry-header">
-              <span class="workbench__status workbench__status--on-hold">On Hold</span>
-              <span class="workbench__date">April 2026</span>
-            </div>
-            <h3 class="card__title">[Shelved Idea]</h3>
-            <p class="card__desc">[Placeholder: 2–3 sentences describing the original idea, why it was paused, and whether you plan to return to it. Replace with real details when ready.]</p>
-            <div class="tags mt-2">
-              <span class="tag">[Tool]</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer-cta">
-    <div class="container">
-      <div class="footer-cta__grid">
-        <div class="footer-cta__message">
-          <p class="footer-cta__label">Open to internships &amp; entry-level roles</p>
-          <h2 class="footer-cta__headline">Bring me a mechanical problem worth solving.</h2>
-          <p class="footer-cta__desc">CAD design, fabrication, mechatronics, and systematic root-cause analysis &mdash; ready to contribute from day one.</p>
-        </div>
-        <div class="footer-cta__actions">
-          <a href="contact.html" class="footer-cta__btn footer-cta__btn--solid">Get in Touch</a>
-          <a href="pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-cta__btn footer-cta__btn--outline">Download R&eacute;sum&eacute;</a>
-        </div>
-      </div>
-      <div class="footer-cta__bar">
-        <span class="footer-cta__copy">&copy; 2026 Ankit Dhital &nbsp;&middot;&nbsp; BYU&ndash;Idaho &middot; Mechanical Engineering</span>
-        <span class="footer-cta__tagline">Static site &middot; GitHub Pages</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="motion.js" defer></script>
-</body>
-</html>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Static site · GitHub Pages ready · No build step</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Atlas Index</b><button type="button" data-command-close>Close</button></div>
+    <p>Fast jump. Press <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+    <div class="command__links"><a href="index.html"><strong>Home</strong><span>index.html</span></a><a href="projects.html"><strong>Projects</strong><span>projects.html</span></a><a href="project-thermogate.html"><strong>Thermogate</strong><span>project-thermogate.html</span></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong><span>project-planetary-gear.html</span></a><a href="project-rat-trap.html"><strong>Automated Rat Trap</strong><span>project-rat-trap.html</span></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong><span>pdfs/resume.pdf</span></a><a href="contact.html"><strong>Contact</strong><span>contact.html</span></a></div>
+  </div>
+</aside>
+<script src="motion.js" defer></script>
+</body></html>

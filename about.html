@@ -1,272 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R8J2Y06LGE');
-  </script>
-  <!-- End Google Analytics 4 -->
-  <title>About — Ankit Dhital</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script>document.documentElement.classList.add("js-motion");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>Profile — Ankit Dhital</title>
+<meta name="description" content="About Ankit Dhital, mechanical engineering student focused on product design, fabrication, controls, and root-cause problem solving.">
+<meta property="og:title" content="Profile — Ankit Dhital">
+<meta property="og:description" content="About Ankit Dhital, mechanical engineering student focused on product design, fabrication, controls, and root-cause problem solving.">
+<meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5efe2">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- ===== NAV ===== -->
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="workbench.html">Workbench</a></li>
-        <li><a href="studies.html">Academic Studies</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a href="contact.html" class="nav__cta">Contact</a></li>
-      </ul>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b><em>Build Atlas</em></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="">Projects</a><a href="about.html" class="active">Profile</a><a href="workbench.html" class="">Workbench</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
+</header>
+<main class="">
+<section class="page-hero">
+  <div class="wrap page-hero__grid">
+    <div><p class="kicker reveal">Profile</p><h1 data-split-text>I am interested in the moment an idea becomes physical.</h1></div>
+    <p class="lead reveal">My strongest work sits where design intent meets reality: CAD tolerances, print constraints, shop process, wiring behavior, test results, and the discipline to revise without ego.</p>
+  </div>
+</section>
+<section class="section pt-0"><div class="wrap profile-grid">
+  <figure class="profile-photo reveal"><img src="assets/webp/headshot.webp" alt="Ankit Dhital"><figcaption>Mechanical Engineering · BYU–Idaho · expected December 2026</figcaption></figure>
+  <div class="profile-copy reveal"><p>I am a mechanical engineering student focused on product design, mechanical systems, fabrication, controls, and engineering communication. I like projects where the computer model is only the first argument and the prototype gets the final vote.</p><p>My work combines SolidWorks and Onshape modeling, manual machining, 3D printing, Arduino prototyping, shop-floor problem solving, and technical writing. I am especially interested in roles where I can move between design, testing, manufacturing, and root-cause analysis.</p><div class="profile-facts"><span>Rexburg, Idaho</span><span>Open to relocation</span><span>Seeking internships and entry-level roles</span></div></div>
+</div></section>
+<section class="section section--cream"><div class="wrap"><div class="section-head reveal"><p class="kicker">What I bring</p><h2>A builder's mindset with documentation discipline.</h2></div><div class="about-cards"><article class="method-card reveal"><span>01</span><h3>Hands-on follow-through</h3><p>I want the final object to exist, move, assemble, and teach something.</p></article><article class="method-card reveal"><span>02</span><h3>Root-cause thinking</h3><p>I care about why a system behaves the way it does, not only how to make it look complete.</p></article><article class="method-card reveal"><span>03</span><h3>Technical communication</h3><p>Good engineering work should be explainable through drawings, notes, photos, and decisions.</p></article></div></div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Open to internships and entry-level roles</p>
+      <h2>Bring me a mechanical problem worth solving.</h2>
+      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
     </div>
-  </nav>
-
-  <!-- ===== PAGE HERO ===== -->
-  <div style="padding:4rem 0 3rem; border-bottom:2px solid var(--ink);">
-    <div class="container">
-      <p class="page-hero__label">About Me</p>
-      <h1 class="page-hero__title">Mechanical Engineer<br>in the Making</h1>
-      <p class="page-hero__desc">A student at BYU–Idaho learning to close the gap between a CAD model and a working system.</p>
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Contact</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
     </div>
   </div>
-
-  <!-- ===== MAIN CONTENT ===== -->
-  <section>
-    <div class="container">
-      <div class="about-grid">
-
-        <!-- Portrait column -->
-        <aside class="about-portrait">
-          <img src="assets/headshot.jpg" alt="Ankit Dhital" />
-          <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
-            <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.125rem 1.25rem;">
-              <p class="text-muted" style="margin-bottom:0.25rem;">School</p>
-              <p style="font-weight:600; font-size:0.9375rem; color:var(--text-primary);">BYU–Idaho</p>
-            </div>
-            <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.125rem 1.25rem;">
-              <p class="text-muted" style="margin-bottom:0.25rem;">Program</p>
-              <p style="font-weight:600; font-size:0.9375rem; color:var(--text-primary);">Mechanical Engineering</p>
-            </div>
-            <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.125rem 1.25rem;">
-              <p class="text-muted" style="margin-bottom:0.25rem;">Location</p>
-              <p style="font-weight:600; font-size:0.9375rem; color:var(--text-primary);">Rexburg, Idaho</p>
-            </div>
-            <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.125rem 1.25rem;">
-              <p class="text-muted" style="margin-bottom:0.25rem;">Primary Tools</p>
-              <p style="font-weight:600; font-size:0.9375rem; color:var(--text-primary);">SolidWorks · Arduino</p>
-            </div>
-          </div>
-          <div style="margin-top:1.5rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
-            <a href="resume.html" class="btn btn--primary" style="flex:1; justify-content:center;">View Résumé</a>
-            <a href="contact.html" class="btn btn--secondary" style="flex:1; justify-content:center;">Contact</a>
-          </div>
-        </aside>
-
-        <!-- Story column -->
-        <div class="about-body">
-
-          <h2>Background</h2>
-          <p>
-            I grew up in Nepal, in the Himalayas, before coming to the United States to study engineering. For as long as I can remember, I've needed to know what's inside things. By around ten — just as I was learning Newton's laws — I'd already taken apart most of my toys, plus a flashlight, a radio, and even a TV, trying to see how simple equations actually came together to make things work.
-          </p>
-          <p>
-            That curiosity never left. I still build to understand, and I'm drawn to projects that make hardware feel interactive and human. One I'm developing now is a mechanical envelope — a rack-and-pinion mechanism that opens to reveal a letter inside, turning a simple message into something tactile.
-          </p>
-          <p>
-            Outside engineering, I play soccer and prototype ideas of my own.
-          </p>
-          <p>
-            The inventor I admire most is Nikola Tesla — not just for his vision, but for his conviction. He believed in his ideas when no one else did, and went on to shape modern life in ways still underrated today. That mix of imagination and self-belief is what I try to bring to my own work.
-          </p>
-
-          <h2>How I got here</h2>
-          <p>
-            I knew I wanted to be an engineer in high school. The curiosity I'd had as a kid had become deliberate: I wanted to design and build for a living, not just understand how things worked.
-          </p>
-          <p>
-            I started at San José State, where I joined the Formula SAE team. On a student-built race car, I saw how a complex machine comes together from many subsystems, and how a technical team organizes itself to keep a long build moving.
-          </p>
-          <p>
-            I later continued my mechanical engineering studies at BYU–Idaho for its hands-on, project-based approach.
-          </p>
-          <p>
-            What confirmed the field for me was a product design class. Working the full process — defining a problem, generating concepts, designing toward a solution — matched how I'd always thought: like an inventor looking for a better way to build something. It's a big part of why I'm drawn to product design today.
-          </p>
-
-          <h2>Where hardware meets software</h2>
-          <p>
-            What draws me most is where mechanical design meets electronics — devices that don't just move, but sense, respond, and feel intuitive to use.
-          </p>
-          <p>
-            The automated rat trap was my first taste of that. It was a team project, but as the most invested member I worked across nearly every part — CAD, research, the patent and proposal, and the bill of materials. Fitting a self-resetting mechanism into a briefcase-style case, with an electronic trigger driving a push-rod release, showed me how much care it takes to make the mechanical and electronic halves work together.
-          </p>
-          <p>
-            The Thermogate took that further — a full hardware-software project I built on my own. I generated the concept, designed it in SolidWorks, 3D printed the parts to tolerance, and programmed the Arduino, adding features to improve the user experience and leaning on AI throughout. The hardest part was packaging: fitting every component into the housing while keeping the enclosure as compact as possible.
-          </p>
-          <p>
-            This is where I see myself heading — automation, smart devices, and designs that put the user first.
-          </p>
-
-          <h2>Fabrication and the physical world</h2>
-          <p>
-            Designing a part on a screen is only half the job — the shop floor doesn't always match the model, and that gap is where I've learned the most.
-          </p>
-          <p>
-            The mailbox took a design all the way to a finished assembly: I laid it out on aluminum sheet, cut and bent it, then built and fastened a wooden stand. Turning a clean model into a square, finished product took more precision and patience than the drawing suggested.
-          </p>
-          <p>
-            The hanger pushed me into real machining. I made it on the mill and lathe at San José State, holding tolerances within 0.001 inch — deliberate work where a small mistake means starting the part over.
-          </p>
-          <p>
-            The lesson is simple: a CAD model doesn't automatically work on the shop floor. Material behaves differently than on screen, tolerances are harder to hold than they look, and the only way to get good at building real things is to build them.
-          </p>
-
-          <h2>Academic foundations</h2>
-          <p>
-            My coursework is where theory gets tested against real data. Three studies stand out.
-          </p>
-          <p>
-            In a thermodynamics study (ME-113), I examined waste heat recovery from industry, comparing heat exchangers, Organic Rankine Cycle systems, and regenerators against real industrial cases. What stayed with me was how much energy industry loses as heat — and how much can be captured and reused.
-          </p>
-          <p>
-            In a fluid dynamics experiment, I measured water flowing from a jar through a straw and calculated a Reynolds number of about 2828 — transitional flow, right at the edge between laminar and turbulent. My results came close to theory, and I accounted for the difference through head loss: a clear lesson in how real conditions diverge from ideal equations.
-          </p>
-          <p>
-            The study closest to how I think was CPR PulseMate (ME 380), a low-cost CPR device for untrained bystanders. The problem is simple: cardiac arrest can happen anywhere, and without the right equipment, someone can lose their life. Positioning it against the hospital-only LUCAS 3 — which runs $10,000–$20,000 — set clear cost and usability constraints to design within. It's the kind of problem I want to keep solving: making capable engineering accessible to more people.
-          </p>
-
-          <h2>What I'm working toward</h2>
-          <p>
-            I'm looking for roles in product design, automation, additive manufacturing, and mechanical engineering more broadly — places where designs are tested against reality, not just reviewed on a screen.
-          </p>
-          <p>
-            I'm open to internships or entry-level work, and to either building end-to-end on a small team or contributing to a larger engineering effort. What matters most is the chance to keep learning alongside a strong, positive team that takes its craft seriously.
-          </p>
-          <p>
-            I'm based in Rexburg, Idaho, and open to relocation. If you're building something that values precision and real curiosity for how things work, I'd like to be part of it.
-          </p>
-
-          <h2>Experience</h2>
-          <p style="font-style:italic; color:var(--text-secondary); margin-bottom:2rem;">Most of what I know how to do, I taught myself through projects. Internships and formal roles taught me the other half — how to work within a system, communicate across teams, and make sure the work lands the way it's supposed to.</p>
-
-          <div class="reveal-group" style="display:flex; flex-direction:column; gap:2rem;">
-
-            <!-- Role 1 — Current -->
-            <div class="reveal" style="padding-left:1rem; border-left:2px solid var(--accent);">
-              <div style="display:flex; align-items:center; gap:0.625rem; flex-wrap:wrap; margin-bottom:0.25rem;">
-                <h3 style="font-size:1rem; font-weight:600; color:var(--text-primary); margin:0;">Engineering Technical Writer Intern</h3>
-                <span style="font-size:0.6875rem; font-weight:600; letter-spacing:0.04em; padding:0.125rem 0.5rem; border-radius:999px; background:var(--accent-light); color:var(--accent); border:1px solid rgba(25,87,255,0.2);">Current</span>
-              </div>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:0.75rem;">Basic American Foods · Blackfoot, ID · Apr 2026 – Jul 2026</p>
-              <ul style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.7; margin:0; padding-left:1.25rem; display:flex; flex-direction:column; gap:0.375rem;">
-                <li>Authoring and standardizing 100+ internal engineering SOPs covering manufacturing processes and equipment specifications.</li>
-                <li>Collaborating with process engineers to translate machine-floor knowledge into clear, revision-controlled procedures.</li>
-                <li>Managing document control across Word, Excel, and SharePoint, keeping every document traceable and version-controlled in a food-manufacturing environment.</li>
-              </ul>
-            </div>
-
-            <!-- Role 2 -->
-            <div class="reveal" style="padding-left:1rem; border-left:2px solid var(--border);">
-              <h3 style="font-size:1rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">CAD Tutor</h3>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:0.75rem;">ME 372 · BYU–Idaho · Rexburg, ID · Jan 2026 – Apr 2026</p>
-              <ul style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.7; margin:0; padding-left:1.25rem; display:flex; flex-direction:column; gap:0.375rem;">
-                <li>Selected by the course instructor to tutor a 30+ student cohort in parametric solid modeling with SolidWorks, reinforcing constraint-driven design and feature-tree management.</li>
-                <li>Ran one-on-one and small-group sessions, diagnosing design-intent errors and assembly conflicts in real time.</li>
-                <li>Built reference sheets and annotated assemblies used across the full cohort.</li>
-              </ul>
-            </div>
-
-            <!-- Role 3 -->
-            <div class="reveal" style="padding-left:1rem; border-left:2px solid var(--border);">
-              <h3 style="font-size:1rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">Physics Teaching Assistant &amp; Grader</h3>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:0.75rem;">Introductory Physics · BYU–Idaho · Rexburg, ID · Jan 2026 – Apr 2026</p>
-              <ul style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.7; margin:0; padding-left:1.25rem; display:flex; flex-direction:column; gap:0.375rem;">
-                <li>Recruited directly by the professor to grade problem sets and exams for an introductory physics course, evaluating student work against solution standards.</li>
-                <li>Occasionally assisted during class sessions, helping students work through mechanics problems.</li>
-              </ul>
-            </div>
-
-            <!-- Role 4 -->
-            <div class="reveal" style="padding-left:1rem; border-left:2px solid var(--border);">
-              <h3 style="font-size:1rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">Co-Founder &amp; Operations Lead</h3>
-              <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:0.75rem;">E-Commerce Venture · Remote · Jan 2022 – Jul 2025</p>
-              <ul style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.7; margin:0; padding-left:1.25rem; display:flex; flex-direction:column; gap:0.375rem;">
-                <li>Co-founded and ran a direct-to-consumer dropshipping business with a team of three, spanning pet, toy, and other consumer niches over three-plus years.</li>
-                <li>Owned sourcing, supplier relationships, pricing, and fulfillment workflows end-to-end to keep margins healthy across channels.</li>
-                <li>Built the operational backbone — inventory tracking and analytics dashboards — that kept multi-channel sales running consistently.</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div style="margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--border);">
-            <p class="section-header__label" style="margin-bottom:1.25rem;">Technical Skills</p>
-            <div class="reveal-group" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem 2rem;">
-              <div class="reveal">
-                <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">CAD &amp; Design</p>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">SolidWorks · Onshape · GD&amp;T · Design for manufacturing · 3D printing &amp; prototyping</p>
-              </div>
-              <div class="reveal">
-                <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">Electronics &amp; Controls</p>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Arduino prototyping · Temperature &amp; motion sensing · Actuation &amp; trigger systems · Circuit wiring</p>
-              </div>
-              <div class="reveal">
-                <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">Fabrication</p>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Manual machining (mill &amp; lathe) · Laser cutting · Sheet-metal forming · Welding · Assembly · Dimensional inspection</p>
-              </div>
-              <div class="reveal">
-                <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">Engineering Analysis</p>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Thermodynamics · Heat transfer · Fluid dynamics · FEA · Material selection</p>
-              </div>
-              <div class="reveal">
-                <p style="font-size:0.8125rem; font-weight:600; color:var(--text-primary); margin-bottom:0.375rem;">AI &amp; Workflow</p>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">AI-assisted design &amp; concept generation · Engineering calculations &amp; problem-solving · Research &amp; troubleshooting</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer-cta">
-    <div class="container">
-      <div class="footer-cta__grid">
-        <div class="footer-cta__message">
-          <p class="footer-cta__label">Open to internships &amp; entry-level roles</p>
-          <h2 class="footer-cta__headline">Bring me a mechanical problem worth solving.</h2>
-          <p class="footer-cta__desc">CAD design, fabrication, mechatronics, and systematic root-cause analysis &mdash; ready to contribute from day one.</p>
-        </div>
-        <div class="footer-cta__actions">
-          <a href="contact.html" class="footer-cta__btn footer-cta__btn--solid">Get in Touch</a>
-          <a href="pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-cta__btn footer-cta__btn--outline">Download R&eacute;sum&eacute;</a>
-        </div>
-      </div>
-      <div class="footer-cta__bar">
-        <span class="footer-cta__copy">&copy; 2026 Ankit Dhital &nbsp;&middot;&nbsp; BYU&ndash;Idaho &middot; Mechanical Engineering</span>
-        <span class="footer-cta__tagline">Static site &middot; GitHub Pages</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="motion.js" defer></script>
-</body>
-</html>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Static site · GitHub Pages ready · No build step</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Atlas Index</b><button type="button" data-command-close>Close</button></div>
+    <p>Fast jump. Press <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+    <div class="command__links"><a href="index.html"><strong>Home</strong><span>index.html</span></a><a href="projects.html"><strong>Projects</strong><span>projects.html</span></a><a href="project-thermogate.html"><strong>Thermogate</strong><span>project-thermogate.html</span></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong><span>project-planetary-gear.html</span></a><a href="project-rat-trap.html"><strong>Automated Rat Trap</strong><span>project-rat-trap.html</span></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong><span>pdfs/resume.pdf</span></a><a href="contact.html"><strong>Contact</strong><span>contact.html</span></a></div>
+  </div>
+</aside>
+<script src="motion.js" defer></script>
+</body></html>

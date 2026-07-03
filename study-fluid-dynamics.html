@@ -1,115 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R8J2Y06LGE');
-  </script>
-  <!-- End Google Analytics 4 -->
-  <title>Fluid Dynamics Study — Ankit Dhital</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script>document.documentElement.classList.add("js-motion");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>Water Flow from Jar to Straw — Ankit Dhital</title>
+<meta name="description" content="An experimental flow study comparing measured discharge with theory, head loss, and Reynolds-number behavior.">
+<meta property="og:title" content="Water Flow from Jar to Straw — Ankit Dhital">
+<meta property="og:description" content="An experimental flow study comparing measured discharge with theory, head loss, and Reynolds-number behavior.">
+<meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5efe2">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="workbench.html">Workbench</a></li>
-        <li><a href="studies.html" class="active">Academic Studies</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a href="contact.html" class="nav__cta">Contact</a></li>
-      </ul>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b><em>Build Atlas</em></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="">Projects</a><a href="about.html" class="">Profile</a><a href="workbench.html" class="">Workbench</a><a href="studies.html" class="active">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
+</header>
+<main class="">
+<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">ME 111 · Fluid Dynamics</p><h1 data-split-text>Water Flow from Jar to Straw</h1></div><p class="lead reveal">An experimental flow study comparing measured discharge with theory, head loss, and Reynolds-number behavior.</p></div></section>
+<section class="section pt-0"><div class="wrap study-detail reveal"><div><h2>Study summary</h2><p>An experimental flow study comparing measured discharge with theory, head loss, and Reynolds-number behavior.</p><div class="tag-row"><span>Fluids</span><span>Experiment</span><span>Reynolds number</span></div><div class="hero-actions"><a class="btn btn--ink" href="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" target="_blank" rel="noopener">Open PDF</a><a class="btn btn--paper" href="studies.html">Back to studies</a></div></div><iframe src="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" title="Water Flow from Jar to Straw PDF"></iframe></div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Open to internships and entry-level roles</p>
+      <h2>Bring me a mechanical problem worth solving.</h2>
+      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
     </div>
-  </nav>
-
-  <div style="padding:3rem 0 5rem;">
-    <div class="container--narrow">
-      <div class="breadcrumb">
-        <a href="studies.html">Academic Studies</a>
-        <span class="breadcrumb__sep">›</span>
-        <span>Fluid Dynamics Experiment</span>
-      </div>
-
-      <p class="page-hero__label">ME 111 · Fluid Dynamics · April 29, 2025</p>
-      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Water Flow from Jar to Straw</h1>
-      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:0.5rem;">Analyzing Head Loss, Velocity, and Flow Regime &nbsp;·&nbsp; ME 111</p>
-
-      <div style="margin:2rem 0; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a href="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" target="_blank" class="btn btn--primary">Open PDF ↗</a>
-        <a href="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" download class="btn btn--secondary">Download PDF</a>
-      </div>
-
-      <div class="project-meta-grid">
-        <div class="project-meta-item"><p class="project-meta-item__label">Course</p><p class="project-meta-item__value">ME 111</p></div>
-        <div class="project-meta-item"><p class="project-meta-item__label">Type</p><p class="project-meta-item__value">Experimental Study</p></div>
-        <div class="project-meta-item"><p class="project-meta-item__label">Date</p><p class="project-meta-item__value">April 29, 2025</p></div>
-        <div class="project-meta-item"><p class="project-meta-item__label">Result</p><p class="project-meta-item__value">Re = 2828 · Transitional</p></div>
-      </div>
-
-      <iframe class="study-pdf-embed" src="pdfs/FLUID_DYNAMICS_EXPERIMENT_WATER_FLOW_FROM_A_JAR_TO_A_STRAW.pdf" title="Fluid Dynamics Experiment — Ankit Dhital"></iframe>
-
-      <div class="project-body">
-        <h2>Topic Overview</h2>
-        <p>An experimental study of water draining through a glass straw from a sealed 500&nbsp;mL jar, used to compute flow rate, exit velocity, head loss, and flow regime from real measurements.</p>
-
-        <h2>Objective</h2>
-        <p>Compute the volume flow rate, exit velocity, head loss, pressure difference, and Reynolds number for the jar-to-straw system, and classify the flow as laminar, transitional, or turbulent.</p>
-
-        <h2>Method</h2>
-        <p>The setup used a 500&nbsp;mL jar sealed at the top draining through a smooth glass straw of 0.295&nbsp;in (0.00749&nbsp;m) diameter, with a 0.3642&nbsp;m drop from water surface to straw exit and water at 20°C. Measured volume and drain time fed an energy balance using Bernoulli's equation, with minor losses and a Reynolds number calculation determining the flow regime.</p>
-
-        <h2>Key Insight</h2>
-        <p>Measured flow rate was 1.67×10⁻⁵ m³/s at an exit velocity of 0.378 m/s, with total head losses of 0.0182 m. The Reynolds number came out to 2828 — placing the flow in the transitional band but behaving close to laminar because of the smooth glass surface. The takeaway: a simple gravity-driven system can be analyzed accurately with Bernoulli and Reynolds relations, and minor losses, while small, are measurable.</p>
-      </div>
-
-      <div class="tags mt-4">
-        <span class="tag">Fluid Dynamics</span>
-        <span class="tag">Head Loss</span>
-        <span class="tag">Bernoulli</span>
-        <span class="tag">Reynolds Number</span>
-        <span class="tag">Experimental</span>
-      </div>
-
-      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
-        <a href="study-waste-heat.html" class="btn btn--secondary">← Waste Heat Recovery</a>
-        <a href="study-cpr-pulsemate.html" class="btn btn--secondary">Next: CPR PulseMate →</a>
-      </div>
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Contact</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
     </div>
   </div>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer-cta">
-    <div class="container">
-      <div class="footer-cta__grid">
-        <div class="footer-cta__message">
-          <p class="footer-cta__label">Open to internships &amp; entry-level roles</p>
-          <h2 class="footer-cta__headline">Bring me a mechanical problem worth solving.</h2>
-          <p class="footer-cta__desc">CAD design, fabrication, mechatronics, and systematic root-cause analysis &mdash; ready to contribute from day one.</p>
-        </div>
-        <div class="footer-cta__actions">
-          <a href="contact.html" class="footer-cta__btn footer-cta__btn--solid">Get in Touch</a>
-          <a href="pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-cta__btn footer-cta__btn--outline">Download R&eacute;sum&eacute;</a>
-        </div>
-      </div>
-      <div class="footer-cta__bar">
-        <span class="footer-cta__copy">&copy; 2026 Ankit Dhital &nbsp;&middot;&nbsp; BYU&ndash;Idaho &middot; Mechanical Engineering</span>
-        <span class="footer-cta__tagline">Static site &middot; GitHub Pages</span>
-      </div>
-    </div>
-  </footer>
-  <script src="motion.js" defer></script>
-</body>
-</html>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Static site · GitHub Pages ready · No build step</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Atlas Index</b><button type="button" data-command-close>Close</button></div>
+    <p>Fast jump. Press <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+    <div class="command__links"><a href="index.html"><strong>Home</strong><span>index.html</span></a><a href="projects.html"><strong>Projects</strong><span>projects.html</span></a><a href="project-thermogate.html"><strong>Thermogate</strong><span>project-thermogate.html</span></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong><span>project-planetary-gear.html</span></a><a href="project-rat-trap.html"><strong>Automated Rat Trap</strong><span>project-rat-trap.html</span></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong><span>pdfs/resume.pdf</span></a><a href="contact.html"><strong>Contact</strong><span>contact.html</span></a></div>
+  </div>
+</aside>
+<script src="motion.js" defer></script>
+</body></html>

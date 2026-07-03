@@ -1,157 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R8J2Y06LGE');
-  </script>
-  <!-- End Google Analytics 4 -->
-  <title>Planetary Gear System — Ankit Dhital</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script>document.documentElement.classList.add("js-motion");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>Planetary Gear System — Ankit Dhital</title>
+<meta name="description" content="A complete SolidWorks planetary gearbox built from individual gear geometry to working physical assembly and exploded-view documentation.">
+<meta property="og:title" content="Planetary Gear System — Ankit Dhital">
+<meta property="og:description" content="A complete SolidWorks planetary gearbox built from individual gear geometry to working physical assembly and exploded-view documentation.">
+<meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5efe2">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- ===== NAV ===== -->
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="workbench.html">Workbench</a></li>
-        <li><a href="studies.html">Academic Studies</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a href="contact.html" class="nav__cta">Contact</a></li>
-      </ul>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b><em>Build Atlas</em></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="active">Projects</a><a href="about.html" class="">Profile</a><a href="workbench.html" class="">Workbench</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
+</header>
+<main class="project-page">
+<section class="project-hero" style="--accent:#ff5a2f;">
+  <div class="wrap project-hero__grid">
+    <div><p class="kicker reveal">Case 02 · CAD · Fabrication</p><h1 data-split-text>Planetary Gear System</h1><p class="lead reveal">A complete SolidWorks planetary gearbox built from individual gear geometry to working physical assembly and exploded-view documentation.</p><div class="tag-row reveal"><span>SolidWorks</span><span>Gears</span><span>3D printing</span><span>Laser cutting</span></div></div>
+    <figure class="project-hero__image reveal"><img src="assets/webp/planetary-gear-assembly.webp" alt="Planetary Gear System"><figcaption>4:1 gear reduction</figcaption></figure>
+  </div>
+</section>
+<section class="section pt-0"><div class="wrap fact-grid reveal"><article><span>Ratio</span><b>4:1</b></article><article><span>Sun / Planet / Ring</span><b>12T · 12T · 36T</b></article><article><span>Workflow</span><b>CAD to assembly</b></article><article><span>Deliverable</span><b>Exploded drawing</b></article></div></section>
+<section class="section section--cream"><div class="wrap case-grid">
+  <article class="case-note reveal"><span>Problem</span><p>Translate gear-train theory into a working mechanism where every tooth mesh, carrier, and fastener clearance matters.</p></article>
+  <article class="case-note reveal"><span>Constraint</span><p>Planetary gears are compact and unforgiving; small clearance errors create binding during assembly.</p></article>
+  <article class="case-note reveal"><span>Intervention</span><p>Modeled the full 3-planet system, fabricated the gears and carrier, assembled the gearbox, and corrected hardware clearance issues discovered in the physical build.</p></article>
+  <article class="case-note reveal"><span>Verification</span><p>Compared physical output behavior against the calculated 4:1 ratio and documented the system with final assembly and exploded views.</p></article>
+</div></section>
+<section class="section"><div class="wrap"><div class="section-head reveal"><p class="kicker">Evidence plates</p><h2>Photos, CAD, and build artifacts.</h2></div><div class="plate-grid"><figure class="plate reveal"><img src="assets/webp/planetary-gear-assembly.webp" alt="Planetary Gear System project image"><figcaption>Planetary Gear Assembly</figcaption></figure><figure class="plate reveal"><img src="assets/webp/planetary-gear-cad.webp" alt="Planetary Gear System project image"><figcaption>Planetary Gear Cad</figcaption></figure><figure class="plate reveal"><img src="assets/webp/planetary-gear-exploded.webp" alt="Planetary Gear System project image"><figcaption>Planetary Gear Exploded</figcaption></figure><figure class="plate reveal"><img src="assets/webp/me-with-planetary-gear.webp" alt="Planetary Gear System project image"><figcaption>Me With Planetary Gear</figcaption></figure></div></div></section>
+<section class="section pt-0"><div class="wrap next-grid reveal"><a href="project-thermogate.html">← Thermogate</a><a href="projects.html">All projects</a><a href="project-rat-trap.html">Automated Rat Trap →</a></div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Open to internships and entry-level roles</p>
+      <h2>Bring me a mechanical problem worth solving.</h2>
+      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
     </div>
-  </nav>
-
-  <!-- ===== CONTENT ===== -->
-  <div style="padding:3rem 0 5rem;">
-    <div class="container--narrow">
-
-      <div class="breadcrumb">
-        <a href="projects.html">Projects</a>
-        <span class="breadcrumb__sep">›</span>
-        <span>Planetary Gear System</span>
-      </div>
-
-      <p class="page-hero__label">CAD · Fabrication</p>
-      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Planetary Gear System</h1>
-      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A complete SolidWorks design and physical build of a 4:1 planetary gearbox — from individual part models to a working assembly and exploded-view drawing.</p>
-
-      <!-- Meta grid -->
-      <div class="project-meta-grid">
-        <div class="project-meta-item">
-          <p class="project-meta-item__label">Tool</p>
-          <p class="project-meta-item__value">SolidWorks</p>
-        </div>
-        <div class="project-meta-item">
-          <p class="project-meta-item__label">Type</p>
-          <p class="project-meta-item__value">CAD + Physical Build</p>
-        </div>
-        <div class="project-meta-item">
-          <p class="project-meta-item__label">Deliverable</p>
-          <p class="project-meta-item__value">Assembly + Drawing</p>
-        </div>
-        <div class="project-meta-item">
-          <p class="project-meta-item__label">Context</p>
-          <p class="project-meta-item__value">BYU–Idaho Coursework</p>
-        </div>
-        <div class="project-meta-item">
-          <p class="project-meta-item__label">Ratio</p>
-          <p class="project-meta-item__value">4:1 Reduction</p>
-        </div>
-      </div>
-
-      <!-- Image gallery -->
-      <div class="project-images">
-        <img src="assets/planetary-gear-cad.png" alt="Planetary Gear — SolidWorks CAD Model" />
-        <img src="assets/planetary-gear-exploded.jpg" alt="Planetary Gear — Exploded View" />
-        <img src="assets/planetary-gear-assembly.png" alt="Planetary Gear — Final Assembly" />
-        <img src="assets/me-with-planetary-gear.jpeg" alt="Working in lab with Planetary Gear" />
-      </div>
-
-      <!-- Key Specs -->
-      <div class="project-body">
-        <h2>Key Specs</h2>
-        <ul>
-          <li>Gear ratio: 4:1 reduction (ring fixed, sun input, carrier output)</li>
-          <li>Tooth counts: 12T sun · 12T planets · 36T ring</li>
-          <li>Materials: PETG gears (3D printed) · laser-cut acrylic housing</li>
-          <li>Assembly: 12 parts plus shaft, keys, and fasteners</li>
-          <li>Deliverable: working assembly · exploded-view drawing · bill of materials</li>
-        </ul>
-      </div>
-
-      <!-- Body -->
-      <div class="project-body">
-
-        <h2>Overview</h2>
-        <p>I designed every component of a planetary gearbox in SolidWorks, assembled them into a working model, and produced formal engineering documentation. The final deliverable was a hand-cranked physical assembly plus an exploded-view drawing with a bill of materials. With the ring gear fixed, a 12-tooth sun gear drives the carrier through 12-tooth planets meshing inside a 36-tooth ring — a clean 4:1 reduction.</p>
-
-        <h2>Problem</h2>
-        <p>Planetary systems pack high-torque reduction into a compact, coaxial package — but the geometry is unforgiving. The sun, planets, ring, and carrier all share one tooth module, so every mesh has to stay geometrically consistent or the gears bind. The real challenge was making sure a design that worked on screen could actually be built and turned by hand.</p>
-
-        <h2>Process</h2>
-        <p>I modeled each component individually in SolidWorks, then mated them into an assembly reflecting the real relationships between sun, planets, ring, and carrier. The exploded view and bill of materials came straight from the assembly file. I 3D printed the gears in PETG for strength and durability and laser-cut the acrylic housing — 12 printed and cut parts in total, plus the shaft, keys, and fasteners. The physical build tested whether the tolerances held: I checked fit and mesh by cranking the carrier and watching for binding.</p>
-
-        <h2>What I learned</h2>
-        <p>A planetary system only works if the gear geometry stays consistent across every mating part, so the modeling has to be disciplined from the first sketch. The build also forced one real fix — my original screw holes left the heads sticking out, so I redesigned them with the right chamfer to sit flush. It's a small change, but it's the kind of detail that only surfaces once a model becomes a physical part. That's exactly the gap coursework alone doesn't teach.</p>
-
-      </div>
-
-      <!-- Tags -->
-      <div class="tags mt-4">
-        <span class="tag">SolidWorks</span>
-        <span class="tag">Gear Design</span>
-        <span class="tag">Assembly Modeling</span>
-        <span class="tag">Engineering Drawing</span>
-        <span class="tag">BOM</span>
-        <span class="tag">3D Printing</span>
-      </div>
-
-      <!-- Navigation -->
-      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
-        <a href="projects.html" class="btn btn--secondary">← All Projects</a>
-        <a href="project-rat-trap.html" class="btn btn--secondary">Next: Rat Trap →</a>
-      </div>
-
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Contact</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
     </div>
   </div>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer-cta">
-    <div class="container">
-      <div class="footer-cta__grid">
-        <div class="footer-cta__message">
-          <p class="footer-cta__label">Open to internships &amp; entry-level roles</p>
-          <h2 class="footer-cta__headline">Bring me a mechanical problem worth solving.</h2>
-          <p class="footer-cta__desc">CAD design, fabrication, mechatronics, and systematic root-cause analysis &mdash; ready to contribute from day one.</p>
-        </div>
-        <div class="footer-cta__actions">
-          <a href="contact.html" class="footer-cta__btn footer-cta__btn--solid">Get in Touch</a>
-          <a href="pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-cta__btn footer-cta__btn--outline">Download R&eacute;sum&eacute;</a>
-        </div>
-      </div>
-      <div class="footer-cta__bar">
-        <span class="footer-cta__copy">&copy; 2026 Ankit Dhital &nbsp;&middot;&nbsp; BYU&ndash;Idaho &middot; Mechanical Engineering</span>
-        <span class="footer-cta__tagline">Static site &middot; GitHub Pages</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="motion.js" defer></script>
-</body>
-</html>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Static site · GitHub Pages ready · No build step</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Atlas Index</b><button type="button" data-command-close>Close</button></div>
+    <p>Fast jump. Press <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+    <div class="command__links"><a href="index.html"><strong>Home</strong><span>index.html</span></a><a href="projects.html"><strong>Projects</strong><span>projects.html</span></a><a href="project-thermogate.html"><strong>Thermogate</strong><span>project-thermogate.html</span></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong><span>project-planetary-gear.html</span></a><a href="project-rat-trap.html"><strong>Automated Rat Trap</strong><span>project-rat-trap.html</span></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong><span>pdfs/resume.pdf</span></a><a href="contact.html"><strong>Contact</strong><span>contact.html</span></a></div>
+  </div>
+</aside>
+<script src="motion.js" defer></script>
+</body></html>

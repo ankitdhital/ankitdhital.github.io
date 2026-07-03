@@ -1,179 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R8J2Y06LGE');
-  </script>
-  <!-- End Google Analytics 4 -->
-  <title>Contact — Ankit Dhital</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script>document.documentElement.classList.add("js-motion");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>Contact — Ankit Dhital</title>
+<meta name="description" content="Contact Ankit Dhital for internships, entry-level roles, CAD engineering, fabrication, and mechanical engineering opportunities.">
+<meta property="og:title" content="Contact — Ankit Dhital">
+<meta property="og:description" content="Contact Ankit Dhital for internships, entry-level roles, CAD engineering, fabrication, and mechanical engineering opportunities.">
+<meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5efe2">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- ===== NAV ===== -->
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="workbench.html">Workbench</a></li>
-        <li><a href="studies.html">Academic Studies</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a href="contact.html" class="active nav__cta">Contact</a></li>
-      </ul>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b><em>Build Atlas</em></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="">Projects</a><a href="about.html" class="">Profile</a><a href="workbench.html" class="">Workbench</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="active">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
+</header>
+<main class="">
+<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">Contact</p><h1 data-split-text>Let’s talk about work that has to become real.</h1></div><p class="lead reveal">Open to internships and entry-level mechanical engineering roles in product design, CAD engineering, manufacturing, and systems problem solving.</p></div></section>
+<section class="section pt-0"><div class="wrap contact-grid">
+  <div class="contact-card reveal"><span>Email</span><a href="mailto:ankit.dhital@icloud.com">ankit.dhital@icloud.com</a></div>
+  <div class="contact-card reveal"><span>LinkedIn</span><a href="https://www.linkedin.com/in/ankitdhital" target="_blank" rel="noopener">linkedin.com/in/ankitdhital</a></div>
+  <div class="contact-card reveal"><span>Location</span><p>Rexburg, Idaho — open to relocation</p></div>
+</div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Open to internships and entry-level roles</p>
+      <h2>Bring me a mechanical problem worth solving.</h2>
+      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
     </div>
-  </nav>
-
-  <!-- ===== PAGE HERO ===== -->
-  <div style="padding:4rem 0 3rem; border-bottom:2px solid var(--ink);">
-    <div class="container">
-      <p class="page-hero__label">Contact</p>
-      <h1 class="page-hero__title">Get in Touch</h1>
-      <p class="page-hero__desc">Open to internship and entry-level opportunities in product design, CAD engineering, and mechanical engineering. Based in Rexburg, Idaho.</p>
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Contact</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
     </div>
   </div>
-
-  <!-- ===== CONTACT CONTENT ===== -->
-  <section>
-    <div class="container">
-      <div class="contact-grid">
-
-        <!-- Form column -->
-        <div>
-          <h2 style="font-size:1.125rem; margin-bottom:1.5rem;">Send a message</h2>
-
-          <form action="https://formspree.io/f/xkolbjlq" method="POST">
-            <div class="form-group">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" id="email" name="_replyto" placeholder="you@example.com" required />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="_subject" placeholder="Internship inquiry, project question, etc." />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me about the opportunity or question..." rows="5" required></textarea>
-            </div>
-            <input type="hidden" name="_next" value="https://ankitdhital.github.io/contact.html?sent=true" />
-            <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center; padding:0.75rem;">Send Message</button>
-          </form>
-        </div>
-
-        <!-- Info column -->
-        <div>
-          <h2 style="font-size:1.125rem; margin-bottom:1.5rem;">Direct contact</h2>
-
-          <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2.5rem;">
-
-            <!-- Email -->
-            <a href="mailto:ankit.dhital@icloud.com" style="text-decoration:none;">
-              <div style="display:flex; align-items:center; gap:1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; transition:border-color 0.15s;" onmouseenter="this.style.borderColor='var(--accent)'" onmouseleave="this.style.borderColor='var(--border)'">
-                <div style="width:40px; height:40px; background:var(--accent-light); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </div>
-                <div>
-                  <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.125rem;">Email</p>
-                  <!-- Replace with your actual email -->
-                  <p style="font-weight:500; font-size:0.9375rem; color:var(--text-primary);">ankit.dhital@icloud.com</p>
-                </div>
-              </div>
-            </a>
-
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/ankitdhital" target="_blank" rel="noopener" style="text-decoration:none;">
-              <div style="display:flex; align-items:center; gap:1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; transition:border-color 0.15s;" onmouseenter="this.style.borderColor='var(--accent)'" onmouseleave="this.style.borderColor='var(--border)'">
-                <div style="width:40px; height:40px; background:var(--accent-light); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-                </div>
-                <div>
-                  <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.125rem;">LinkedIn</p>
-                  <p style="font-weight:500; font-size:0.9375rem; color:var(--text-primary);">linkedin.com/in/ankitdhital</p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Location -->
-            <div style="display:flex; align-items:center; gap:1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem;">
-              <div style="width:40px; height:40px; background:var(--accent-light); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.125rem;">Location</p>
-                <p style="font-weight:500; font-size:0.9375rem; color:var(--text-primary);">Rexburg, Idaho — Open to relocation</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- What I'm looking for -->
-          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem;">
-            <h3 style="font-size:0.9375rem; font-weight:600; margin-bottom:1rem;">What I'm looking for</h3>
-            <div style="display:flex; flex-direction:column; gap:0.625rem;">
-              <div style="display:flex; align-items:center; gap:0.75rem;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Internships in product design or CAD engineering</p>
-              </div>
-              <div style="display:flex; align-items:center; gap:0.75rem;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Entry-level mechanical engineering roles</p>
-              </div>
-              <div style="display:flex; align-items:center; gap:0.75rem;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Teams that work on physical products</p>
-              </div>
-              <div style="display:flex; align-items:center; gap:0.75rem;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
-                <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Hardware/software integration environments</p>
-              </div>
-            </div>
-            <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
-              <a href="resume.html" class="btn btn--primary" style="width:100%; justify-content:center;">View Full Résumé</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer-cta">
-    <div class="container">
-      <div class="footer-cta__grid">
-        <div class="footer-cta__message">
-          <p class="footer-cta__label">Open to internships &amp; entry-level roles</p>
-          <h2 class="footer-cta__headline">Bring me a mechanical problem worth solving.</h2>
-          <p class="footer-cta__desc">CAD design, fabrication, mechatronics, and systematic root-cause analysis &mdash; ready to contribute from day one.</p>
-        </div>
-        <div class="footer-cta__actions">
-          <a href="contact.html" class="footer-cta__btn footer-cta__btn--solid">Get in Touch</a>
-          <a href="pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-cta__btn footer-cta__btn--outline">Download R&eacute;sum&eacute;</a>
-        </div>
-      </div>
-      <div class="footer-cta__bar">
-        <span class="footer-cta__copy">&copy; 2026 Ankit Dhital &nbsp;&middot;&nbsp; BYU&ndash;Idaho &middot; Mechanical Engineering</span>
-        <span class="footer-cta__tagline">Static site &middot; GitHub Pages</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="motion.js" defer></script>
-</body>
-</html>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Static site · GitHub Pages ready · No build step</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Atlas Index</b><button type="button" data-command-close>Close</button></div>
+    <p>Fast jump. Press <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+    <div class="command__links"><a href="index.html"><strong>Home</strong><span>index.html</span></a><a href="projects.html"><strong>Projects</strong><span>projects.html</span></a><a href="project-thermogate.html"><strong>Thermogate</strong><span>project-thermogate.html</span></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong><span>project-planetary-gear.html</span></a><a href="project-rat-trap.html"><strong>Automated Rat Trap</strong><span>project-rat-trap.html</span></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong><span>pdfs/resume.pdf</span></a><a href="contact.html"><strong>Contact</strong><span>contact.html</span></a></div>
+  </div>
+</aside>
+<script src="motion.js" defer></script>
+</body></html>

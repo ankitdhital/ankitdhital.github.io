@@ -1,125 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R8J2Y06LGE');
-  </script>
-  <!-- End Google Analytics 4 -->
-  <title>Hanger CAD Model — Ankit Dhital</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script>document.documentElement.classList.add("js-motion");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>Hanger — CAD to Part — Ankit Dhital</title>
+<meta name="description" content="A SolidWorks component converted into a machined aluminum part through mill, lathe, setup planning, and inspection.">
+<meta property="og:title" content="Hanger — CAD to Part — Ankit Dhital">
+<meta property="og:description" content="A SolidWorks component converted into a machined aluminum part through mill, lathe, setup planning, and inspection.">
+<meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5efe2">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Ankit <span>Dhital</span></a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="workbench.html">Workbench</a></li>
-        <li><a href="studies.html">Academic Studies</a></li>
-        <li><a href="resume.html">Résumé</a></li>
-        <li><a href="contact.html" class="nav__cta">Contact</a></li>
-      </ul>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b><em>Build Atlas</em></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="active">Projects</a><a href="about.html" class="">Profile</a><a href="workbench.html" class="">Workbench</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
+</header>
+<main class="project-page">
+<section class="project-hero" style="--accent:#7f4cff;">
+  <div class="wrap project-hero__grid">
+    <div><p class="kicker reveal">Case 04 · Manual Machining</p><h1 data-split-text>Hanger — CAD to Part</h1><p class="lead reveal">A SolidWorks component converted into a machined aluminum part through mill, lathe, setup planning, and inspection.</p><div class="tag-row reveal"><span>SolidWorks</span><span>Mill</span><span>Lathe</span><span>Inspection</span></div></div>
+    <figure class="project-hero__image reveal"><img src="assets/webp/hanger-cad.webp" alt="Hanger — CAD to Part"><figcaption>0.001 in tolerance</figcaption></figure>
+  </div>
+</section>
+<section class="section pt-0"><div class="wrap fact-grid reveal"><article><span>Material</span><b>6061 aluminum</b></article><article><span>Machines</span><b>Mill + lathe</b></article><article><span>Tolerance</span><b>0.001 in</b></article><article><span>Workflow</span><b>Model to part</b></article></div></section>
+<section class="section section--cream"><div class="wrap case-grid">
+  <article class="case-note reveal"><span>Problem</span><p>Turn a clean CAD model into a real part where every thousandth of an inch matters.</p></article>
+  <article class="case-note reveal"><span>Constraint</span><p>A small measurement or setup error could force the part to be restarted.</p></article>
+  <article class="case-note reveal"><span>Intervention</span><p>Modeled the part, planned operations, machined the geometry, and inspected dimensions through the process.</p></article>
+  <article class="case-note reveal"><span>Verification</span><p>Held critical dimensions to 0.001 inch and completed the CAD-to-finished-part workflow.</p></article>
+</div></section>
+<section class="section"><div class="wrap"><div class="section-head reveal"><p class="kicker">Evidence plates</p><h2>Photos, CAD, and build artifacts.</h2></div><div class="plate-grid"><figure class="plate reveal"><img src="assets/webp/hanger-cad.webp" alt="Hanger — CAD to Part project image"><figcaption>Hanger Cad</figcaption></figure><figure class="plate reveal"><img src="assets/webp/hanger-physical.webp" alt="Hanger — CAD to Part project image"><figcaption>Hanger Physical</figcaption></figure></div></div></section>
+<section class="section pt-0"><div class="wrap next-grid reveal"><a href="project-rat-trap.html">← Automated Rat Trap</a><a href="projects.html">All projects</a><a href="project-mailbox.html">Mailbox Fabrication →</a></div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Open to internships and entry-level roles</p>
+      <h2>Bring me a mechanical problem worth solving.</h2>
+      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
     </div>
-  </nav>
-
-  <div style="padding:3rem 0 5rem;">
-    <div class="container--narrow">
-      <div class="breadcrumb">
-        <a href="projects.html">Projects</a>
-        <span class="breadcrumb__sep">›</span>
-        <span>Hanger — CAD Model</span>
-      </div>
-      <p class="page-hero__label">CAD Modeling · Fabrication</p>
-      <h1 style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(1.75rem,3.5vw,2.5rem); letter-spacing:-0.02em; line-height:1.15; margin-bottom:1rem;">Hanger — CAD to Part</h1>
-      <p style="font-size:1.0625rem; color:var(--text-secondary); line-height:1.75; margin-bottom:2rem;">A hanger component I designed in SolidWorks and then machined myself on the mill and lathe, holding tolerances to within 0.001 inch — a full CAD-to-part workflow from model to finished 6061 aluminum piece.</p>
-
-      <div class="project-meta-grid">
-        <div class="project-meta-item"><p class="project-meta-item__label">Tools</p><p class="project-meta-item__value">SolidWorks · Mill · Lathe</p></div>
-        <div class="project-meta-item"><p class="project-meta-item__label">Type</p><p class="project-meta-item__value">Design + Machining</p></div>
-        <div class="project-meta-item"><p class="project-meta-item__label">Tolerance</p><p class="project-meta-item__value">0.001 in</p></div>
-        <div class="project-meta-item"><p class="project-meta-item__label">Material</p><p class="project-meta-item__value">6061 Aluminum</p></div>
-        <div class="project-meta-item"><p class="project-meta-item__label">Context</p><p class="project-meta-item__value">SJSU Machine Shop</p></div>
-      </div>
-
-      <div class="project-images">
-        <img src="assets/hanger-cad.png" alt="Hanger — SolidWorks CAD Model" />
-        <img src="assets/hanger-physical.jpg" alt="Hanger — Physical Prototype" />
-      </div>
-
-      <!-- Key Specs -->
-      <div class="project-body">
-        <h2>Key Specs</h2>
-        <ul>
-          <li>Workflow: designed in SolidWorks, then machined by hand</li>
-          <li>Machining: mill and lathe</li>
-          <li>Tolerance: held to within 0.001 in</li>
-          <li>Material: 6061 aluminum</li>
-          <li>Context: SJSU machine shop</li>
-        </ul>
-      </div>
-
-      <div class="project-body">
-        <h2>Overview</h2>
-        <p>A screw-mounted hanger component I took from a SolidWorks model all the way to a finished metal part — a base plate with mounting holes and a central post. I designed it in CAD, then machined it myself on the mill and lathe out of 6061 aluminum, holding tolerances to within 0.001 inch. It's a direct test of whether a model on screen can become a precise, real-world part.</p>
-
-        <h2>Challenge</h2>
-        <p>Machining to a thousandth of an inch leaves almost no margin. Every cut on the mill and lathe had to match the modeled dimensions exactly, because at that tolerance a small mistake means scrapping the part and starting over. The challenge was translating clean CAD geometry into a sequence of machining operations that could actually hold that precision by hand.</p>
-
-        <h2>Process</h2>
-        <p>I modeled the hanger in SolidWorks, defining the dimensions and features that would drive the machining. Then I worked it on the mill and lathe at the SJSU machine shop, cutting to the modeled geometry and checking dimensions as I went to stay within 0.001 inch. The finished 6061 aluminum part matched the model.</p>
-
-        <h2>What I learned</h2>
-        <p>Designing a part and then making it yourself closes a loop most coursework never does — you feel exactly which dimensions matter, where tolerances are realistic, and which features are easy or hard to cut. Holding 0.001 inch by hand taught me how much discipline real precision takes, and how a CAD model is only as good as your ability to turn it into a part.</p>
-      </div>
-
-      <div class="tags mt-4">
-        <span class="tag">SolidWorks</span>
-        <span class="tag">Parametric Modeling</span>
-        <span class="tag">Precision Machining</span>
-        <span class="tag">Mill &amp; Lathe</span>
-        <span class="tag">Dimensional Verification</span>
-      </div>
-
-      <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border);">
-        <a href="project-fsae-wheel.html" class="btn btn--secondary">← FSAE</a>
-        <a href="project-laser-cut-pattern.html" class="btn btn--secondary">Laser-Cut Pattern →</a>
-      </div>
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Contact</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
     </div>
   </div>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer-cta">
-    <div class="container">
-      <div class="footer-cta__grid">
-        <div class="footer-cta__message">
-          <p class="footer-cta__label">Open to internships &amp; entry-level roles</p>
-          <h2 class="footer-cta__headline">Bring me a mechanical problem worth solving.</h2>
-          <p class="footer-cta__desc">CAD design, fabrication, mechatronics, and systematic root-cause analysis &mdash; ready to contribute from day one.</p>
-        </div>
-        <div class="footer-cta__actions">
-          <a href="contact.html" class="footer-cta__btn footer-cta__btn--solid">Get in Touch</a>
-          <a href="pdfs/resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-cta__btn footer-cta__btn--outline">Download R&eacute;sum&eacute;</a>
-        </div>
-      </div>
-      <div class="footer-cta__bar">
-        <span class="footer-cta__copy">&copy; 2026 Ankit Dhital &nbsp;&middot;&nbsp; BYU&ndash;Idaho &middot; Mechanical Engineering</span>
-        <span class="footer-cta__tagline">Static site &middot; GitHub Pages</span>
-      </div>
-    </div>
-  </footer>
-  <script src="motion.js" defer></script>
-</body>
-</html>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Static site · GitHub Pages ready · No build step</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Atlas Index</b><button type="button" data-command-close>Close</button></div>
+    <p>Fast jump. Press <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+    <div class="command__links"><a href="index.html"><strong>Home</strong><span>index.html</span></a><a href="projects.html"><strong>Projects</strong><span>projects.html</span></a><a href="project-thermogate.html"><strong>Thermogate</strong><span>project-thermogate.html</span></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong><span>project-planetary-gear.html</span></a><a href="project-rat-trap.html"><strong>Automated Rat Trap</strong><span>project-rat-trap.html</span></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong><span>pdfs/resume.pdf</span></a><a href="contact.html"><strong>Contact</strong><span>contact.html</span></a></div>
+  </div>
+</aside>
+<script src="motion.js" defer></script>
+</body></html>
