@@ -39,6 +39,17 @@
 <section class="section">
   <div class="wrap">
     <div class="reveal" style="max-width:72ch; line-height:1.8;">
+      <h2>Key Specs</h2>
+      <ul style="margin:0.5rem 0 2rem; padding-left:1.25rem; line-height:2;">
+        <li>Build: solo — CAD, 3D printing, wiring, and code</li>
+        <li>Controller: Arduino Uno R3 · ~10 components</li>
+        <li>Control: closed-loop feedback — continuously senses and corrects</li>
+        <li>Sensing &amp; accuracy: thermistor, ±2°C</li>
+        <li>Actuation: DC fan — rotation direction sets heating vs. cooling</li>
+        <li>Interface: keypad input · LCD readout · RGB status light (red / yellow / green)</li>
+        <li>Extras: digital clock, alarm, music player, °C↔°F converter</li>
+        <li>Use cases: room ventilation, electronics cooling, greenhouse climate control</li>
+      </ul>
       <h2>Overview</h2>
       <p>Thermogate is a temperature-controlled vent system I designed and built entirely on my own — from the SolidWorks enclosure and 3D-printed parts to the wiring and the Arduino code. A thermistor reads the ambient temperature, and the Arduino drives a DC fan in a closed feedback loop to hold a target setpoint within ±2°C, continuously comparing the live reading against the setpoint and correcting; the fan's rotation direction determines whether it works to raise or lower the temperature. The user sets the target on a keypad, an LCD shows the time, setpoint, and live reading, and an RGB LED signals status at a glance — red for hot, yellow as it approaches, green once it's at temperature. It's built to be useful anywhere temperature matters: room ventilation, electronics cooling, or greenhouse climate control.</p>
       <h2 style="margin-top:2rem;">Problem</h2>
