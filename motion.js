@@ -131,12 +131,27 @@
 
     // Find the prose content div — first section that contains h2 elements
     let proseDiv = null;
+    let proseSec = null;
     for (const sec of $$('.section')) {
       const d = sec.querySelector('.wrap > div');
-      if (d && d.querySelector('h2')) { proseDiv = d; break; }
+      if (d && d.querySelector('h2')) { proseDiv = d; proseSec = sec; break; }
     }
 
+    // Full-page scroll-snap — one section per scroll
+    // Hero, photos section, next-nav, and footer are snap points
+    // Prose section is intentionally excluded (its sa-blocks handle snapping)
+    // Fact-grid section is excluded (too short, feels like a hiccup)
+    document.documentElement.classList.add('snap-page');
+    $('.project-hero')?.classList.add('snap-pt');
+    $$('.section').forEach(sec => {
+      if (sec === proseSec || sec.querySelector('.fact-grid')) return;
+      sec.classList.add('snap-pt');
+    });
+    $('.footer')?.classList.add('snap-pt');
+
     if (proseDiv) {
+      // Remove section padding — sa-blocks are full-viewport, padding creates dead snap gap
+      if (proseSec) proseSec.style.padding = '0';
       // Remove from main reveal observer — we handle it ourselves
       proseDiv.classList.remove('reveal');
       proseDiv.style.opacity = '1';
@@ -161,7 +176,7 @@
         const w = document.createElement('div');
         w.className = 'sa-block';
         w.dataset.sa = idx === 0 ? 'specs' : ANIMS[(idx - 1) % ANIMS.length];
-        if (idx > 0) w.style.marginTop = '2.5rem';
+        // no margin — full-viewport blocks; snap handles spacing
         proseDiv.insertBefore(w, h2);
         h2.style.marginTop = '';
         w.appendChild(h2);
