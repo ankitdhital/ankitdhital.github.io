@@ -121,7 +121,7 @@
     }
   });
 
-  // ── Project page section-by-section animations ────────────────────────────
+  // ── Project page: stacked-panel scroll story ──────────────────────────────
   if ($('.project-hero')) {
     const heroEl = $('.project-hero');
     const accentColor = heroEl ? getComputedStyle(heroEl).getPropertyValue('--accent').trim() : '';
@@ -129,7 +129,6 @@
 
     const ANIMS = ['blur', 'right', 'up', 'scale', 'left', 'tilt'];
 
-    // Find the prose content div — first section that contains h2 elements
     let proseDiv = null;
     let proseSec = null;
     for (const sec of $$('.section')) {
@@ -137,10 +136,7 @@
       if (d && d.querySelector('h2')) { proseDiv = d; proseSec = sec; break; }
     }
 
-    // Full-page scroll-snap — one section per scroll
-    // Hero, photos section, next-nav, and footer are snap points
-    // Prose section is intentionally excluded (its sa-blocks handle snapping)
-    // Fact-grid section is excluded (too short, feels like a hiccup)
+    // Proximity snap: hero → story driver → photos → next → footer
     document.documentElement.classList.add('snap-page');
     $('.project-hero')?.classList.add('snap-pt');
     $$('.section').forEach(sec => {
@@ -150,15 +146,13 @@
     $('.footer')?.classList.add('snap-pt');
 
     if (proseDiv) {
-      // Remove section padding — sa-blocks are full-viewport, padding creates dead snap gap
       if (proseSec) proseSec.style.padding = '0';
-      // Remove from main reveal observer — we handle it ourselves
       proseDiv.classList.remove('reveal');
       proseDiv.style.opacity = '1';
       proseDiv.style.transform = 'none';
       io.unobserve(proseDiv);
 
-      // Group child nodes by h2 headings
+      // Group nodes by h2 headings
       const nodes = [...proseDiv.childNodes];
       const groups = [];
       let cur = null;
@@ -171,52 +165,118 @@
         }
       });
 
-      // Wrap each group in an sa-block div
-      const wrappers = groups.map(({ h2, rest }, idx) => {
-        const w = document.createElement('div');
-        w.className = 'sa-block';
-        w.dataset.sa = idx === 0 ? 'specs' : ANIMS[(idx - 1) % ANIMS.length];
-        // no margin — full-viewport blocks; snap handles spacing
-        proseDiv.insertBefore(w, h2);
+      const N = groups.length;
+      if (!N) return;
+
+      // Build: driver (tall scroll space) → stage (sticky 100vh) → panels (overlapping)
+      const driver = document.createElement('div');
+      driver.className = 'sa-driver';
+      // (N+1)*100vh gives each of N panels exactly 100vh of scroll distance
+      driver.style.height = `${(N + 1) * 100}vh`;
+
+      const stage = document.createElement('div');
+      stage.className = 'sa-stage';
+      driver.appendChild(stage);
+
+      const prog = document.createElement('div');
+      prog.className = 'sa-prog';
+      stage.appendChild(prog);
+
+      const num = document.createElement('div');
+      num.className = 'sa-num';
+      num.textContent = '01';
+      stage.appendChild(num);
+
+      const lbl = document.createElement('div');
+      lbl.className = 'sa-label';
+      lbl.textContent = `01 / ${String(N).padStart(2, '0')}`;
+      stage.appendChild(lbl);
+
+      // Create one panel per h2 group — all stacked in the same stage
+      const panels = groups.map(({ h2, rest }, idx) => {
+        const panel = document.createElement('div');
+        panel.className = 'sa-panel';
+        panel.dataset.sa = idx === 0 ? 'specs' : ANIMS[(idx - 1) % ANIMS.length];
         h2.style.marginTop = '';
-        w.appendChild(h2);
-        rest.forEach(n => w.appendChild(n));
-        w.querySelectorAll('li').forEach((li, i) => li.style.setProperty('--li-i', i));
-        return w;
+        panel.appendChild(h2);
+        rest.forEach(n => panel.appendChild(n));
+        panel.querySelectorAll('li').forEach((li, i) => li.style.setProperty('--li-i', i));
+        stage.appendChild(panel);
+        return panel;
       });
 
+      // Replace proseDiv with driver
+      proseDiv.parentNode.insertBefore(driver, proseDiv);
+      proseDiv.remove();
+
       if (!reduce) {
-        // Build progress rail
         const rail = document.createElement('nav');
         rail.className = 'sa-rail';
         rail.setAttribute('aria-label', 'Page sections');
-        const pips = wrappers.map((w, i) => {
+        const pips = panels.map((panel, i) => {
           const p = document.createElement('button');
           p.className = 'sa-pip';
           p.setAttribute('aria-label', `Section ${i + 1}`);
-          p.addEventListener('click', () => w.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+          p.addEventListener('click', () => {
+            const top = driver.offsetTop + (i / N) * (driver.offsetHeight - innerHeight);
+            window.scrollTo({ top, behavior: 'smooth' });
+          });
           rail.appendChild(p);
           return p;
         });
         document.body.appendChild(rail);
 
-        // Observe each block — trigger animation on enter
-        const sio = new IntersectionObserver(entries => {
-          entries.forEach(e => {
-            if (!e.isIntersecting) return;
-            e.target.classList.add('sa-in');
-            const i = wrappers.indexOf(e.target);
-            pips.forEach((p, j) => p.classList.toggle('pip-on', j === i));
+        let activeIdx = -1;
+
+        function showPanel(idx) {
+          if (idx === activeIdx) return;
+          // Animate out the leaving panel
+          if (activeIdx >= 0 && activeIdx < panels.length) {
+            const prev = panels[activeIdx];
+            prev.classList.remove('sa-in');
+            prev.classList.add('sa-out');
+            const captured = prev;
+            setTimeout(() => captured.classList.remove('sa-out'), 240);
+          }
+          // Animate in the arriving panel
+          if (idx >= 0 && idx < panels.length) {
+            panels[idx].classList.add('sa-in');
+            num.textContent = String(idx + 1).padStart(2, '0');
+            lbl.textContent = `${String(idx + 1).padStart(2, '0')} / ${String(N).padStart(2, '0')}`;
+            prog.style.width = `${((idx + 1) / N) * 100}%`;
+            pips.forEach((p, j) => p.classList.toggle('pip-on', j === idx));
             rail.classList.add('rail-on');
-          });
-        }, { threshold: 0.22, rootMargin: '-8% 0px -8% 0px' });
+          }
+          activeIdx = idx;
+        }
 
-        wrappers.forEach(w => sio.observe(w));
+        function onScroll() {
+          const rect = driver.getBoundingClientRect();
+          const scrollable = driver.offsetHeight - innerHeight;
+          if (scrollable <= 0) return;
 
-        // Hide rail when content section leaves viewport
-        new IntersectionObserver(([e]) => {
-          if (!e.isIntersecting) rail.classList.remove('rail-on');
-        }, { threshold: 0.01 }).observe(proseDiv.closest('section') || proseDiv);
+          // Driver not yet reached — hide active panel
+          if (rect.top > 20) {
+            if (activeIdx !== -1) {
+              panels[activeIdx].classList.remove('sa-in');
+              activeIdx = -1;
+              rail.classList.remove('rail-on');
+            }
+            return;
+          }
+          // Driver fully scrolled past
+          if (rect.bottom < innerHeight - 20) {
+            rail.classList.remove('rail-on');
+            return;
+          }
+
+          const progress = Math.max(0, -rect.top / scrollable);
+          const idx = Math.min(Math.floor(progress * N), N - 1);
+          showPanel(idx);
+        }
+
+        addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
       }
     }
   }
