@@ -23,18 +23,117 @@
   <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="">Projects</a><a href="about.html" class="">Profile</a><a href="workbench.html" class="">Workbench</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="active">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
 </header>
 <main class="">
-<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">Contact</p><h1 data-split-text>Let’s talk about work that has to become real.</h1></div><p class="lead reveal">Open to internships and entry-level mechanical engineering roles in product design, CAD engineering, manufacturing, and systems problem solving.</p></div></section>
-<section class="section pt-0"><div class="wrap contact-grid">
-  <div class="contact-card reveal"><span>Email</span><a href="mailto:ankit.dhital@icloud.com">ankit.dhital@icloud.com</a></div>
-  <div class="contact-card reveal"><span>LinkedIn</span><a href="https://www.linkedin.com/in/ankitdhital" target="_blank" rel="noopener">linkedin.com/in/ankitdhital</a></div>
-  <div class="contact-card reveal"><span>Location</span><p>Rexburg, Idaho — open to relocation</p></div>
-</div></section>
+<section class="page-hero">
+  <div class="wrap page-hero__grid">
+    <div><p class="kicker reveal">Contact</p><h1 data-split-text>Get in Touch</h1></div>
+    <p class="lead reveal">Open to internship and entry-level opportunities in product design, CAD engineering, and mechanical engineering. Based in Rexburg, Idaho.</p>
+  </div>
+</section>
+<section class="section pt-0">
+  <div class="wrap">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+
+      <!-- Form column -->
+      <div class="reveal">
+        <h2 style="font-size:1.125rem; margin-bottom:1.5rem;">Send a message</h2>
+        <form action="https://formspree.io/f/xkolbjlq" method="POST">
+          <div style="margin-bottom:1.25rem;">
+            <label for="name" style="display:block; font-size:0.875rem; font-weight:500; margin-bottom:0.375rem;">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required style="width:100%; padding:0.625rem 0.875rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); font-size:0.9375rem; font-family:inherit; box-sizing:border-box;" />
+          </div>
+          <div style="margin-bottom:1.25rem;">
+            <label for="email" style="display:block; font-size:0.875rem; font-weight:500; margin-bottom:0.375rem;">Email address</label>
+            <input type="email" id="email" name="_replyto" placeholder="you@example.com" required style="width:100%; padding:0.625rem 0.875rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); font-size:0.9375rem; font-family:inherit; box-sizing:border-box;" />
+          </div>
+          <div style="margin-bottom:1.25rem;">
+            <label for="subject" style="display:block; font-size:0.875rem; font-weight:500; margin-bottom:0.375rem;">Subject</label>
+            <input type="text" id="subject" name="_subject" placeholder="Internship inquiry, project question, etc." style="width:100%; padding:0.625rem 0.875rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); font-size:0.9375rem; font-family:inherit; box-sizing:border-box;" />
+          </div>
+          <div style="margin-bottom:1.5rem;">
+            <label for="message" style="display:block; font-size:0.875rem; font-weight:500; margin-bottom:0.375rem;">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about the opportunity or question..." rows="5" required style="width:100%; padding:0.625rem 0.875rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); font-size:0.9375rem; font-family:inherit; box-sizing:border-box; resize:vertical;"></textarea>
+          </div>
+          <input type="hidden" name="_next" value="https://ankitdhital.github.io/contact.html?sent=true" />
+          <button type="submit" class="btn btn--ink" style="width:100%; justify-content:center; padding:0.75rem;">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Info column -->
+      <div class="reveal">
+        <h2 style="font-size:1.125rem; margin-bottom:1.5rem;">Direct contact</h2>
+
+        <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2.5rem;">
+
+          <a href="mailto:ankit.dhital@icloud.com" style="text-decoration:none;">
+            <div style="display:flex; align-items:center; gap:1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem;">
+              <div style="width:40px; height:40px; background:var(--accent-light); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.125rem;">Email</p>
+                <p style="font-weight:500; font-size:0.9375rem; color:var(--text-primary);">ankit.dhital@icloud.com</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/ankitdhital" target="_blank" rel="noopener" style="text-decoration:none;">
+            <div style="display:flex; align-items:center; gap:1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem;">
+              <div style="width:40px; height:40px; background:var(--accent-light); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.125rem;">LinkedIn</p>
+                <p style="font-weight:500; font-size:0.9375rem; color:var(--text-primary);">linkedin.com/in/ankitdhital</p>
+              </div>
+            </div>
+          </a>
+
+          <div style="display:flex; align-items:center; gap:1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem;">
+            <div style="width:40px; height:40px; background:var(--accent-light); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.125rem;">Location</p>
+              <p style="font-weight:500; font-size:0.9375rem; color:var(--text-primary);">Rexburg, Idaho — Open to relocation</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem;">
+          <h3 style="font-size:0.9375rem; font-weight:600; margin-bottom:1rem;">What I'm looking for</h3>
+          <div style="display:flex; flex-direction:column; gap:0.625rem;">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
+              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Internships in product design or CAD engineering</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
+              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Entry-level mechanical engineering roles</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
+              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Teams that work on physical products</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <div style="width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0;"></div>
+              <p style="font-size:0.875rem; color:var(--text-secondary); margin:0;">Hardware/software integration environments</p>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+            <a href="resume.html" class="btn btn--ink" style="width:100%; justify-content:center;">View Full Résumé</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 </main><footer class="footer">
   <div class="wrap footer__grid">
     <div>
       <p class="kicker">Open to internships and entry-level roles</p>
       <h2>Bring me a mechanical problem worth solving.</h2>
-      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
+      <p>CAD design, fabrication, mechatronics, and systematic root-cause analysis — ready to contribute from day one.</p>
     </div>
     <div class="footer__actions">
       <a class="btn btn--ink" href="contact.html">Contact</a>

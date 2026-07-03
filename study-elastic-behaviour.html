@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
 <title>Elastic Behaviour of Rigidly Constrained Structure — Ankit Dhital</title>
-<meta name="description" content="A constrained-structure study comparing hand calculations, experimental behavior, and FEA reasoning.">
+<meta name="description" content="Fixed-fixed PVC beam deflection experiment — hand calc, singularity functions, and FEA verified against physical measurements. 0.00% FEA error at highest load.">
 <meta property="og:title" content="Elastic Behaviour of Rigidly Constrained Structure — Ankit Dhital">
-<meta property="og:description" content="A constrained-structure study comparing hand calculations, experimental behavior, and FEA reasoning.">
+<meta property="og:description" content="Fixed-fixed PVC beam deflection experiment — hand calc, singularity functions, and FEA verified against physical measurements. 0.00% FEA error at highest load.">
 <meta property="og:image" content="https://ankitdhital.github.io/assets/og-atlas-card.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,14 +23,48 @@
   <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Index</a><a href="projects.html" class="">Projects</a><a href="about.html" class="">Profile</a><a href="workbench.html" class="">Workbench</a><a href="studies.html" class="active">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command">Atlas Index</button></nav>
 </header>
 <main class="">
-<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">ME 370 · Machine Design</p><h1 data-split-text>Elastic Behaviour of Rigidly Constrained Structure</h1></div><p class="lead reveal">A constrained-structure study comparing hand calculations, experimental behavior, and FEA reasoning.</p></div></section>
-<section class="section pt-0"><div class="wrap study-detail reveal"><div><h2>Study summary</h2><p>A constrained-structure study comparing hand calculations, experimental behavior, and FEA reasoning.</p><div class="tag-row"><span>Machine design</span><span>FEA</span><span>Deflection</span></div><div class="hero-actions"><a class="btn btn--ink" href="pdfs/elastic-behaviour-rigidly-constrained-structure.pdf" target="_blank" rel="noopener">Open PDF</a><a class="btn btn--paper" href="studies.html">Back to studies</a></div></div><iframe src="pdfs/elastic-behaviour-rigidly-constrained-structure.pdf" title="Elastic Behaviour of Rigidly Constrained Structure PDF"></iframe></div></section>
+<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">ME 370 · Machine Design</p><h1 data-split-text>Elastic Behaviour of Rigidly Constrained Structure</h1></div><p class="lead reveal">Course: ME 370 Machine Design</p></div></section>
+<section class="section pt-0">
+  <div class="wrap">
+    <div class="reveal" style="max-width:860px;">
+      <p style="font-size:0.9375rem; color:var(--text-muted); margin-bottom:1.5rem;">ME 370 · Machine Design · BYU–Idaho</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
+        <a class="btn btn--ink" href="pdfs/elastic-behaviour-rigidly-constrained-structure.pdf" target="_blank" rel="noopener">Open PDF</a>
+        <a class="btn btn--paper" href="studies.html">Back to studies</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:1rem; margin-bottom:2rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem;">
+        <div><p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:0.25rem;">Course</p><p style="font-weight:600; font-size:0.875rem;">ME 370 Machine Design</p></div>
+        <div><p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:0.25rem;">Topic</p><p style="font-weight:600; font-size:0.875rem;">Beam Deflection &amp; Stress</p></div>
+        <div><p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:0.25rem;">Method</p><p style="font-weight:600; font-size:0.875rem;">Experiment + FEA</p></div>
+        <div><p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:0.25rem;">Format</p><p style="font-weight:600; font-size:0.875rem;">Research Paper</p></div>
+      </div>
+    </div>
+    <iframe src="pdfs/elastic-behaviour-rigidly-constrained-structure.pdf" title="Elastic Behaviour of Rigidly Constrained Structure — Ankit Dhital" style="width:100%; height:600px; border:1px solid var(--border); border-radius:var(--radius); margin-bottom:2rem;"></iframe>
+    <div class="reveal" style="max-width:860px;">
+      <h2>Topic Overview</h2>
+      <p>A fixed-fixed structural member — a hollow PVC window-blinds wand — loaded at an off-center point develops both bending stress and deflection. Because the supports prevent rotation at both ends, the system is statically indeterminate: equilibrium alone can't solve it, and the fixed-end moments must be found from the constraint that the slope is zero at each support. This study analyzes that behavior across three methods and validates them against a physical experiment.</p>
+      <h2>Objective</h2>
+      <p>Calculate the maximum bending stress and midspan deflection of a rigidly constrained structural member under a transverse point load, then verify those predictions against measured experimental data to confirm that the fixed-fixed beam model accurately describes real elastic behavior.</p>
+      <h2>Method</h2>
+      <p>The member was a hollow PVC tube (OD = 0.397 in, ID = 0.272 in, L = 32.25 in, I = 0.000951 in⁴). Material was identified as PVC through a float/burn test; the modulus of elasticity was initially assumed at 400 kpsi, then back-solved to E = 668,000 psi to match experimental data. Both ends were clamped with clamps and 3D-printed v-blocks; steel washer masses were applied at a point 20.125 in from end A (4 inches from midspan), and deflection was measured with a zeroed dial indicator at three load levels (F₁ = 0.298 lb, F₂ = 0.553 lb, F₃ = 0.861 lb). Deflection was calculated three ways: hand calculations using Euler-Bernoulli beam theory and fixed-end moment formulas (yielding δ = −0.2327F), singularity functions, and a SolidWorks FEA simulation. Results from all three methods were compared against measured experimental deflections.</p>
+      <h2>Key Insights</h2>
+      <p>All three analytical methods agreed with experiment to within 10% error across all load levels. At the highest load, hand calculations gave δ = 0.2004 in vs. measured 0.201 in (−0.30% error); FEA predicted 0.201 in (0.00% error). The back-solved modulus of E = 668,000 psi fell within the known PVC range (200–800 kpsi) and explained the small error at lower loads. The beam behaved elastically throughout, confirming that fixed-fixed beam theory and FEA together reliably predict deflection in rigidly constrained structural members — and that the indeterminate solution is necessary and sufficient to model real behavior.</p>
+      <div class="tag-row" style="margin-top:1.5rem;">
+        <span>Machine Design</span><span>Beam Deflection</span><span>FEA</span><span>Structural Analysis</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+        <a class="btn btn--paper" href="study-electronic-fin.html">← Electronic Fin Design</a>
+        <a class="btn btn--paper" href="studies.html">All Studies →</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main><footer class="footer">
   <div class="wrap footer__grid">
     <div>
       <p class="kicker">Open to internships and entry-level roles</p>
       <h2>Bring me a mechanical problem worth solving.</h2>
-      <p>CAD, fabrication, controls, analysis, technical documentation, and the patience to keep testing until the result is real.</p>
+      <p>CAD design, fabrication, mechatronics, and systematic root-cause analysis — ready to contribute from day one.</p>
     </div>
     <div class="footer__actions">
       <a class="btn btn--ink" href="contact.html">Contact</a>
