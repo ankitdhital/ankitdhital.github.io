@@ -120,4 +120,89 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
   });
+
+  // ── Project page section-by-section animations ────────────────────────────
+  if ($('.project-hero')) {
+    const heroEl = $('.project-hero');
+    const accentColor = heroEl ? getComputedStyle(heroEl).getPropertyValue('--accent').trim() : '';
+    if (accentColor) document.documentElement.style.setProperty('--sa-accent', accentColor);
+
+    const ANIMS = ['blur', 'right', 'up', 'scale', 'left', 'tilt'];
+
+    // Find the prose content div — first section that contains h2 elements
+    let proseDiv = null;
+    for (const sec of $$('.section')) {
+      const d = sec.querySelector('.wrap > div');
+      if (d && d.querySelector('h2')) { proseDiv = d; break; }
+    }
+
+    if (proseDiv) {
+      // Remove from main reveal observer — we handle it ourselves
+      proseDiv.classList.remove('reveal');
+      proseDiv.style.opacity = '1';
+      proseDiv.style.transform = 'none';
+      io.unobserve(proseDiv);
+
+      // Group child nodes by h2 headings
+      const nodes = [...proseDiv.childNodes];
+      const groups = [];
+      let cur = null;
+      nodes.forEach(node => {
+        if (node.nodeType === 1 && node.tagName === 'H2') {
+          cur = { h2: node, rest: [] };
+          groups.push(cur);
+        } else if (cur) {
+          cur.rest.push(node);
+        }
+      });
+
+      // Wrap each group in an sa-block div
+      const wrappers = groups.map(({ h2, rest }, idx) => {
+        const w = document.createElement('div');
+        w.className = 'sa-block';
+        w.dataset.sa = idx === 0 ? 'specs' : ANIMS[(idx - 1) % ANIMS.length];
+        if (idx > 0) w.style.marginTop = '2.5rem';
+        proseDiv.insertBefore(w, h2);
+        h2.style.marginTop = '';
+        w.appendChild(h2);
+        rest.forEach(n => w.appendChild(n));
+        w.querySelectorAll('li').forEach((li, i) => li.style.setProperty('--li-i', i));
+        return w;
+      });
+
+      if (!reduce) {
+        // Build progress rail
+        const rail = document.createElement('nav');
+        rail.className = 'sa-rail';
+        rail.setAttribute('aria-label', 'Page sections');
+        const pips = wrappers.map((w, i) => {
+          const p = document.createElement('button');
+          p.className = 'sa-pip';
+          p.setAttribute('aria-label', `Section ${i + 1}`);
+          p.addEventListener('click', () => w.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+          rail.appendChild(p);
+          return p;
+        });
+        document.body.appendChild(rail);
+
+        // Observe each block — trigger animation on enter
+        const sio = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            e.target.classList.add('sa-in');
+            const i = wrappers.indexOf(e.target);
+            pips.forEach((p, j) => p.classList.toggle('pip-on', j === i));
+            rail.classList.add('rail-on');
+          });
+        }, { threshold: 0.22, rootMargin: '-8% 0px -8% 0px' });
+
+        wrappers.forEach(w => sio.observe(w));
+
+        // Hide rail when content section leaves viewport
+        new IntersectionObserver(([e]) => {
+          if (!e.isIntersecting) rail.classList.remove('rail-on');
+        }, { threshold: 0.01 }).observe(proseDiv.closest('section') || proseDiv);
+      }
+    }
+  }
 })();
