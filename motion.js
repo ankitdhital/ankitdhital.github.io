@@ -65,6 +65,16 @@
     row.addEventListener('click', () => setPreview(row));
   });
 
+  // Keep the preview in sync while scrolling, not just on hover/click —
+  // whichever row crosses the vertical center band becomes active.
+  const featureRows = $$('[data-feature-row]');
+  if (featureRows.length) {
+    const rowIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) setPreview(entry.target); });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    featureRows.forEach(row => rowIO.observe(row));
+  }
+
   $$('[data-filter]').forEach(btn => btn.addEventListener('click', () => {
     const f = btn.dataset.filter;
     $$('[data-filter]').forEach(b => b.classList.toggle('is-active', b === btn));
