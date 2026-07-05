@@ -40,41 +40,6 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   $$('.reveal, [data-split-text]').forEach(el => io.observe(el));
 
-  function setPreview(row) {
-    const img = $('[data-feature-img]');
-    const title = $('[data-feature-title]');
-    const meta = $('[data-feature-meta]');
-    const link = $('[data-feature-link]');
-    const viewer = $('.showcase__viewer');
-    if (!row || !img || !title || !meta || !link) return;
-    $$('.feature-row').forEach(r => r.classList.remove('is-active'));
-    row.classList.add('is-active');
-    img.style.opacity = '0';
-    setTimeout(() => {
-      img.src = row.dataset.previewSrc;
-      title.textContent = row.dataset.previewTitle;
-      meta.textContent = row.dataset.previewMeta;
-      link.href = row.dataset.previewLink;
-      if (viewer) viewer.style.setProperty('--accent', getComputedStyle(row).getPropertyValue('--accent'));
-      img.style.opacity = '1';
-    }, 120);
-  }
-  $$('[data-feature-row]').forEach(row => {
-    row.addEventListener('mouseenter', () => setPreview(row));
-    row.addEventListener('focus', () => setPreview(row));
-    row.addEventListener('click', () => setPreview(row));
-  });
-
-  // Keep the preview in sync while scrolling, not just on hover/click —
-  // whichever row crosses the vertical center band becomes active.
-  const featureRows = $$('[data-feature-row]');
-  if (featureRows.length) {
-    const rowIO = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) setPreview(entry.target); });
-    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-    featureRows.forEach(row => rowIO.observe(row));
-  }
-
   $$('[data-filter]').forEach(btn => btn.addEventListener('click', () => {
     const f = btn.dataset.filter;
     $$('[data-filter]').forEach(b => b.classList.toggle('is-active', b === btn));
