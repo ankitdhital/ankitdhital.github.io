@@ -44,7 +44,7 @@
     const f = btn.dataset.filter;
     $$('[data-filter]').forEach(b => b.classList.toggle('is-active', b === btn));
     $$('[data-filter-card]').forEach(card => {
-      const show = f === 'all' || card.dataset.cat === f;
+      const show = f === 'all' || card.dataset.cat.split(/\s+/).includes(f);
       card.style.display = show ? '' : 'none';
     });
   }));
