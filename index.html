@@ -13,8 +13,385 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f5efe2">
 <link rel="stylesheet" href="styles.css?v=19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { corePlugins: { preflight: false }, theme: { extend: { colors: { 'graphite-subtle': '#5A6065', 'surface-variant': '#e7e2d8', 'surface-cream-raised': '#ECE6D8', 'cad-dark-surface': '#16181C', 'surface-cream': '#F6F1E7', 'on-surface': '#1d1c16', 'surface': '#fef9ef', 'surface-container-high': '#ede8de', 'secondary-container': '#ff5722', 'surface-container-low': '#f8f3e9', 'surface-container': '#f2ede3', 'spec-purple': '#6347D1', 'diagnostic-orange': '#FF5722', 'on-surface-variant': '#45474a', 'surface-container-lowest': '#ffffff', 'spec-blue': '#0D52BD', 'spec-teal': '#0E7C66', 'on-primary': '#ffffff', 'diagnostic-orange-soft': '#FFEFEA', 'surface-tint': '#5d5e62', 'primary': '#000000', 'graphite-text': '#121417', 'on-error': '#ffffff' }, spacing: { 'gutter-mobile': '16px', 'stack-xs': '4px', 'stack-sm': '8px', 'touch-min': '48px' }, minHeight: { 'touch': '48px' }, fontFamily: { 'headline-lg': ['Space Grotesk'], 'body-sm': ['Inter'], 'label-lg': ['JetBrains Mono'], 'headline-xl-mobile': ['Space Grotesk'], 'body-md': ['Inter'], 'headline-sm': ['Space Grotesk'], 'label-md': ['JetBrains Mono'], 'label-sm': ['JetBrains Mono'] }, fontSize: { 'headline-lg': ['26px', { lineHeight: '32px', letterSpacing: '-0.02em', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }], 'label-lg': ['12px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '600' }], 'headline-xl-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.025em', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '21px', fontWeight: '400' }], 'headline-sm': ['17px', { lineHeight: '22px', letterSpacing: '-0.01em', fontWeight: '600' }], 'label-md': ['11px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '500' }], 'label-sm': ['10px', { lineHeight: '13px', letterSpacing: '0.1em', fontWeight: '500' }] } } } };
+</script>
+<style>
+#mobile-home{display:none}
+#mobile-home,#mobile-home *,#mobile-home *::before,#mobile-home *::after{box-sizing:border-box}
+#mobile-home h1,#mobile-home h2,#mobile-home h3,#mobile-home p,#mobile-home figure,#mobile-home ul{margin:0}
+#mobile-home ul{padding:0;list-style:none}
+#mobile-home button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+#mobile-home a{text-decoration:none}
+#mobile-home img{max-width:100%;display:block}
+@media (max-width:767px){
+  #mobile-home{display:block}
+  .topbar,main.home-page,.footer{display:none}
+}
+</style>
 </head>
 <body>
+<div id="mobile-home">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-stack-sm"><div class="w-9 h-9 bg-graphite-text text-surface flex items-center justify-center rounded"><span class="font-label-lg text-label-lg tracking-tight">AD</span></div><div class="flex flex-col"><div class="flex items-center gap-stack-xs"><span class="font-headline-sm text-headline-sm text-graphite-text font-bold leading-none">Ankit Dhital</span><span class="font-label-sm text-label-sm bg-surface-variant text-graphite-subtle px-1.5 py-0.5 rounded">BYU–I</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-diagnostic-orange animate-pulse"></span><span class="font-label-sm text-label-sm text-graphite-subtle tracking-wide uppercase">Open to Roles</span></div></div></div><div class="flex items-center gap-stack-sm"><a href="about.html" aria-label="Profile" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header>
+<main class="flex-1 flex flex-col relative w-full pt-16 bg-surface">
+<div class="flex flex-col w-full pb-24 text-graphite-text">
+<div class="w-full bg-graphite-text text-surface py-2 px-gutter-mobile overflow-hidden shadow-sm">
+<div class="flex items-center space-x-6 whitespace-nowrap animate-pulse">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-diagnostic-orange">● Live Status</span>
+<span class="font-label-sm text-label-sm tracking-wider opacity-80">OBSERVE</span>
+<span class="text-graphite-subtle text-xs">/</span>
+<span class="font-label-sm text-label-sm tracking-wider opacity-80">DIAGNOSE</span>
+<span class="text-graphite-subtle text-xs">/</span>
+<span class="font-label-sm text-label-sm tracking-wider opacity-80">MODEL</span>
+<span class="text-graphite-subtle text-xs">/</span>
+<span class="font-label-sm text-label-sm tracking-wider opacity-80">BUILD</span>
+<span class="text-graphite-subtle text-xs">/</span>
+<span class="font-label-sm text-label-sm tracking-wider opacity-80">VERIFY</span>
+<span class="text-graphite-subtle text-xs">/</span>
+<span class="font-label-sm text-label-sm tracking-wider opacity-80">DOCUMENT</span>
+</div>
+</div>
+<section class="px-gutter-mobile pt-6 pb-8 flex flex-col space-y-6">
+<div class="flex flex-col space-y-2">
+<div class="inline-flex items-center gap-2 self-start bg-surface-cream-raised px-2.5 py-1 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-spec-blue"></span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Mechanical Engineering · BYU–Idaho</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-graphite-text tracking-tight font-bold pt-1">Ready for any challenge. Driven by root-cause analysis.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant pt-2 leading-relaxed">I approach technical challenges with a strict diagnostic mindset. Whether it's diagnosing a system failure, optimizing a process, or building a physical mechanism, I focus on identifying the root cause and executing the solution.</p>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-1">
+<a class="flex items-center justify-center min-h-touch bg-graphite-text text-on-primary rounded font-body-md font-semibold px-4 shadow-md transition-transform active:translate-x-0.5 active:translate-y-0.5" href="#featured-projects">
+<span>View Projects</span>
+<span class="material-symbols-outlined text-[18px] ml-1.5">arrow_downward</span>
+</a>
+<a class="flex items-center justify-center min-h-touch bg-surface-cream-raised text-graphite-text rounded font-body-md font-semibold px-4 shadow-sm transition-transform active:translate-x-0.5 active:translate-y-0.5" href="pdfs/resume.pdf" target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-[18px] mr-1.5 text-diagnostic-orange">download</span>
+<span>Résumé</span>
+</a>
+</div>
+<div class="relative bg-surface-cream-raised rounded-xl p-4 shadow-md overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-diagnostic-orange/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-3">
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase tracking-wider">PORTFOLIO INDEX · VER 2026.04</span>
+<span class="font-label-sm text-label-sm bg-diagnostic-orange-soft text-diagnostic-orange px-2 py-0.5 rounded font-semibold uppercase">Open to Roles</span>
+</div>
+<div class="relative w-full h-56 rounded-lg overflow-hidden bg-cad-dark-surface shadow-inner">
+<img class="w-full h-full object-cover" alt="Ankit Dhital" src="assets/webp/headshot.webp">
+<div class="absolute bottom-3 left-3 bg-graphite-text/90 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-md">
+<span class="w-2 h-2 rounded-full bg-diagnostic-orange animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-primary tracking-wide">ACTIVE · REXBURG, ID</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Innovative</span>
+<span class="material-symbols-outlined text-spec-blue text-[20px]">lightbulb</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fresh angles on tough problems.</p>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Mindful</span>
+<span class="material-symbols-outlined text-spec-teal text-[20px]">troubleshoot</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Root-cause over quick fixes.</p>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Growth</span>
+<span class="material-symbols-outlined text-spec-purple text-[20px]">trending_up</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Always iterating, always learning.</p>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col justify-between space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Hands-On</span>
+<span class="material-symbols-outlined text-diagnostic-orange text-[20px]">build</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Equally at home in CAD &amp; shop.</p>
+</div>
+</div>
+</section>
+<div class="px-gutter-mobile py-4">
+<div class="bg-cad-dark-surface text-surface rounded-xl p-4 shadow-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Tolerance Target</span>
+<span class="font-label-lg text-label-lg text-on-primary font-bold">± 0.001 IN</span>
+</div>
+<div class="h-8 w-px bg-surface-tint/30"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Workflows</span>
+<span class="font-label-lg text-label-lg text-on-primary font-bold">CAD-to-Part</span>
+</div>
+<div class="h-8 w-px bg-surface-tint/30"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Fabrication</span>
+<span class="font-label-lg text-label-lg text-diagnostic-orange font-bold">CNC / Laser</span>
+</div>
+</div>
+</div>
+<section class="px-gutter-mobile pt-8 pb-10 flex flex-col space-y-5" id="featured-projects">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-diagnostic-orange uppercase tracking-wider font-semibold">FEATURED WORK</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle">07 ENTRIES</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-graphite-text">Selected Projects</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A cross-section of mechanical design, fabrication, and hardware integration work from coursework and independent builds.</p>
+</div>
+<a href="project-thermogate.html" class="block bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col space-y-3 transition-transform active:scale-[0.99]">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" alt="Thermogate" loading="lazy" src="assets/webp/thermogate-front.webp">
+<div class="absolute top-2 left-2 bg-graphite-text/80 text-surface font-label-sm text-label-sm px-2 py-0.5 rounded backdrop-blur-sm">MECHATRONICS</div>
+</div>
+<div class="flex items-start justify-between gap-2 pt-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Thermogate</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">A temperature-actuated gate system with live sensor feedback, interior wiring management, and a labeled component layout.</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm bg-diagnostic-orange-soft text-diagnostic-orange px-2 py-1 rounded font-semibold">±2°C SETPOINT TARGET</span>
+<span class="font-label-sm text-label-sm font-bold flex items-center text-graphite-text">SPEC SHEET <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</div>
+</a>
+<a href="project-planetary-gear.html" class="block bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col space-y-3 transition-transform active:scale-[0.99]">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" alt="Planetary Gear System" loading="lazy" src="assets/webp/planetary-gear-assembly.webp">
+<div class="absolute top-2 left-2 bg-graphite-text/80 text-surface font-label-sm text-label-sm px-2 py-0.5 rounded backdrop-blur-sm">MACHINE DESIGN</div>
+</div>
+<div class="flex items-start justify-between gap-2 pt-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Planetary Gear System</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Full SolidWorks design and physical assembly of a planetary gearbox, including exploded-view documentation.</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-spec-blue px-2 py-1 rounded font-semibold">4:1 GEAR REDUCTION</span>
+<span class="font-label-sm text-label-sm font-bold flex items-center text-graphite-text">CAD MODEL <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</div>
+</a>
+<a href="project-rat-trap.html" class="block bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col space-y-3 transition-transform active:scale-[0.99]">
+<div class="relative w-full h-44 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" alt="Automated Rat Trap" loading="lazy" src="assets/webp/rat-trap-interior.webp">
+<div class="absolute top-2 left-2 bg-graphite-text/80 text-surface font-label-sm text-label-sm px-2 py-0.5 rounded backdrop-blur-sm">MECHANISM DESIGN</div>
+</div>
+<div class="flex items-start justify-between gap-2 pt-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Automated Rat Trap</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">A self-resetting trap built into a briefcase-style case, with an electronic trigger, push-rod release, and locking hinges.</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-spec-teal px-2 py-1 rounded font-semibold">NO-TOUCH DISPOSAL CONCEPT</span>
+<span class="font-label-sm text-label-sm font-bold flex items-center text-graphite-text">DIAGNOSTIC <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</div>
+</a>
+<div class="space-y-3 pt-2">
+<a href="project-hanger.html" class="block bg-surface-cream-raised p-4 rounded-xl shadow-sm flex items-center justify-between gap-3">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Hanger — CAD to Part</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Precision SolidWorks model of a hanger component with physical prototype verification, demonstrating CAD-to-part workflow.</p>
+<span class="font-label-sm text-label-sm text-spec-blue font-semibold mt-1">0.001 IN TOLERANCE</span>
+</div>
+<div class="w-16 h-16 rounded bg-cad-dark-surface shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" alt="Hanger CAD to part" loading="lazy" src="assets/webp/hanger-cad.webp">
+</div>
+</a>
+<a href="project-mailbox.html" class="block bg-surface-cream-raised p-4 rounded-xl shadow-sm flex items-center justify-between gap-3">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Mailbox Fabrication</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Fabricated sheet-metal mailbox built to dimensional tolerances, demonstrating metal forming and fastening techniques.</p>
+<span class="font-label-sm text-label-sm text-diagnostic-orange font-semibold mt-1">±1/32 IN FABRICATION</span>
+</div>
+<div class="w-16 h-16 rounded bg-cad-dark-surface shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" alt="Mailbox fabrication" loading="lazy" src="assets/webp/mailbox-final.webp">
+</div>
+</a>
+<a href="project-fsae-wheel.html" class="block bg-surface-cream-raised p-4 rounded-xl shadow-sm flex items-center justify-between gap-3">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">FSAE Wheel &amp; Suspension</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Contributed to wheel assembly, suspension geometry, and chassis work on a student-built Formula SAE race car.</p>
+<span class="font-label-sm text-label-sm text-spec-purple font-semibold mt-1">SUBSYSTEM INTEGRATION</span>
+</div>
+<div class="w-16 h-16 rounded bg-cad-dark-surface shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" alt="FSAE wheel and suspension" loading="lazy" src="assets/webp/fsae-car.webp">
+</div>
+</a>
+<a href="project-laser-cut-pattern.html" class="block bg-surface-cream-raised p-4 rounded-xl shadow-sm flex items-center justify-between gap-3">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Laser-Cut Steel Tiger</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Pattern designed in SolidWorks, laid out in sheet metal, and precision laser cut for flat-pattern manufacturing.</p>
+<span class="font-label-sm text-label-sm text-spec-teal font-semibold mt-1">1/4 IN STEEL ARTWORK</span>
+</div>
+<div class="w-16 h-16 rounded bg-cad-dark-surface shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" alt="Laser-cut steel tiger" loading="lazy" src="assets/webp/tiger-finished.webp">
+</div>
+</a>
+</div>
+<a href="projects.html" class="inline-flex items-center justify-center min-h-touch bg-surface-container text-graphite-text rounded font-headline-sm text-headline-sm font-semibold shadow-sm w-full py-2.5">
+<span>View all projects</span>
+<span class="material-symbols-outlined text-[18px] ml-1">arrow_forward</span>
+</a>
+</section>
+<section class="bg-surface-container-high px-gutter-mobile py-10 flex flex-col space-y-6">
+<div class="flex flex-col space-y-2">
+<span class="font-label-sm text-label-sm text-diagnostic-orange uppercase tracking-wider font-semibold">HOW I WORK</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-graphite-text">Built on a diagnostic mindset.</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Every project starts the same way: with a question. What's actually failing? What does the system need? I don't build until I understand the problem — and I don't stop until the data confirms the fix.</p>
+</div>
+<div class="flex flex-col space-y-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded bg-spec-blue text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">01</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">DIAGNOSTIC PHASE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Start with the system</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Understand the full context before touching any component. Symptoms live at the surface; causes live in the system.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded bg-diagnostic-orange text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">02</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">MEASUREMENT</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Measure before cutting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quantify the problem. Data first, assumptions last. A number beats an opinion every time.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded bg-spec-teal text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">03</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">FABRICATION</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Build to learn</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Physical prototypes reveal constraints that CAD models hide. Iteration is the process, not the failure.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded bg-spec-purple text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">04</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">TRACEABILITY</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Document the deviation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Anomalies are information. Record everything — the deviation you skip today becomes the root cause you chase tomorrow.</p>
+</div>
+</div>
+</section>
+<section class="px-gutter-mobile py-10 flex flex-col space-y-5">
+<div class="flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-spec-blue uppercase tracking-wider font-semibold">ACADEMIC WORK</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-graphite-text">Study Papers</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Written analyses, design proposals, and engineering investigations from coursework.</p>
+</div>
+<div class="flex flex-col space-y-2.5">
+<a href="study-waste-heat.html" class="block bg-surface-cream-raised p-4 rounded-lg shadow-sm flex items-center justify-between transition-transform active:translate-x-0.5">
+<div class="flex flex-col space-y-1 pr-2">
+<span class="font-label-sm text-label-sm text-graphite-subtle">ME-113 · THERMODYNAMICS</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-graphite-text">Waste Heat Recovery from Industry</h3>
+</div>
+<span class="font-label-sm text-label-sm text-diagnostic-orange font-bold whitespace-nowrap flex items-center">READ <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</a>
+<a href="study-fluid-dynamics.html" class="block bg-surface-cream-raised p-4 rounded-lg shadow-sm flex items-center justify-between transition-transform active:translate-x-0.5">
+<div class="flex flex-col space-y-1 pr-2">
+<span class="font-label-sm text-label-sm text-graphite-subtle">ME 111 · FLUID DYNAMICS</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-graphite-text">Laminar &amp; Turbulent Flow Study</h3>
+</div>
+<span class="font-label-sm text-label-sm text-diagnostic-orange font-bold whitespace-nowrap flex items-center">READ <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</a>
+<a href="study-cpr-pulsemate.html" class="block bg-surface-cream-raised p-4 rounded-lg shadow-sm flex items-center justify-between transition-transform active:translate-x-0.5">
+<div class="flex flex-col space-y-1 pr-2">
+<span class="font-label-sm text-label-sm text-graphite-subtle">ME 380 · PRODUCT DESIGN</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-graphite-text">CPR PulseMate Device Proposal</h3>
+</div>
+<span class="font-label-sm text-label-sm text-diagnostic-orange font-bold whitespace-nowrap flex items-center">READ <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</a>
+<a href="study-electronic-fin.html" class="block bg-surface-cream-raised p-4 rounded-lg shadow-sm flex items-center justify-between transition-transform active:translate-x-0.5">
+<div class="flex flex-col space-y-1 pr-2">
+<span class="font-label-sm text-label-sm text-graphite-subtle">MECHANICAL DESIGN</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-graphite-text">Electronic Fin Design</h3>
+</div>
+<span class="font-label-sm text-label-sm text-diagnostic-orange font-bold whitespace-nowrap flex items-center">READ <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</a>
+<a href="study-elastic-behaviour.html" class="block bg-surface-cream-raised p-4 rounded-lg shadow-sm flex items-center justify-between transition-transform active:translate-x-0.5">
+<div class="flex flex-col space-y-1 pr-2">
+<span class="font-label-sm text-label-sm text-graphite-subtle">ME 370 · MACHINE DESIGN</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-graphite-text">Elastic Behaviour of Rigidly Constrained Structure</h3>
+</div>
+<span class="font-label-sm text-label-sm text-diagnostic-orange font-bold whitespace-nowrap flex items-center">READ <span class="material-symbols-outlined text-[16px] ml-0.5">arrow_forward</span></span>
+</a>
+</div>
+<a href="studies.html" class="inline-flex items-center text-graphite-text font-label-md text-label-md font-bold self-start pt-1">
+<span>VIEW ALL STUDIES</span>
+<span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+</a>
+</section>
+<section class="px-gutter-mobile py-4">
+<div class="bg-cad-dark-surface text-surface rounded-xl p-5 shadow-xl flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 rounded-full bg-diagnostic-orange"></span>
+<span class="font-label-sm text-label-sm text-surface uppercase font-semibold">Diagnostic Sandbox</span>
+</div>
+<span class="font-label-sm text-label-sm text-graphite-subtle">TOLERANCE CHECK</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-variant">Interactive machining tolerance calculator configured for SolidWorks precision prototypes:</p>
+<div class="bg-primary-container p-3 rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-graphite-subtle">FIT CLASS: H7/g6</span>
+<span class="font-label-lg text-label-lg text-diagnostic-orange font-bold" id="tolerance-display">+0.012 mm / -0.005 mm</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 rounded bg-graphite-subtle/30 text-surface font-label-sm text-label-sm font-semibold transition-colors hover:bg-graphite-subtle/50" onclick="document.getElementById('tolerance-display').innerText = '+0.008 mm / -0.002 mm'">Precision</button>
+<button class="flex-1 py-2 rounded bg-graphite-subtle/30 text-surface font-label-sm text-label-sm font-semibold transition-colors hover:bg-graphite-subtle/50" onclick="document.getElementById('tolerance-display').innerText = '±0.025 mm (ISO 2768-m)'">General</button>
+</div>
+</div>
+</section>
+<section class="bg-graphite-text text-on-primary px-gutter-mobile py-10 mt-6 rounded-t-2xl shadow-xl flex flex-col space-y-6">
+<div class="flex flex-col space-y-2">
+<div class="inline-flex items-center gap-1.5 self-start bg-secondary-container/20 px-2.5 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-diagnostic-orange"></span>
+<span class="font-label-sm text-label-sm text-secondary-container uppercase tracking-wide">Open to internships &amp; entry-level roles</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-primary tracking-tight">Got an engineering problem worth solving? Let's talk.</h2>
+<p class="font-body-md text-body-md text-surface-variant/80 pt-1 leading-relaxed">CAD design, fabrication, mechatronics, and systematic root-cause analysis — ready to contribute from day one.</p>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<a class="flex items-center justify-center min-h-touch bg-diagnostic-orange text-on-secondary rounded font-body-md font-semibold px-4 shadow-md transition-transform active:scale-95" href="contact.html">
+<span class="material-symbols-outlined text-[18px] mr-1.5">mail</span>
+<span>Contact</span>
+</a>
+<a class="flex items-center justify-center min-h-touch bg-surface-cream text-graphite-text rounded font-body-md font-semibold px-4 shadow-md transition-transform active:scale-95" href="pdfs/resume.pdf" target="_blank" rel="noopener">
+<span class="material-symbols-outlined text-[18px] mr-1.5">picture_as_pdf</span>
+<span>Resume PDF</span>
+</a>
+</div>
+<div class="pt-6 border-t border-graphite-subtle/20 flex flex-col space-y-2">
+<p class="font-label-sm text-label-sm text-graphite-subtle">© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</p>
+<p class="font-label-sm text-label-sm text-graphite-subtle/70">Static site · GitHub Pages ready · No build step</p>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"><div class="flex justify-around items-center h-16 px-gutter-mobile">
+<a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch transition-colors text-primary font-bold" href="index.html"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-sm text-label-sm uppercase">Overview</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="projects.html"><span class="material-symbols-outlined text-[20px]">precision_manufacturing</span><span class="font-label-sm text-label-sm uppercase">Projects</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="workbench.html"><span class="material-symbols-outlined text-[20px]">layers</span><span class="font-label-sm text-label-sm uppercase">CAD/Lab</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="contact.html"><span class="material-symbols-outlined text-[20px]">alternate_email</span><span class="font-label-sm text-label-sm uppercase">Contact</span></a>
+</div></nav>
+</div>
 <div class="paper-grain" aria-hidden="true"></div>
 <div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
 <header class="topbar" data-topbar>
