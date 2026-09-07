@@ -36,3 +36,17 @@
 
 /* ── Flip-word tagline (effects.js) ─── */
 .flip-word{display:inline-block;position:relative;transition:opacity .22s ease}
+
+/* ── Method cards: playful staggered scroll-in ─── */
+.method-card.reveal{opacity:0;transform:scale(.82) rotate(-6deg) translateY(30px);transition:opacity .5s var(--ease),transform .65s cubic-bezier(.34,1.56,.64,1)}
+.method-cards .method-card:nth-child(2){transition-delay:.09s}
+.method-cards .method-card:nth-child(3){transition-delay:.18s}
+.method-cards .method-card:nth-child(4){transition-delay:.27s}
+.method-card.reveal.is-visible{opacity:1;transform:none}
+.method-cards .method-card.is-visible{transition-delay:0s}
+.method-card span{transition:transform .5s cubic-bezier(.34,1.56,.64,1) .12s}
+.method-card.reveal span{transform:scale(0) rotate(-160deg)}
+.method-card.reveal.is-visible span{transform:scale(1) rotate(0deg)}
+.method-card:hover{transform:translateY(-6px) rotate(-1.2deg)}
+.method-card.is-visible:hover span{transform:scale(1.18) rotate(10deg)}
+@media(prefers-reduced-motion:reduce){.method-card.reveal{transform:none}.method-card.reveal span{transform:none}}
