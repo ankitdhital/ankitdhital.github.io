@@ -260,34 +260,34 @@ tailwind.config = { corePlugins: { preflight: false }, theme: { extend: { colors
 <div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
 <div class="flex items-center justify-between">
 <span class="w-7 h-7 rounded bg-spec-blue text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">01</span>
-<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">DIAGNOSTIC PHASE</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">ROOT CAUSE</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Start with the system</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Understand the full context before touching any component. Symptoms live at the surface; causes live in the system.</p>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Root-cause the failure</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Trace every symptom to its origin — a 5-Whys chain or a fishbone diagram — before changing a single dimension. A fix that skips diagnosis just relocates the failure.</p>
 </div>
 <div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
 <div class="flex items-center justify-between">
 <span class="w-7 h-7 rounded bg-diagnostic-orange text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">02</span>
-<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">MEASUREMENT</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">TOLERANCING</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Measure before cutting</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Quantify the problem. Data first, assumptions last. A number beats an opinion every time.</p>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Stack up the tolerances</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Run the GD&amp;T and tolerance stack-up before anything gets machined. A ±0.005 in. assumption that's wrong costs a re-cut; one that's verified costs five minutes.</p>
 </div>
 <div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
 <div class="flex items-center justify-between">
 <span class="w-7 h-7 rounded bg-spec-teal text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">03</span>
-<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">FABRICATION</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">PROTOTYPING</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Build to learn</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Physical prototypes reveal constraints that CAD models hide. Iteration is the process, not the failure.</p>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Prototype, then break it</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">3D print or CNC a test article and load it past spec. FEA predicts where a part might fail; a physical part under load shows you where it actually does.</p>
 </div>
 <div class="bg-surface-container-lowest p-4 rounded-xl shadow-md flex flex-col space-y-2">
 <div class="flex items-center justify-between">
 <span class="w-7 h-7 rounded bg-spec-purple text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">04</span>
-<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">TRACEABILITY</span>
+<span class="font-label-sm text-label-sm text-graphite-subtle uppercase">DOCUMENTATION</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Document the deviation</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Anomalies are information. Record everything — the deviation you skip today becomes the root cause you chase tomorrow.</p>
+<h3 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Log the deviation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Record every dimension, revision, and root cause in the design history file. An undocumented fix is a problem waiting to resurface on the next build.</p>
 </div>
 </div>
 </section>
@@ -484,10 +484,10 @@ tailwind.config = { corePlugins: { preflight: false }, theme: { extend: { colors
     </div>
     <div class="method-scroller" data-method-scroller>
       <div class="method-stage method-cards" data-method-stage>
-        <article class="method-card method-step reveal is-active" data-step="0" style="--accent:#1B2631;"><span>01</span><h3>Start with the system</h3><p>Understand the full context before touching any component. Symptoms live at the surface; causes live in the system.</p></article>
-        <article class="method-card method-step reveal" data-step="1" style="--accent:#4F6B75;"><span>02</span><h3>Measure before cutting</h3><p>Quantify the problem. Data first, assumptions last. A number beats an opinion every time.</p></article>
-        <article class="method-card method-step reveal" data-step="2" style="--accent:#3F4E4F;"><span>03</span><h3>Build to learn</h3><p>Physical prototypes reveal constraints that CAD models hide. Iteration is the process, not the failure.</p></article>
-        <article class="method-card method-step reveal" data-step="3" style="--accent:#6B8E9E;"><span>04</span><h3>Document the deviation</h3><p>Anomalies are information. Record everything — the deviation you skip today becomes the root cause you chase tomorrow.</p></article>
+        <article class="method-card method-step reveal is-active" data-step="0" style="--accent:#1B2631;"><span>01</span><h3>Root-cause the failure</h3><p>Trace every symptom to its origin — a 5-Whys chain or a fishbone diagram — before changing a single dimension. A fix that skips diagnosis just relocates the failure.</p></article>
+        <article class="method-card method-step reveal" data-step="1" style="--accent:#4F6B75;"><span>02</span><h3>Stack up the tolerances</h3><p>Run the GD&amp;T and tolerance stack-up before anything gets machined. A ±0.005 in. assumption that's wrong costs a re-cut; one that's verified costs five minutes.</p></article>
+        <article class="method-card method-step reveal" data-step="2" style="--accent:#3F4E4F;"><span>03</span><h3>Prototype, then break it</h3><p>3D print or CNC a test article and load it past spec. FEA predicts where a part might fail; a physical part under load shows you where it actually does.</p></article>
+        <article class="method-card method-step reveal" data-step="3" style="--accent:#6B8E9E;"><span>04</span><h3>Log the deviation</h3><p>Record every dimension, revision, and root cause in the design history file. An undocumented fix is a problem waiting to resurface on the next build.</p></article>
       </div>
       <div class="method-dots" data-method-dots aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
     </div>
