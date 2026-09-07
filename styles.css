@@ -37,40 +37,12 @@
 /* ── Flip-word tagline (effects.js) ─── */
 .flip-word{display:inline-block;position:relative;transition:opacity .22s ease}
 
-/* ── Method cards: narrow-width fallback (plain staggered pop-in) ─── */
+/* ── Method cards: staggered pop-in on scroll ─── */
 .method-card.reveal{opacity:0;transform:scale(.82) rotate(-6deg) translateY(30px);transition:opacity .5s var(--ease),transform .65s cubic-bezier(.34,1.56,.64,1)}
 .method-cards .method-card:nth-child(2){transition-delay:.09s}
 .method-cards .method-card:nth-child(3){transition-delay:.18s}
 .method-cards .method-card:nth-child(4){transition-delay:.27s}
 .method-card.reveal.is-visible{opacity:1;transform:none}
 .method-cards .method-card.is-visible{transition-delay:0s}
-
-/* ── Method steps: scroll-pinned vertical reveal (desktop only, effects.js) ─── */
-.method-scroller{position:relative;height:400vh}
-.method-stage.method-cards{display:block;position:sticky;top:120px;height:340px}
-.method-dots{display:flex;gap:.55rem;justify-content:center;margin-top:1.5rem}
-.method-dots span{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .4s var(--ease),transform .4s var(--ease)}
-.method-dots span.is-active{background:var(--ink);transform:scale(1.35)}
-@media(min-width:981px){
-  /* .method-scroller prefix bumps specificity to (0,3,0) — matching
-     .method-card.reveal.is-visible — so this wins via source order once the
-     section's generic scroll-reveal has already marked every card is-visible */
-  .method-step{position:absolute;inset:0;transition:opacity .7s var(--ease),transform .8s var(--ease);pointer-events:none}
-  .method-scroller .method-step:not(.is-active){opacity:0;transform:translateY(32px)}
-  .method-scroller .method-step.is-active{opacity:1;transform:translateY(0);pointer-events:auto;z-index:2}
-  .method-step span{transition:opacity .6s var(--ease) .08s,transform .6s var(--ease) .08s}
-  .method-scroller .method-step:not(.is-active) span{opacity:0;transform:translateY(12px)}
-  .method-scroller .method-step.is-active span{opacity:1;transform:translateY(0)}
-}
-@media(max-width:980px){
-  .method-scroller{height:auto}
-  .method-stage.method-cards{position:static;height:auto;display:grid;grid-template-columns:1fr;gap:1rem}
-  .method-card.reveal.is-visible:hover{transform:translateY(-6px) rotate(-1.2deg)}
-  .method-dots{display:none}
-}
-@media(prefers-reduced-motion:reduce){
-  .method-card.reveal{transform:none}
-  .method-scroller{height:auto}
-  .method-stage.method-cards{position:static;height:auto;display:grid;grid-template-columns:1fr;gap:1rem}
-  .method-dots{display:none}
-}
+.method-card:hover{transform:translateY(-6px) rotate(-1.2deg)}
+@media(prefers-reduced-motion:reduce){.method-card.reveal{transform:none}}

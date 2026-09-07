@@ -30,48 +30,6 @@
     nav.insertBefore(frag, trailing || null);
   });
 
-  // "How I work" section: pin the stage and iris-wipe between steps as the
-  // user scrolls through the tall .method-scroller wrapper (desktop only —
-  // CSS falls back to a plain stacked list below 980px).
-  var scroller = document.querySelector("[data-method-scroller]");
-  if (scroller) {
-    var steps = scroller.querySelectorAll(".method-step");
-    var dots = scroller.querySelectorAll("[data-method-dots] span");
-    var lastIndex = 0;
-    var updateStep = function () {
-      if (window.innerWidth <= 980) return;
-      var rect = scroller.getBoundingClientRect();
-      var total = rect.height - window.innerHeight;
-      var progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
-      var index = Math.min(steps.length - 1, Math.floor(progress * steps.length));
-      if (index !== lastIndex) {
-        steps.forEach(function (s, i) {
-          s.classList.toggle("is-active", i === index);
-        });
-        dots.forEach(function (d, i) {
-          d.classList.toggle("is-active", i === index);
-        });
-        lastIndex = index;
-      }
-    };
-    var ticking = false;
-    window.addEventListener(
-      "scroll",
-      function () {
-        if (!ticking) {
-          requestAnimationFrame(function () {
-            updateStep();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      },
-      { passive: true }
-    );
-    window.addEventListener("resize", updateStep);
-    updateStep();
-  }
-
   document.querySelectorAll("[data-flip-words]").forEach(function (el) {
     var words;
     try {
