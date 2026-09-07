@@ -33,3 +33,21 @@
 /* ── Atlas Index trigger ─── */
 .atlas-open{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:2.6rem;height:2.6rem;padding:0}
 .atlas-open i{display:block;width:16px;height:2px;background:currentColor;border-radius:1px}
+
+/* ── Ambient effects (effects.js) ─── */
+#cursor-glow{position:fixed;top:0;left:0;width:380px;height:380px;border-radius:50%;pointer-events:none;z-index:40;background:radial-gradient(circle,rgba(2,71,167,.12),rgba(255,90,47,.06) 45%,transparent 72%);transform:translate(-50%,-50%);opacity:0;transition:opacity .4s var(--ease);mix-blend-mode:multiply}
+@media(hover:hover) and (pointer:fine){
+.project-row,.atlas-card,.method-card,.study-ticket,.study-card,.contact-card,.workbench-card,.case-note,.resume-panel,.study-detail{position:relative}
+.project-row:after,.atlas-card:after,.method-card:after,.study-ticket:after,.study-card:after,.contact-card:after,.workbench-card:after,.case-note:after,.resume-panel:after,.study-detail:after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.55),transparent 65%);opacity:0;transition:opacity .35s var(--ease);pointer-events:none;z-index:4;mix-blend-mode:overlay}
+.project-row:hover:after,.atlas-card:hover:after,.method-card:hover:after,.study-ticket:hover:after,.study-card:hover:after,.contact-card:hover:after,.workbench-card:hover:after,.case-note:hover:after,.resume-panel:hover:after,.study-detail:hover:after{opacity:1}
+.btn{position:relative;overflow:hidden}
+.btn:before{content:"";position:absolute;top:0;left:-160%;width:55%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-18deg);pointer-events:none}
+.btn:hover:before{animation:btn-shimmer 1.1s var(--ease)}
+@keyframes btn-shimmer{to{left:160%}}
+}
+.footer{position:relative}
+.meteor-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.meteor{position:absolute;top:-10%;width:2px;height:2px;background:#fff;border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.12);opacity:0;animation:meteor-fall linear infinite}
+.meteor:before{content:"";position:absolute;top:50%;right:0;width:70px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75));transform:translateY(-50%)}
+@keyframes meteor-fall{0%{transform:rotate(215deg) translateX(0);opacity:1}70%{opacity:1}100%{transform:rotate(215deg) translateX(-520px);opacity:0}}
+.flip-word{display:inline-block;position:relative;transition:opacity .22s ease}
