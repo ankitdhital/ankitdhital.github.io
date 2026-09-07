@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F0F4F8">
-<link rel="stylesheet" href="styles.css?v=21">
+<link rel="stylesheet" href="styles.css?v=22">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -482,11 +482,14 @@ tailwind.config = { corePlugins: { preflight: false }, theme: { extend: { colors
       <h2>Built on a diagnostic mindset.</h2>
       <p>Every project starts the same way: with a question. What's actually failing? What does the system need? I don't build until I understand the problem — and I don't stop until the data confirms the fix.</p>
     </div>
-    <div class="method-cards">
-      <article class="method-card reveal" style="--accent:#1B2631;"><span>01</span><h3>Start with the system</h3><p>Understand the full context before touching any component. Symptoms live at the surface; causes live in the system.</p></article>
-      <article class="method-card reveal" style="--accent:#4F6B75;"><span>02</span><h3>Measure before cutting</h3><p>Quantify the problem. Data first, assumptions last. A number beats an opinion every time.</p></article>
-      <article class="method-card reveal" style="--accent:#3F4E4F;"><span>03</span><h3>Build to learn</h3><p>Physical prototypes reveal constraints that CAD models hide. Iteration is the process, not the failure.</p></article>
-      <article class="method-card reveal" style="--accent:#6B8E9E;"><span>04</span><h3>Document the deviation</h3><p>Anomalies are information. Record everything — the deviation you skip today becomes the root cause you chase tomorrow.</p></article>
+    <div class="method-scroller" data-method-scroller>
+      <div class="method-stage method-cards" data-method-stage>
+        <article class="method-card method-step reveal is-active" data-step="0" style="--accent:#1B2631;"><span>01</span><h3>Start with the system</h3><p>Understand the full context before touching any component. Symptoms live at the surface; causes live in the system.</p></article>
+        <article class="method-card method-step reveal" data-step="1" style="--accent:#4F6B75;"><span>02</span><h3>Measure before cutting</h3><p>Quantify the problem. Data first, assumptions last. A number beats an opinion every time.</p></article>
+        <article class="method-card method-step reveal" data-step="2" style="--accent:#3F4E4F;"><span>03</span><h3>Build to learn</h3><p>Physical prototypes reveal constraints that CAD models hide. Iteration is the process, not the failure.</p></article>
+        <article class="method-card method-step reveal" data-step="3" style="--accent:#6B8E9E;"><span>04</span><h3>Document the deviation</h3><p>Anomalies are information. Record everything — the deviation you skip today becomes the root cause you chase tomorrow.</p></article>
+      </div>
+      <div class="method-dots" data-method-dots aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
     </div>
   </div>
 </section>
@@ -517,5 +520,5 @@ tailwind.config = { corePlugins: { preflight: false }, theme: { extend: { colors
     <div class="command__links"><a href="index.html"><strong>Home</strong></a><a href="projects.html"><strong>Projects</strong></a><a href="project-thermogate.html"><strong>Thermogate</strong></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong></a><a href="project-rat-trap.html"><strong>Automated Rat Trap</strong></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong></a><a href="contact.html"><strong>Contact</strong></a></div>
   </div>
 </aside>
-<script src="motion.js?v=8" defer></script><script src="effects.js?v=3" defer></script>
+<script src="motion.js?v=8" defer></script><script src="effects.js?v=4" defer></script>
 </body></html>
