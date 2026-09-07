@@ -31,6 +31,15 @@
 .field input:focus,.field textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(63,78,79,.22)}
 @media(max-width:600px){.contact-card{flex-wrap:wrap}}
 
+/* ── Project pages: highlighted spec panel + inline contextual figures ─── */
+.spec-panel{border:1px solid var(--line);border-radius:18px;background:var(--paper-2);padding:1.6rem 1.75rem;box-shadow:0 12px 28px rgba(27,38,49,.14);margin-bottom:2rem}
+.spec-panel h2{margin:0 0 .75rem}
+.spec-panel ul{margin:0;padding-left:1.15rem;line-height:1.9;color:var(--ink-2)}
+.inline-figure{margin:1.5rem 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper-2);box-shadow:0 14px 32px rgba(27,38,49,.18)}
+.inline-figure img{width:100%;height:340px;object-fit:cover;display:block}
+.inline-figure figcaption{border-top:1px solid var(--line);padding:.7rem 1rem;font-weight:700;text-transform:uppercase;font-size:.75rem;letter-spacing:.06em;color:var(--muted)}
+@media(max-width:720px){.inline-figure img{height:220px}}
+
 /* ── Atlas Index trigger ─── */
 .atlas-open{display:inline-flex;align-items:center;justify-content:center;width:2.6rem;height:2.6rem;padding:0;font-size:20px}
 
