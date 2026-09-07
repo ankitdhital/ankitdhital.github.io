@@ -13,8 +13,143 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f5efe2">
 <link rel="stylesheet" href="styles.css?v=19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { corePlugins: { preflight: false }, theme: { extend: { colors: { 'graphite-subtle': '#5A6065', 'surface-variant': '#e7e2d8', 'surface-cream-raised': '#ECE6D8', 'cad-dark-surface': '#16181C', 'surface-cream': '#F6F1E7', 'on-surface': '#1d1c16', 'surface': '#fef9ef', 'surface-container-high': '#ede8de', 'secondary-container': '#ff5722', 'surface-container-low': '#f8f3e9', 'surface-container': '#f2ede3', 'spec-purple': '#6347D1', 'diagnostic-orange': '#FF5722', 'on-surface-variant': '#45474a', 'surface-container-lowest': '#ffffff', 'spec-blue': '#0D52BD', 'spec-teal': '#0E7C66', 'on-primary': '#ffffff', 'diagnostic-orange-soft': '#FFEFEA', 'surface-tint': '#5d5e62', 'primary': '#000000', 'graphite-text': '#121417', 'on-error': '#ffffff' }, spacing: { 'gutter-mobile': '16px', 'stack-xs': '4px', 'stack-sm': '8px', 'touch-min': '48px' }, minHeight: { 'touch': '48px' }, fontFamily: { 'headline-lg': ['Space Grotesk'], 'body-sm': ['Inter'], 'label-lg': ['JetBrains Mono'], 'headline-xl-mobile': ['Space Grotesk'], 'body-md': ['Inter'], 'headline-sm': ['Space Grotesk'], 'label-md': ['JetBrains Mono'], 'label-sm': ['JetBrains Mono'] }, fontSize: { 'headline-lg': ['26px', { lineHeight: '32px', letterSpacing: '-0.02em', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }], 'label-lg': ['12px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '600' }], 'headline-xl-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.025em', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '21px', fontWeight: '400' }], 'headline-sm': ['17px', { lineHeight: '22px', letterSpacing: '-0.01em', fontWeight: '600' }], 'label-md': ['11px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '500' }], 'label-sm': ['10px', { lineHeight: '13px', letterSpacing: '0.1em', fontWeight: '500' }] } } } };
+</script>
+<style>
+#mobile-home{display:none}
+#mobile-home,#mobile-home *,#mobile-home *::before,#mobile-home *::after{box-sizing:border-box}
+#mobile-home h1,#mobile-home h2,#mobile-home h3,#mobile-home p,#mobile-home figure,#mobile-home ul{margin:0}
+#mobile-home ul{padding:0;list-style:none}
+#mobile-home button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+#mobile-home a{text-decoration:none}
+#mobile-home img{max-width:100%;display:block}
+@media (max-width:767px){
+  #mobile-home{display:block}
+  .topbar, body > main, .footer{display:none}
+}
+</style>
 </head>
 <body>
+<div id="mobile-home">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-stack-sm"><div class="w-9 h-9 bg-graphite-text text-surface flex items-center justify-center rounded"><span class="font-label-lg text-label-lg tracking-tight">AD</span></div><div class="flex flex-col"><div class="flex items-center gap-stack-xs"><span class="font-headline-sm text-headline-sm text-graphite-text font-bold leading-none">Ankit Dhital</span><span class="font-label-sm text-label-sm bg-surface-variant text-graphite-subtle px-1.5 py-0.5 rounded">BYU–I</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-diagnostic-orange animate-pulse"></span><span class="font-label-sm text-label-sm text-graphite-subtle tracking-wide uppercase">Open to Roles</span></div></div></div><div class="flex items-center gap-stack-sm"><a href="about.html" aria-label="Profile" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header>
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface">
+
+<section class="relative w-full h-64 overflow-hidden">
+  <img class="w-full h-full object-cover" alt="Thermogate front view" src="assets/webp/thermogate-front.webp">
+  <div class="absolute top-4 left-4 bg-graphite-text/80 text-surface font-label-sm text-label-sm px-2.5 py-1 rounded backdrop-blur-sm uppercase tracking-wide">Mechatronics</div>
+</section>
+
+<section class="px-gutter-mobile pt-5 pb-1 flex flex-col space-y-2">
+  <p class="font-label-sm text-label-sm text-graphite-subtle uppercase tracking-wide">Electronics Integration · Solo Build</p>
+  <h1 class="font-headline-lg text-headline-lg font-bold text-graphite-text">Thermogate</h1>
+  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C. Designed in SolidWorks, 3D printed, and programmed end-to-end, with keypad control, an LCD, and color-coded feedback.</p>
+</section>
+
+<section class="px-gutter-mobile py-4 flex flex-wrap gap-2">
+  <span class="font-label-sm text-label-sm bg-diagnostic-orange-soft text-diagnostic-orange px-2.5 py-1.5 rounded font-semibold uppercase">±2°C Setpoint Target</span>
+  <span class="font-label-sm text-label-sm bg-surface-container-high text-graphite-text px-2.5 py-1.5 rounded font-medium">Temperature Sensing</span>
+  <span class="font-label-sm text-label-sm bg-surface-container-high text-graphite-text px-2.5 py-1.5 rounded font-medium">Actuation</span>
+  <span class="font-label-sm text-label-sm bg-surface-container-high text-graphite-text px-2.5 py-1.5 rounded font-medium">Control Logic</span>
+  <span class="font-label-sm text-label-sm bg-surface-container-high text-graphite-text px-2.5 py-1.5 rounded font-medium">Arduino</span>
+  <span class="font-label-sm text-label-sm bg-surface-container-high text-graphite-text px-2.5 py-1.5 rounded font-medium">SolidWorks</span>
+  <span class="font-label-sm text-label-sm bg-surface-container-high text-graphite-text px-2.5 py-1.5 rounded font-medium">3D Printing</span>
+</section>
+
+<section class="px-gutter-mobile pb-2">
+  <div class="grid grid-cols-2 gap-3">
+    <div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col space-y-1">
+      <span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Role</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Solo builder</span>
+    </div>
+    <div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col space-y-1">
+      <span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Controller</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-graphite-text">Arduino Uno R3</span>
+    </div>
+    <div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col space-y-1">
+      <span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Interface</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-graphite-text">LCD · keypad · RGB</span>
+    </div>
+    <div class="bg-surface-container-low p-3.5 rounded-lg shadow-sm flex flex-col space-y-1">
+      <span class="font-label-sm text-label-sm text-graphite-subtle uppercase">Accuracy</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-graphite-text">±2°C</span>
+    </div>
+  </div>
+</section>
+
+<section class="px-gutter-mobile py-5 flex flex-col space-y-4">
+  <div class="bg-surface-container-lowest p-4 rounded-xl shadow-md">
+    <h2 class="font-headline-sm text-headline-sm font-bold text-graphite-text mb-2">Key Specs</h2>
+    <ul class="flex flex-col space-y-2">
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Build: solo — CAD, 3D printing, wiring, and code</span></li>
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Controller: Arduino Uno R3 · ~10 components</span></li>
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Control: closed-loop feedback — continuously senses and corrects</span></li>
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Sensing &amp; accuracy: thermistor, ±2°C</span></li>
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Actuation: DC fan — rotation direction sets heating vs. cooling</span></li>
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Interface: keypad input · LCD readout · RGB status light (red / yellow / green)</span></li>
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Extras: digital clock, alarm, music player, °C↔°F converter</span></li>
+      <li class="flex gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="text-diagnostic-orange font-bold">•</span><span>Use cases: room ventilation, electronics cooling, greenhouse climate control</span></li>
+    </ul>
+  </div>
+
+  <div class="flex flex-col space-y-2">
+    <h2 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Overview</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Thermogate is a temperature-controlled vent system I designed and built entirely on my own — from the SolidWorks enclosure and 3D-printed parts to the wiring and the Arduino code. A thermistor reads the ambient temperature, and the Arduino drives a DC fan in a closed feedback loop to hold a target setpoint within ±2°C, continuously comparing the live reading against the setpoint and correcting; the fan's rotation direction determines whether it works to raise or lower the temperature. The user sets the target on a keypad, an LCD shows the time, setpoint, and live reading, and an RGB LED signals status at a glance — red for hot, yellow as it approaches, green once it's at temperature. It's built to be useful anywhere temperature matters: room ventilation, electronics cooling, or greenhouse climate control.</p>
+  </div>
+
+  <figure class="rounded-lg overflow-hidden bg-surface-container">
+    <img class="w-full h-48 object-cover" alt="Thermogate annotated component diagram" src="assets/webp/thermogate-annotated.webp">
+    <figcaption class="font-label-sm text-label-sm text-graphite-subtle px-3 py-2">Annotated component layout</figcaption>
+  </figure>
+
+  <div class="flex flex-col space-y-2">
+    <h2 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Problem</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">The goal was a single device that could sense temperature and respond to it automatically, accurately, and clearly enough for someone to actually use. That meant tying a live sensor reading to a physical action in a closed feedback loop, giving the user a simple way to set and monitor the target, and packing everything into a compact, serviceable enclosure.</p>
+  </div>
+
+  <div class="flex flex-col space-y-2">
+    <h2 class="font-headline-sm text-headline-sm font-bold text-graphite-text">Process</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">I started from a concept sketch, modeled the enclosure in SolidWorks, and 3D printed the parts with tolerances in mind. I wired roughly ten components around an Arduino Uno R3 — thermistor, DC fan, LCD, keypad, and RGB LED — and wrote the control logic myself, leaning on AI to write and debug code as I went. Beyond the core temperature control, I layered in extra features to make it more useful and engaging: a digital clock, an alarm, a music player, and a °C-to-°F converter, with the RGB LED also pulsing to the music's pitch.</p>
+  </div>
+
+  <figure class="rounded-lg overflow-hidden bg-surface-container">
+    <img class="w-full h-48 object-cover" alt="Thermogate interior wiring" src="assets/webp/thermogate-interior.webp">
+    <figcaption class="font-label-sm text-label-sm text-graphite-subtle px-3 py-2">Interior wiring</figcaption>
+  </figure>
+
+  <div class="flex flex-col space-y-2">
+    <h2 class="font-headline-sm text-headline-sm font-bold text-graphite-text">What I Learned</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Three things turned out harder than they looked. Fitting all the wiring and components into a compact housing took careful planning. The thermistor had to stick out just far enough to read the room's temperature rather than the heat building up inside the enclosure — a small placement detail with a big effect on accuracy. And the closed-loop control had to spin the fan clockwise or counter-clockwise depending on whether the system needed to raise or lower the temperature. Getting all three right is what turned a wiring diagram into a device that actually holds a setpoint.</p>
+  </div>
+
+  <figure class="rounded-lg overflow-hidden bg-surface-container">
+    <img class="w-full h-48 object-cover" alt="Thermogate concept sketch" src="assets/webp/thermogate-sketch.webp">
+    <figcaption class="font-label-sm text-label-sm text-graphite-subtle px-3 py-2">Original concept sketch</figcaption>
+  </figure>
+</section>
+
+<section class="px-gutter-mobile pb-8 flex flex-col gap-3">
+  <a href="project-laser-cut-pattern.html" class="flex items-center justify-between bg-surface-container-low rounded-lg p-3.5 font-body-sm text-body-sm text-graphite-text font-semibold"><span>&larr; Laser-Cut Steel Tiger</span></a>
+  <a href="project-planetary-gear.html" class="flex items-center justify-between bg-surface-container-low rounded-lg p-3.5 font-body-sm text-body-sm text-graphite-text font-semibold"><span>Planetary Gear System &rarr;</span></a>
+  <a href="projects.html" class="inline-flex items-center justify-center min-h-touch bg-graphite-text text-on-primary rounded font-headline-sm text-headline-sm font-semibold shadow-md w-full py-3 mt-1">
+    <span>Back to all projects</span>
+    <span class="material-symbols-outlined text-[18px] ml-1.5">arrow_forward</span>
+  </a>
+</section>
+
+</main>
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"><div class="flex justify-around items-center h-16 px-gutter-mobile">
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="index.html"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-sm text-label-sm uppercase">Overview</span></a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-primary font-bold transition-colors" href="projects.html"><span class="material-symbols-outlined text-[20px]">precision_manufacturing</span><span class="font-label-sm text-label-sm uppercase">Projects</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="workbench.html"><span class="material-symbols-outlined text-[20px]">layers</span><span class="font-label-sm text-label-sm uppercase">CAD/Lab</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="contact.html"><span class="material-symbols-outlined text-[20px]">alternate_email</span><span class="font-label-sm text-label-sm uppercase">Contact</span></a>
+</div></nav>
+</div>
 <div class="paper-grain" aria-hidden="true"></div>
 <div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
 <header class="topbar" data-topbar>

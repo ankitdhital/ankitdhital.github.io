@@ -13,8 +13,54 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f5efe2">
 <link rel="stylesheet" href="styles.css?v=19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { corePlugins: { preflight: false }, theme: { extend: { colors: { 'graphite-subtle': '#5A6065', 'surface-variant': '#e7e2d8', 'surface-cream-raised': '#ECE6D8', 'cad-dark-surface': '#16181C', 'surface-cream': '#F6F1E7', 'on-surface': '#1d1c16', 'surface': '#fef9ef', 'surface-container-high': '#ede8de', 'secondary-container': '#ff5722', 'surface-container-low': '#f8f3e9', 'surface-container': '#f2ede3', 'spec-purple': '#6347D1', 'diagnostic-orange': '#FF5722', 'on-surface-variant': '#45474a', 'surface-container-lowest': '#ffffff', 'spec-blue': '#0D52BD', 'spec-teal': '#0E7C66', 'on-primary': '#ffffff', 'diagnostic-orange-soft': '#FFEFEA', 'surface-tint': '#5d5e62', 'primary': '#000000', 'graphite-text': '#121417', 'on-error': '#ffffff' }, spacing: { 'gutter-mobile': '16px', 'stack-xs': '4px', 'stack-sm': '8px', 'touch-min': '48px' }, minHeight: { 'touch': '48px' }, fontFamily: { 'headline-lg': ['Space Grotesk'], 'body-sm': ['Inter'], 'label-lg': ['JetBrains Mono'], 'headline-xl-mobile': ['Space Grotesk'], 'body-md': ['Inter'], 'headline-sm': ['Space Grotesk'], 'label-md': ['JetBrains Mono'], 'label-sm': ['JetBrains Mono'] }, fontSize: { 'headline-lg': ['26px', { lineHeight: '32px', letterSpacing: '-0.02em', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }], 'label-lg': ['12px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '600' }], 'headline-xl-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.025em', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '21px', fontWeight: '400' }], 'headline-sm': ['17px', { lineHeight: '22px', letterSpacing: '-0.01em', fontWeight: '600' }], 'label-md': ['11px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '500' }], 'label-sm': ['10px', { lineHeight: '13px', letterSpacing: '0.1em', fontWeight: '500' }] } } } };
+</script>
+<style>
+#mobile-home{display:none}
+#mobile-home,#mobile-home *,#mobile-home *::before,#mobile-home *::after{box-sizing:border-box}
+#mobile-home h1,#mobile-home h2,#mobile-home h3,#mobile-home p,#mobile-home figure,#mobile-home ul{margin:0}
+#mobile-home ul{padding:0;list-style:none}
+#mobile-home button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+#mobile-home a{text-decoration:none}
+#mobile-home img{max-width:100%;display:block}
+@media (max-width:767px){
+  #mobile-home{display:block}
+  .topbar, body > main, .footer{display:none}
+}
+</style>
 </head>
 <body>
+<div id="mobile-home">
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-stack-sm"><div class="w-9 h-9 bg-graphite-text text-surface flex items-center justify-center rounded"><span class="font-label-lg text-label-lg tracking-tight">AD</span></div><div class="flex flex-col"><div class="flex items-center gap-stack-xs"><span class="font-headline-sm text-headline-sm text-graphite-text font-bold leading-none">Ankit Dhital</span><span class="font-label-sm text-label-sm bg-surface-variant text-graphite-subtle px-1.5 py-0.5 rounded">BYU–I</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-diagnostic-orange animate-pulse"></span><span class="font-label-sm text-label-sm text-graphite-subtle tracking-wide uppercase">Open to Roles</span></div></div></div><div class="flex items-center gap-stack-sm"><a href="about.html" aria-label="Profile" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></a></div></div></header>
+<main class="flex-1 flex flex-col relative w-full min-h-screen pt-16 pb-24 bg-surface">
+
+<section class="px-gutter-mobile pt-14 pb-10 flex flex-col items-center justify-center text-center space-y-5 flex-1">
+<div class="w-20 h-20 rounded-full bg-cad-dark-surface flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-diagnostic-orange text-[40px]">explore_off</span>
+</div>
+<span class="font-label-lg text-label-lg text-graphite-subtle uppercase tracking-wider">Error 404</span>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-graphite-text tracking-tight font-bold">This page fell out of the atlas.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">The link may have moved. Jump back to the project atlas or open the home page.</p>
+<div class="grid grid-cols-2 gap-3 w-full pt-2">
+<a href="index.html" class="flex items-center justify-center min-h-touch bg-graphite-text text-on-primary rounded font-body-md font-semibold px-4 shadow-md transition-transform active:scale-95">Home</a>
+<a href="projects.html" class="flex items-center justify-center min-h-touch bg-surface-cream-raised text-graphite-text rounded font-body-md font-semibold px-4 shadow-sm transition-transform active:scale-95">Projects</a>
+</div>
+</section>
+
+</main>
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"><div class="flex justify-around items-center h-16 px-gutter-mobile">
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="index.html"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-sm text-label-sm uppercase">Overview</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="projects.html"><span class="material-symbols-outlined text-[20px]">precision_manufacturing</span><span class="font-label-sm text-label-sm uppercase">Projects</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="workbench.html"><span class="material-symbols-outlined text-[20px]">layers</span><span class="font-label-sm text-label-sm uppercase">CAD/Lab</span></a>
+<a class="flex flex-col items-center justify-center gap-1 min-w-[48px] min-h-touch text-on-surface-variant transition-colors" href="contact.html"><span class="material-symbols-outlined text-[20px]">alternate_email</span><span class="font-label-sm text-label-sm uppercase">Contact</span></a>
+</div></nav>
+</div>
 <div class="paper-grain" aria-hidden="true"></div>
 <div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
 <header class="topbar" data-topbar>
