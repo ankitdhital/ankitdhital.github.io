@@ -50,7 +50,7 @@
   }));
 
   if (!reduce) {
-    $$('.atlas-card, .method-card, .workbench-card').forEach((card, idx) => {
+    $$('.atlas-card:not([data-fan-card]), .method-card, .workbench-card').forEach((card, idx) => {
       card.style.setProperty('--tilt', `${(idx % 2 ? 1 : -1) * 0.8}deg`);
       card.addEventListener('pointermove', (e) => {
         const r = card.getBoundingClientRect();
@@ -62,6 +62,71 @@
       });
       card.addEventListener('pointerleave', () => card.style.transform = '');
     });
+  }
+
+  // Featured cards: pinned scroll-scrub. Cards start stacked dead-center
+  // (overlapping the middle card) and translate/scale out to their own
+  // natural grid slot as the user scrolls through the tall `.feature-fan`
+  // spacer — progress 0 = fully stacked, progress 1 = exactly aligned to
+  // the untouched CSS grid layout, so the landing is always pixel-perfect.
+  const fan = $('[data-feature-fan]');
+  if (fan) {
+    const fanCards = $$('[data-fan-card]', fan);
+    const desktopMq = matchMedia('(min-width:981px)');
+    let starts = [];
+    let scrubbing = false;
+
+    const measure = () => {
+      fanCards.forEach(c => { c.style.transform = ''; });
+      const rects = fanCards.map(c => c.getBoundingClientRect());
+      const mid = rects[1];
+      const midCenter = { x: mid.left + mid.width / 2, y: mid.top + mid.height / 2 };
+      starts = rects.map((r, i) => {
+        if (i === 1) return { dx: 0, dy: 0, scale: .88 };
+        const center = { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+        return { dx: midCenter.x - center.x, dy: midCenter.y - center.y, scale: .8 };
+      });
+    };
+
+    const apply = (progress) => {
+      fanCards.forEach((card, i) => {
+        const s = starts[i];
+        const dx = s.dx * (1 - progress);
+        const dy = s.dy * (1 - progress);
+        const scale = s.scale + (1 - s.scale) * progress;
+        card.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+        card.style.zIndex = i === 1 ? 3 : 1;
+      });
+    };
+
+    const update = () => {
+      if (!scrubbing) return;
+      const rect = fan.getBoundingClientRect();
+      const total = fan.offsetHeight - innerHeight;
+      const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 1;
+      apply(progress);
+    };
+
+    const setup = () => {
+      if (reduce || !desktopMq.matches) {
+        scrubbing = false;
+        fanCards.forEach(c => { c.style.transform = ''; c.style.zIndex = ''; });
+        return;
+      }
+      scrubbing = true;
+      measure();
+      update();
+    };
+
+    addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', setup);
+    setup();
+    // Re-measure once everything (webfonts, images) has actually settled —
+    // a measurement taken too early can catch the grid mid-reflow. `load`
+    // may already have fired by the time this deferred script runs, so
+    // don't rely on the event alone.
+    if (document.readyState === 'complete') setTimeout(setup, 50);
+    else addEventListener('load', () => setTimeout(setup, 50));
   }
 
   const command = $('[data-command]');
