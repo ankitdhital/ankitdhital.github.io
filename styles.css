@@ -75,6 +75,14 @@
 
 /* Section intro paragraph reads as a subheading, not muted body copy */
 .section-head p:last-child{font-size:1.05rem;line-height:1.6;color:var(--ink-2);font-weight:500}
+
+/* Featured-work heading stacks (kicker / title / subheading) instead of
+   the 3-column layout used elsewhere, so there's clear blank space
+   before the card row below it. */
+.feature-fan__stage .section-head{display:block}
+.feature-fan__stage .section-head .kicker{margin-bottom:.9rem}
+.feature-fan__stage .section-head h2{margin:0 0 1rem}
+.feature-fan__stage .section-head p:last-child{max-width:680px}
 @media(max-width:980px){
   .feature-fan{height:auto}
   .feature-fan__stage{position:static;top:auto;min-height:0;display:block}
