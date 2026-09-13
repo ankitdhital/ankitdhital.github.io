@@ -6,9 +6,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
 <title>Electronic Fin Design — Ankit Dhital</title>
 <link rel="canonical" href="https://ankitdhital.com/study-electronic-fin.html">
-<meta name="description" content="A design study exploring electronically controlled fin behavior and mechanical/electrical integration.">
+<meta name="description" content="A transient thermal model comparing fin geometries in Python; a triangular fin at 20% coverage kept the peak temperature at 46.3 °C.">
 <meta property="og:title" content="Electronic Fin Design — Ankit Dhital">
-<meta property="og:description" content="A design study exploring electronically controlled fin behavior and mechanical/electrical integration.">
+<meta property="og:description" content="A transient thermal model comparing fin geometries in Python; a triangular fin at 20% coverage kept the peak temperature at 46.3 °C.">
 <meta property="og:image" content="https://ankitdhital.com/assets/og-atlas-card.jpg">
 <meta property="og:url" content="https://ankitdhital.com/study-electronic-fin.html">
 <meta property="og:type" content="website">
@@ -31,7 +31,7 @@
 </div>
 </header>
 <main class="">
-<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">Mechanical Design</p><h1 data-split-text>Electronic Fin Design</h1></div><p class="lead reveal">A mechanical design study exploring the design and evaluation of an electronic fin concept.</p></div></section>
+<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">Mechanical Design</p><h1 data-split-text>Electronic Fin Design</h1></div><p class="lead reveal">A transient thermal model comparing fin geometries in Python, used to pick a fin that stays safe under a heat load while minimizing mass and cost.</p></div></section>
 <section class="section pt-0">
   <div class="wrap">
     <div class="reveal" style="max-width:860px;">
@@ -40,20 +40,20 @@
         <a class="btn btn--ink" href="pdfs/electronic-fin-design.pdf" target="_blank" rel="noopener">Open PDF</a>
         <a class="btn btn--paper" href="studies.html">Back to studies</a>
       </div>
-      <div class="fact-grid reveal" style="margin-bottom:2rem;"><article><span>Area</span><b>Mechanical Design</b></article><article><span>Type</span><b>Design Study</b></article><article><span>Domain</span><b>Electronics / Fins</b></article><article><span>Context</span><b>BYU–Idaho Coursework</b></article></div>
+      <div class="fact-grid reveal" style="margin-bottom:2rem;"><article><span>Model</span><b>Lumped-capacitance</b></article><article><span>Tool</span><b>Python simulation</b></article><article><span>Result</span><b>46.3 °C peak</b></article><article><span>Selected</span><b>Triangular, 20% coverage</b></article></div>
     </div>
     <iframe src="pdfs/electronic-fin-design.pdf" title="Electronic Fin Design — Ankit Dhital" style="width:100%; height:600px; border:1px solid var(--line); border-radius:18px; margin-bottom:2rem;"></iframe>
     <div class="reveal" style="max-width:860px;">
       <h2>Topic Overview</h2>
-      <p>This study covers the mechanical design and evaluation of an electronic fin concept — examining geometry, material selection, and integration constraints relevant to fin-based electronic systems.</p>
+      <p>A transient thermal analysis of an electronic fin, using a lumped-capacitance model — valid because the Biot number is under 0.1, meaning conduction inside the fin happens much faster than convection can carry heat away to the surrounding air.</p>
       <h2>Objective</h2>
-      <p>Develop and document a fin design that meets both structural and thermal/electronic performance requirements, using engineering analysis to support design decisions.</p>
+      <p>Model the fin's transient heating and cooling response, then compare fin geometries and coverage levels to find one that stays under a safe peak temperature while minimizing material mass and manufacturing cost.</p>
       <h2>Method</h2>
-      <p>The study applies mechanical design principles to evaluate fin geometry and configuration against performance criteria, drawing on coursework in materials and design methodology.</p>
+      <p>The transient response follows an energy balance, Q<sub>in</sub> − Q<sub>out</sub> = mc(dT/dt), solved analytically for both the heating case (with a heat input Q) and the passive cooling case (Q = 0). I implemented this model in Python to simulate rectangular and triangular fin geometries at different surface coverage levels, comparing their temperature, mass, and thermal efficiency.</p>
       <h2>Key Insight</h2>
-      <p>Designing fins for electronic applications requires balancing competing constraints — surface area for thermal management, structural rigidity for mounting, and form factor for integration — making it a useful exercise in constraint-driven mechanical design.</p>
+      <p>Triangular fins outperformed the alternatives, but high coverage could still push the transient peak above 50 °C. A triangular fin at 20% coverage held the peak to 46.3 °C, and was selected over the higher-coverage options for that safe peak temperature, its lower material mass, lower manufacturing cost, and a more stable transient response.</p>
       <div class="tag-row" style="margin-top:1.5rem;">
-        <span>Mechanical Design</span><span>Fin Design</span><span>Electronics</span><span>Thermal Management</span><span>Design Study</span>
+        <span>Thermal Analysis</span><span>Fin Design</span><span>Python</span><span>Transient Modeling</span>
       </div>
       <div style="display:flex; justify-content:space-between; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--line);">
         <a class="btn btn--paper" href="study-cpr-pulsemate.html">← CPR PulseMate</a>
