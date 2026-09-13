@@ -65,16 +65,23 @@
   }
 
   // Featured cards: pinned scroll-scrub. Cards start stacked dead-center
-  // (overlapping the middle card) and translate/scale out to their own
-  // natural grid slot as the user scrolls through the tall `.feature-fan`
-  // spacer — progress 0 = fully stacked, progress 1 = exactly aligned to
-  // the untouched CSS grid layout, so the landing is always pixel-perfect.
+  // (overlapping the middle card, fanned open a few degrees like a hand of
+  // cards) and translate/rotate/scale out to their own natural grid slot as
+  // the user scrolls through the tall `.feature-fan` spacer — progress 0 =
+  // fully stacked, progress 1 = exactly aligned to the untouched CSS grid
+  // layout, so the landing is always pixel-perfect. Progress is eased
+  // (easeOutCubic) so the cards settle into place rather than tracking the
+  // scrollbar 1:1, and the scroll handler is rAF-batched so a burst of
+  // scroll events only ever produces one style write per frame.
   const fan = $('[data-feature-fan]');
   if (fan) {
     const fanCards = $$('[data-fan-card]', fan);
     const desktopMq = matchMedia('(min-width:981px)');
+    const FAN_ROTATION = [-6, 0, 6]; // degrees, stacked (progress 0) -> 0deg once landed
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
     let starts = [];
     let scrubbing = false;
+    let queued = false;
 
     const measure = () => {
       fanCards.forEach(c => { c.style.transform = ''; });
@@ -82,24 +89,27 @@
       const mid = rects[1];
       const midCenter = { x: mid.left + mid.width / 2, y: mid.top + mid.height / 2 };
       starts = rects.map((r, i) => {
-        if (i === 1) return { dx: 0, dy: 0, scale: .88 };
+        if (i === 1) return { dx: 0, dy: 0, scale: .88, rot: FAN_ROTATION[i] };
         const center = { x: r.left + r.width / 2, y: r.top + r.height / 2 };
-        return { dx: midCenter.x - center.x, dy: midCenter.y - center.y, scale: .8 };
+        return { dx: midCenter.x - center.x, dy: midCenter.y - center.y, scale: .8, rot: FAN_ROTATION[i] };
       });
     };
 
     const apply = (progress) => {
+      const eased = easeOutCubic(progress);
       fanCards.forEach((card, i) => {
         const s = starts[i];
-        const dx = s.dx * (1 - progress);
-        const dy = s.dy * (1 - progress);
-        const scale = s.scale + (1 - s.scale) * progress;
-        card.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+        const dx = s.dx * (1 - eased);
+        const dy = s.dy * (1 - eased);
+        const scale = s.scale + (1 - s.scale) * eased;
+        const rot = s.rot * (1 - eased);
+        card.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px) rotate(${rot.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
         card.style.zIndex = i === 1 ? 3 : 1;
       });
     };
 
-    const update = () => {
+    const compute = () => {
+      queued = false;
       if (!scrubbing) return;
       const rect = fan.getBoundingClientRect();
       const total = fan.offsetHeight - innerHeight;
@@ -107,15 +117,24 @@
       apply(progress);
     };
 
+    // rAF-batch: a fast trackpad/mouse-wheel fling can fire dozens of
+    // `scroll` events per frame — only the last one before paint matters.
+    const update = () => {
+      if (!scrubbing || queued) return;
+      queued = true;
+      requestAnimationFrame(compute);
+    };
+
     const setup = () => {
       if (reduce || !desktopMq.matches) {
         scrubbing = false;
-        fanCards.forEach(c => { c.style.transform = ''; c.style.zIndex = ''; });
+        fanCards.forEach(c => { c.style.transform = ''; c.style.zIndex = ''; c.style.willChange = ''; });
         return;
       }
       scrubbing = true;
+      fanCards.forEach(c => { c.style.willChange = 'transform'; });
       measure();
-      update();
+      compute();
     };
 
     addEventListener('scroll', update, { passive: true });
