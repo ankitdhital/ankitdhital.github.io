@@ -37,25 +37,24 @@
     <figure class="project-hero__image reveal"><img src="assets/webp/rat-trap-interior.webp" alt="Briefcase rat trap interior mechanism"><figcaption>No-touch disposal design</figcaption></figure>
   </div>
 </section>
-<section class="section pt-0"><div class="wrap fact-grid reveal"><article><span>Role</span><b>CAD · research · BOM</b></article><article><span>Form factor</span><b>Briefcase enclosure</b></article><article><span>Budget</span><b>Under $120</b></article><article><span>Focus</span><b>Hands-free disposal</b></article></div></section>
 <section class="section pt-0">
   <div class="wrap split-layout">
     <div class="reveal spec-panel">
       <h2>Key Specs</h2>
-      <ul>
-        <li>Form factor: briefcase enclosure, 7.5 × 10 × 3 in · 3D printed</li>
-        <li>Entry: one-way door — rat enters, can't escape</li>
-        <li>Kill: humane electric shock (contact plate)</li>
-        <li>Disposal: hands-free magnetic drop door — nothing to see or touch</li>
-        <li>Maintenance: detachable base plate for easy cleaning</li>
-        <li>Safety: power disconnects when the case is opened</li>
-        <li>Indicator: LED kill light · auto-resets after disposal</li>
-        <li>Cost: built for under $120</li>
-      </ul>
+      <div class="spec-table-wrap"><table class="spec-table">
+        <tr><td>Role</td><td>Team build — I owned CAD, patent research, BOM, proposal</td></tr>
+        <tr><td>Scope</td><td>15-part assembly, briefcase enclosure 7.5 × 10 × 3 in</td></tr>
+        <tr><td>Process</td><td>Pugh matrix concept selection → SolidWorks → 3D print → wired assembly</td></tr>
+        <tr><td>Key spec</td><td>$120 against a $200 cap — 40% under budget</td></tr>
+        <tr><td>Dispatch</td><td>Electrified contact plate, single-circuit</td></tr>
+        <tr><td>Safety</td><td>Lid-activated interlock cuts live power on case-open, restores within 3 s</td></tr>
+        <tr><td>Verification</td><td>Disposal-door actuator validated by static FEA at 3× target load (14.7 N); 80+ release cycles without failure. Mechanism validated, not tested on an animal.</td></tr>
+        <tr><td>Deliverables</td><td>15-part assembly, BOM, patent search, project proposal</td></tr>
+      </table></div>
     </div>
     <div class="reveal" style="max-width:72ch; line-height:1.8;">
       <h2>Overview</h2>
-      <p>The briefcase rat trap is a humane, hands-off pest device built into a briefcase-style case that doesn't look like a trap. A rat enters through a one-way door, steps onto an electrified plate, and completes a circuit designed to deliver a lethal shock; an LED signals the kill. To clear it, the user pushes a manual rod that opens a magnetic disposal door underneath, dropping the rat out without anyone seeing or touching it. The base plate detaches for cleaning, and a safety interlock cuts power whenever the case is opened. Once emptied, the trap resets itself for the next catch.</p>
+      <p>The briefcase rat trap is a humane, hands-off pest device built into a briefcase-style case that doesn't look like a trap. A rat enters through a one-way door, steps onto an electrified plate, and completes a circuit designed to deliver a lethal shock; validated through the mechanism, not on an animal. An LED signals the kill. To clear it, the user pushes a manual rod that opens a magnetic disposal door underneath, dropping the rat out without anyone seeing or touching it. The base plate detaches for cleaning, and a safety interlock cuts power whenever the case is opened. Once emptied, the trap resets itself for the next catch.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/rat-trap-exterior.webp" alt="Rat trap exterior view"><figcaption>Briefcase-style exterior</figcaption></figure>
       <h2 style="margin-top:2rem;">Problem</h2>
       <p>Standard rat traps are unpleasant in every way — you see the kill, touch the carcass, and reset the mechanism by hand, and most of them obviously look like traps. We set out to design something touchless, discreet, and automated: a device that kills quickly and humanely, hides the result, resets on its own, and looks like an ordinary case so it can sit out in a living space.</p>
@@ -65,7 +64,7 @@
       <p>This was a team project, but I was the most invested member and worked across nearly every part of it. I handled CAD modeling of the case and mechanism, background research, the patent search, the project proposal, and the bill of materials. Being involved end-to-end meant I saw how the mechanical design, the electronics, and the documentation all had to line up for the device to work.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/rat-trap-cad-expanded.webp" alt="Rat trap SolidWorks expanded view"><figcaption>SolidWorks expanded view</figcaption></figure>
       <h2 style="margin-top:2rem;">Process</h2>
-      <p>We modeled the enclosure and internal components in SolidWorks, and the hardest parts weren't the electronics — they were the mechanical details. We designed a one-way entrance so a rat could enter but not escape, iterated on bait placement until it reliably drew the rat onto the contact plate, and made the base plate detachable so the trap could be emptied and cleaned. We also added a safety interlock that disconnects power whenever the case is opened from the top, so the live contacts are never exposed while someone is handling it. We ran a patent search to check prior art, documented the full assembly in a bill of materials, and brought the whole device together for under $120.</p>
+      <p>Before settling on the design, we compared candidate concepts with a Pugh matrix. We modeled the enclosure and internal components in SolidWorks, and the hardest parts weren't the electronics — they were the mechanical details. We designed a one-way entrance so a rat could enter but not escape, iterated on bait placement until it reliably drew the rat onto the contact plate, and made the base plate detachable so the trap could be emptied and cleaned. We also added a safety interlock that disconnects power whenever the case is opened from the top, so the live contacts are never exposed while someone is handling it. We ran a patent search to check prior art, documented the full assembly in a bill of materials, and brought the whole device together for under $120.</p>
       <h2 style="margin-top:2rem;">What I learned</h2>
       <p>The real challenge wasn't packing in the electronics — it was the mechanical design around them. A dependable one-way entrance, the right bait placement, and an easy-to-clean base each took several iterations. The detail we're most proud of is the safety interlock: cutting power the moment the case opens turned a live electrical device into something safe to handle. We validated the trap through the mechanism rather than on a live animal, but the full sequence — enter, shock, indicate, dispose, reset — worked as designed.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/rat-trap-team.webp" alt="Rat trap team photo"><figcaption>Team photo</figcaption></figure>

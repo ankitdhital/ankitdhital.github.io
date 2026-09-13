@@ -35,7 +35,7 @@
 .spec-panel{border:1px solid var(--line);border-radius:18px;background:var(--paper-2);padding:1.6rem 1.75rem;box-shadow:0 12px 28px rgba(27,38,49,.14);position:sticky;top:130px}
 @media(max-width:980px){.spec-panel{position:static;top:auto}}
 .spec-panel h2{margin:0 0 .75rem}
-.spec-panel ul{margin:0;padding-left:1.15rem;line-height:1.9;color:var(--ink-2)}
+.spec-panel ul{margin:0;padding-left:1.15rem;line-height:1.9;color:var(--ink-2)}.spec-table-wrap{overflow-x:auto}.spec-table{width:100%;border-collapse:collapse}.spec-table tr:not(:last-child) td{border-bottom:1px solid var(--line)}.spec-table td{padding:.7rem 0;vertical-align:top}.spec-table td:first-child{font:800 .72rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);white-space:nowrap;padding-right:1.5rem}.spec-table td:last-child{width:100%;color:var(--ink-2);font-variant-numeric:tabular-nums}
 .inline-figure{max-width:440px;margin:1.75rem auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper-2);box-shadow:0 14px 32px rgba(27,38,49,.18)}
 .inline-figure img{width:100%;height:auto;display:block}
 .inline-figure figcaption{border-top:1px solid var(--line);padding:.7rem 1rem;font-weight:700;text-transform:uppercase;font-size:.75rem;letter-spacing:.06em;color:var(--muted)}

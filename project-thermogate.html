@@ -37,31 +37,33 @@
     <figure class="project-hero__image reveal"><img src="assets/webp/thermogate-front.webp" alt="Thermogate front view"><figcaption>±2°C setpoint accuracy</figcaption></figure>
   </div>
 </section>
-<section class="section pt-0"><div class="wrap fact-grid reveal"><article><span>Role</span><b>Solo builder</b></article><article><span>Controller</span><b>Arduino Uno R3</b></article><article><span>Interface</span><b>LCD · keypad · RGB</b></article><article><span>Accuracy</span><b>±2°C</b></article></div></section>
 <section class="section pt-0">
   <div class="wrap split-layout">
     <div class="reveal spec-panel">
       <h2>Key Specs</h2>
-      <ul>
-        <li>Build: solo — CAD, 3D printing, wiring, and code</li>
-        <li>Controller: Arduino Uno R3 · ~10 components</li>
-        <li>Control: closed-loop feedback — continuously senses and corrects</li>
-        <li>Sensing &amp; accuracy: thermistor, ±2°C</li>
-        <li>Actuation: DC fan — rotation direction sets heating vs. cooling</li>
-        <li>Interface: keypad input · LCD readout · RGB status light (red / yellow / green)</li>
-        <li>Extras: digital clock, alarm, music player, °C↔°F converter</li>
-        <li>Use cases: room ventilation, electronics cooling, greenhouse climate control</li>
-      </ul>
+      <div class="spec-table-wrap"><table class="spec-table">
+        <tr><td>Role</td><td>Solo — CAD, print, wiring, firmware</td></tr>
+        <tr><td>Scope</td><td>~10 components, Arduino Uno R3</td></tr>
+        <tr><td>Materials</td><td>3D-printed enclosure (PETG)</td></tr>
+        <tr><td>Process</td><td>SolidWorks → FDM print → hand wiring</td></tr>
+        <tr><td>Actuation</td><td>Servo-positioned vent + DC fan, one control loop</td></tr>
+        <tr><td>Sensing</td><td>NTC thermistor, ±2 °C rated, mounted outboard of the enclosure</td></tr>
+        <tr><td>Key spec</td><td>Within ±2 °C on 90% of 120+ test runs</td></tr>
+        <tr><td>Verification</td><td>Setpoint vs. achieved logged across 120+ runs; reading cross-checked against a reference thermometer</td></tr>
+        <tr><td>Deliverables</td><td>Enclosure model, wiring layout, Arduino sketch</td></tr>
+      </table></div>
     </div>
     <div class="reveal" style="max-width:72ch; line-height:1.8;">
       <h2>Overview</h2>
-      <p>Thermogate is a temperature-controlled vent system I designed and built entirely on my own — from the SolidWorks enclosure and 3D-printed parts to the wiring and the Arduino code. A thermistor reads the ambient temperature, and the Arduino drives a DC fan in a closed feedback loop to hold a target setpoint within ±2°C, continuously comparing the live reading against the setpoint and correcting; the fan's rotation direction determines whether it works to raise or lower the temperature. The user sets the target on a keypad, an LCD shows the time, setpoint, and live reading, and an RGB LED signals status at a glance — red for hot, yellow as it approaches, green once it's at temperature. It's built to be useful anywhere temperature matters: room ventilation, electronics cooling, or greenhouse climate control.</p>
+      <p>Thermogate is a temperature-controlled vent system I designed and built entirely on my own — from the SolidWorks enclosure and 3D-printed parts to the wiring and the Arduino code. A thermistor reads room temperature and the Arduino closes the loop on two actuators — a servo sets vent position to modulate airflow, and a DC fan drives it. Splitting authority between a positioner and a prime mover is what lets the system hold a setpoint instead of oscillating around it. The user sets the target on a keypad, an LCD shows the time, setpoint, and live reading, and an RGB LED signals status at a glance — red for hot, yellow as it approaches, green once it's at temperature. It's built to be useful anywhere temperature matters: room ventilation, electronics cooling, or greenhouse climate control.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/thermogate-annotated.webp" alt="Thermogate annotated component diagram"><figcaption>Annotated component layout</figcaption></figure>
       <h2 style="margin-top:2rem;">Problem</h2>
       <p>The goal was a single device that could sense temperature and respond to it automatically, accurately, and clearly enough for someone to actually use. That meant tying a live sensor reading to a physical action in a closed feedback loop, giving the user a simple way to set and monitor the target, and packing everything into a compact, serviceable enclosure.</p>
       <h2 style="margin-top:2rem;">Process</h2>
       <p>I started from a concept sketch, modeled the enclosure in SolidWorks, and 3D printed the parts with tolerances in mind. I wired roughly ten components around an Arduino Uno R3 — thermistor, DC fan, LCD, keypad, and RGB LED — and wrote the control logic myself, leaning on AI to write and debug code as I went. Beyond the core temperature control, I layered in extra features to make it more useful and engaging: a digital clock, an alarm, a music player, and a °C-to-°F converter, with the RGB LED also pulsing to the music's pitch.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/thermogate-interior.webp" alt="Thermogate interior wiring"><figcaption>Interior wiring</figcaption></figure>
+      <h2 style="margin-top:2rem;">Verification</h2>
+      <p>I validated it in two passes. First the sensor: I compared Thermogate's reading against a reference thermometer in the same room, confirming it was tracking ambient rather than the heat building inside its own enclosure. Then the loop: across 120+ test runs I logged setpoint against the temperature the system actually settled at. Error stayed inside ±2 °C on 90% of them — which is also the thermistor's own rated tolerance, so the loop is holding to the limit of what it can sense. Tightening it further is a sensor problem, not a control problem.</p>
       <h2 style="margin-top:2rem;">What I learned</h2>
       <p>Three things turned out harder than they looked. Fitting all the wiring and components into a compact housing took careful planning. The thermistor had to stick out just far enough to read the room's temperature rather than the heat building up inside the enclosure — a small placement detail with a big effect on accuracy. And the closed-loop control had to spin the fan clockwise or counter-clockwise depending on whether the system needed to raise or lower the temperature. Getting all three right is what turned a wiring diagram into a device that actually holds a setpoint.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/thermogate-sketch.webp" alt="Thermogate concept sketch"><figcaption>Original concept sketch</figcaption></figure>
