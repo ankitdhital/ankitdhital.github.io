@@ -78,7 +78,7 @@
 .feature-fan{position:relative;height:200vh}
 .feature-fan__stage{position:sticky;top:88px;min-height:calc(100vh - 88px);display:flex;flex-direction:column;justify-content:center}
 .feature-fan__stage .atlas-grid--featured{margin:2.5rem 0 0}
-[data-fan-card]{will-change:transform}
+[data-fan-card]{will-change:transform;transition:box-shadow .34s var(--ease)}
 
 /* Section intro paragraph reads as a subheading, not muted body copy */
 .section-head p:last-child{font-size:1.05rem;line-height:1.6;color:var(--ink-2);font-weight:500}
