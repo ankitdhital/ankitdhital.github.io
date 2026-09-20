@@ -41,10 +41,17 @@
 .inline-figure figcaption{border-top:1px solid var(--line);padding:.7rem 1rem;font-weight:700;text-transform:uppercase;font-size:.75rem;letter-spacing:.06em;color:var(--muted)}
 
 
-/* ── Homepage featured cards: photo visible by default (no hover-reveal) ─── */
-.atlas-card--featured figure{clip-path:circle(100% at 50% 50%)}
+/* ── Homepage featured cards: image on top, title + two-line description
+   below it — no text-over-photo overlay. Card is a column (image, then
+   body); .feature-fan's scroll-scrub reads each card's live bounding box
+   at runtime, so this layout change doesn't need any JS changes. ─── */
+.atlas-card--featured{flex-direction:column;align-items:stretch;background:var(--paper-2)}
+.atlas-card--featured figure{position:relative;inset:auto;height:220px;clip-path:none}
 .atlas-card--featured img{transform:scale(1)}
 .atlas-card--featured:hover img{transform:scale(1.06)}
+.atlas-card--featured .atlas-card__body{gap:.6rem}
+.atlas-card--featured .atlas-card__body h3{text-shadow:none;font-size:1.35rem}
+.atlas-card--featured .atlas-card__body span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-size:.92rem;line-height:1.5}
 
 /* ── Atlas Index trigger ─── */
 .atlas-open{display:inline-flex;align-items:center;justify-content:center;width:2.6rem;height:2.6rem;padding:0;font-size:20px}
