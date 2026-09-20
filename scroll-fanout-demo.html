@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choose your path — scroll fan-out demo</title>
+<style>
+  :root{
+    --paper:#F0F4F8; --paper-2:#FFFFFF; --ink:#1B2631; --ink-2:#3F4E4F; --muted:#5C6D74;
+    --line:rgba(27,38,49,.16); --shadow:0 28px 70px rgba(27,38,49,.14); --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+
+  .spacer{height:40vh;display:grid;place-items:center;color:var(--muted);font-size:.95rem}
+
+  /* 1. Scroll-pinned container */
+  .scroll-container{
+    position:relative;
+    height:250vh;
+  }
+
+  /* Sticky child that stays pinned for the duration of the scroll track */
+  .sticky-wrapper{
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .sticky-wrapper h2{
+    margin:0 0 .6rem;
+    font-size:clamp(2rem,4vw,3rem);
+    font-weight:700;
+    letter-spacing:-.02em;
+  }
+  .sticky-wrapper p{
+    margin:0 0 3rem;
+    color:var(--muted);
+    max-width:520px;
+    font-size:1.05rem;
+  }
+
+  /* 2. Cards wrapper — a positioning context sized to fit the final 3-column layout */
+  .cards-wrapper{
+    position:relative;
+    width:min(1020px,92vw);
+    height:420px;
+  }
+
+  .card{
+    position:absolute;
+    top:0;
+    left:50%;
+    width:300px;
+    height:420px;
+    border-radius:20px;
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    will-change:transform;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .card__image{
+    height:55%;
+    background:linear-gradient(135deg,var(--img-a,#A5C8D6),var(--img-b,#4F6B75));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card__image span{
+    font-size:2.6rem;
+  }
+
+  .card__body{
+    padding:1.4rem 1.4rem 1.6rem;
+    display:flex;
+    flex-direction:column;
+    gap:.5rem;
+    flex:1;
+  }
+  .card__body p{
+    margin:0;
+    font-size:.7rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+  }
+  .card__body h3{
+    margin:0;
+    font-size:1.25rem;
+    line-height:1.2;
+    letter-spacing:-.01em;
+  }
+  .card__body a{
+    margin-top:auto;
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    font-weight:700;
+    font-size:.9rem;
+    color:var(--ink);
+    text-decoration:none;
+  }
+
+  .card--center{ z-index:3; }
+  .card--left  { z-index:2; }
+  .card--right { z-index:1; }
+
+  .spacer.bottom{height:60vh}
+
+  @media (prefers-reduced-motion: reduce){
+    .card{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="spacer">Scroll down ↓</div>
+
+<div class="scroll-container" data-scroll-container>
+  <div class="sticky-wrapper">
+    <h2>Choose your path</h2>
+    <p>Wherever you are in your career, there's a track built for you.</p>
+
+    <div class="cards-wrapper">
+      <article class="card card--left" data-card="left" style="--img-a:#A5C8D6;--img-b:#4F6B75;">
+        <div class="card__image"><span>🎓</span></div>
+        <div class="card__body">
+          <p>Track 01</p>
+          <h3>Students</h3>
+          <a href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card card--center" data-card="center" style="--img-a:#4F6B75;--img-b:#1B2631;">
+        <div class="card__image"><span>🚀</span></div>
+        <div class="card__body">
+          <p>Track 02</p>
+          <h3>Early to Mid Career Professionals</h3>
+          <a href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card card--right" data-card="right" style="--img-a:#85A8B5;--img-b:#3F4E4F;">
+        <div class="card__image"><span>🏆</span></div>
+        <div class="card__body">
+          <p>Track 03</p>
+          <h3>Experienced Professionals</h3>
+          <a href="#">Explore →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="spacer bottom">End of demo</div>
+
+<script>
+(() => {
+  const container = document.querySelector('[data-scroll-container]');
+  const left = document.querySelector('[data-card="left"]');
+  const center = document.querySelector('[data-card="center"]');
+  const right = document.querySelector('[data-card="right"]');
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let ticking = false;
+
+  function render(){
+    ticking = false;
+
+    const rect = container.getBoundingClientRect();
+    const containerHeight = container.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    // Normalized scroll progress through the pinned track, clamped to [0, 1]
+    const p = Math.max(0, Math.min(1, -rect.top / (containerHeight - windowHeight)));
+
+    if (reduce) {
+      // Land straight on the final layout when motion is reduced
+      center.style.transform = 'translate(-50%, 0) scale(1.05)';
+      left.style.transform   = 'translate(-160%, 0) scale(1)';
+      right.style.transform  = 'translate(60%, 0) scale(1)';
+      return;
+    }
+
+    // Center card: scale(0.9) -> scale(1.05), stays horizontally centered
+    const centerScale = 0.9 + (1.05 - 0.9) * p;
+    center.style.transform = `translate(-50%, 0) scale(${centerScale})`;
+
+    // Left card: hidden behind center -> fanned out to the left
+    const leftX = -50 + (-160 - -50) * p;      // -50%  ->  -160%
+    const leftScale = 0.85 + (1 - 0.85) * p;   // 0.85  ->  1
+    left.style.transform = `translate(${leftX}%, 0) scale(${leftScale})`;
+
+    // Right card: hidden behind center -> fanned out to the right
+    const rightX = -50 + (60 - -50) * p;       // -50%  ->  60%
+    const rightScale = 0.85 + (1 - 0.85) * p;  // 0.85  ->  1
+    right.style.transform = `translate(${rightX}%, 0) scale(${rightScale})`;
+  }
+
+  function onScroll(){
+    if (!ticking) {
+      requestAnimationFrame(render);
+      ticking = true;
+    }
+  }
+
+  addEventListener('scroll', onScroll, { passive:true });
+  addEventListener('resize', onScroll);
+  render();
+})();
+</script>
+
+</body>
+</html>
