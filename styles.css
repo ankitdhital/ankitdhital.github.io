@@ -98,3 +98,5 @@
   .feature-fan{height:auto}
   .feature-fan__stage{position:static;top:auto;min-height:0;display:block}
 }
+.experience-home .experience-summary{display:block;margin-top:.5rem;color:var(--muted);font:400 .95rem/1.5 Arial,sans-serif;text-transform:none;letter-spacing:normal;white-space:normal}
+.home-page .atlas-card--featured .atlas-card__body>span{-webkit-line-clamp:unset;overflow:visible}
