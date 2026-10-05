@@ -6,15 +6,15 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
 <title>4:1 Planetary Gearbox — Ankit Dhital</title>
 <link rel="canonical" href="https://ankitdhital.com/project-planetary-gear.html">
-<meta name="description" content="A complete SolidWorks design and physical build of a 4:1 planetary gearbox — from individual part models to a working assembly and exploded-view drawing.">
+<meta name="description" content="I designed a 4:1 planetary gearbox in SolidWorks and built a hand-cranked assembly with PETG gears and an acrylic housing. The build included an exploded-view drawing, a bill of materials, and a correction for fastener clearance.">
 <meta property="og:title" content="4:1 Planetary Gearbox — Ankit Dhital">
-<meta property="og:description" content="A complete SolidWorks design and physical build of a 4:1 planetary gearbox — from individual part models to a working assembly and exploded-view drawing.">
+<meta property="og:description" content="I designed a 4:1 planetary gearbox in SolidWorks and built a hand-cranked assembly with PETG gears and an acrylic housing. The build included an exploded-view drawing, a bill of materials, and a correction for fastener clearance.">
 <meta property="og:image" content="https://ankitdhital.com/assets/og-atlas-card.jpg">
 <meta property="og:url" content="https://ankitdhital.com/project-planetary-gear.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F0F4F8">
-<link rel="stylesheet" href="styles.css?v=42">
+<link rel="stylesheet" href="styles.css?v=43">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
 <main class="project-page">
 <section class="project-hero" style="--accent:#4F6B75;">
   <div class="wrap project-hero__grid">
-    <div><p class="kicker reveal">CAD · Fabrication · BYU–Idaho</p><h1 data-split-text>4:1 Planetary Gearbox</h1><p class="lead reveal">A complete SolidWorks design and physical build of a 4:1 planetary gearbox — from individual part models to a working assembly and exploded-view drawing.</p><div class="tag-row reveal"><span>SolidWorks</span><span>Gear Design</span><span>Assembly Modeling</span><span>Engineering Drawing</span><span>BOM</span><span>3D Printing</span></div></div>
+    <div><p class="kicker reveal">CAD · Fabrication · BYU–Idaho</p><h1 data-split-text>4:1 Planetary Gearbox</h1><p class="lead reveal">I designed a 4:1 planetary gearbox in SolidWorks and built a hand-cranked assembly with PETG gears and an acrylic housing. The build included an exploded-view drawing, a bill of materials, and a correction for fastener clearance.</p><div class="tag-row reveal"><span>SolidWorks</span><span>Gear Design</span><span>Assembly Modeling</span><span>Engineering Drawing</span><span>BOM</span><span>3D Printing</span></div></div>
     <figure class="project-hero__image reveal"><img src="assets/webp/planetary-gear-assembly.webp" alt="Planetary gear assembly"><figcaption>4:1 gear reduction</figcaption></figure>
   </div>
 </section>
@@ -45,22 +45,22 @@
         <tr><td>Role</td><td>Solo</td></tr>
         <tr><td>Scope</td><td>12 parts — 12T sun, three 12T planets, 36T ring · 5–6 design iterations</td></tr>
         <tr><td>Materials</td><td>PETG gears (3D printed) · laser-cut acrylic housing</td></tr>
-        <tr><td>Key spec</td><td>4:1 reduction — 4× torque, 0.61 → 2.44 N·m (hand-calculated)</td></tr>
+        <tr><td>Key spec</td><td>4:1 reduction; ideal calculated output 2.44 N·m from 0.61 N·m input, before losses. Output torque not measured.</td></tr>
         <tr><td>Verification</td><td>Hand-cranked fit and mesh check; fastener interference found and corrected with a countersunk chamfer</td></tr>
         <tr><td>Deliverables</td><td>Working assembly, exploded-view drawing, BOM</td></tr>
       </table></div>
     </div>
     <div class="reveal" style="max-width:72ch; line-height:1.8;">
-      <h2>Overview</h2>
-      <p>I designed every component of a planetary gearbox in SolidWorks, assembled them into a working model, and produced formal engineering documentation. The final deliverable was a hand-cranked physical assembly plus an exploded-view drawing with a bill of materials. With the ring gear fixed, a 12-tooth sun gear drives the carrier through 12-tooth planets meshing inside a 36-tooth ring — a clean 4:1 reduction.</p>
+      <h2>What I built</h2>
+      <p>The gearbox uses a 12-tooth sun, three 12-tooth planets, and a 36-tooth ring. With the ring fixed, the sun-to-carrier tooth-count relation gives a 4:1 reduction. I designed the parts and assembly in SolidWorks, then produced the physical build and its drawings.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/planetary-gear-cad.webp" alt="Planetary gear SolidWorks CAD model"><figcaption>SolidWorks CAD model</figcaption></figure>
-      <h2 style="margin-top:2rem;">Problem</h2>
-      <p>Planetary systems pack high-torque reduction into a compact, coaxial package — but the geometry is unforgiving. The sun, planets, ring, and carrier all share one tooth module, so every mesh has to stay geometrically consistent or the gears bind. The real challenge was making sure a design that worked on screen could actually be built and turned by hand.</p>
-      <h2 style="margin-top:2rem;">Process</h2>
-      <p>I modeled each component individually in SolidWorks, then mated them into an assembly reflecting the real relationships between sun, planets, ring, and carrier. The exploded view and bill of materials came straight from the assembly file. I 3D printed the gears in PETG for strength and durability and laser-cut the acrylic housing — 12 printed and cut parts in total, plus the shaft, keys, and fasteners. The physical build tested whether the tolerances held: I checked fit and mesh by cranking the carrier and watching for binding.</p>
+      <h2 style="margin-top:2rem;">Design constraints</h2>
+      <p>The gear module, center distances, and carrier positions had to agree across both meshes. I also needed enough clearance for the shafts and fasteners so the printed assembly could turn without binding.</p>
+      <h2 style="margin-top:2rem;">Fabrication and fit checks</h2>
+      <p>I modeled and mated the components in SolidWorks, then printed the gears in PETG and laser-cut the acrylic housing. The design went through five to six iterations. Hand-cranking the assembly exposed screw heads that interfered with the carrier; I revised the holes with countersunk chamfers.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/planetary-gear-exploded.webp" alt="Planetary gear exploded view"><figcaption>Exploded-view drawing</figcaption></figure>
-      <h2 style="margin-top:2rem;">What I learned</h2>
-      <p>A planetary system only works if the gear geometry stays consistent across every mating part, so the modeling has to be disciplined from the first sketch. The build also forced one real fix — my original screw holes left the heads sticking out, so I redesigned them with the right chamfer to sit flush. It's a small change, but it's the kind of detail that only surfaces once a model becomes a physical part. That's exactly the gap coursework alone doesn't teach.</p>
+      <h2 style="margin-top:2rem;">Results and limitations</h2>
+      <p>The finished assembly passed my hand-cranked fit and mesh check. The ideal torque calculation is 0.61 N·m input × 4 = 2.44 N·m output, before mechanical losses. I did not measure delivered torque. The most useful lesson was to include fastener-head clearance in the CAD review rather than waiting for assembly to expose it.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/me-with-planetary-gear.webp" alt="Working in lab with planetary gear"><figcaption>Lab build and fit check</figcaption></figure>
     </div>
   </div>
@@ -69,13 +69,13 @@
 </main><footer class="footer">
   <div class="wrap footer__grid">
     <div>
-      <p class="kicker">Open to internships and entry-level roles</p>
-      <h2>Got an engineering problem worth solving? Let's talk.</h2>
-      <p>Want the SolidWorks files or the drawing set for any of these? Ask and I'll send them.</p>
+      <p class="kicker">Available January 2027</p>
+      <h2>I’m looking for my next engineering team.</h2>
+      <p>Interested in mechanical design, mechatronics, or manufacturing engineering. Graduating December 2026; based in Rexburg, Idaho, and open to relocation.</p>
     </div>
     <div class="footer__actions">
-      <a class="btn btn--ink" href="contact.html">Contact</a>
-      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+      <a class="btn btn--ink" href="contact.html">Get in Touch</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">View Résumé PDF</a>
     </div>
   </div>
   <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Rexburg, ID · Open to relocation · Graduating December 2026</span></div>

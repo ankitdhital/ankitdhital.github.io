@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
-<title>Elastic Behaviour of Rigidly Constrained Structure — Ankit Dhital</title>
+<title>Beam Deflection: Model and Measurement — Ankit Dhital</title>
 <link rel="canonical" href="https://ankitdhital.com/study-elastic-behaviour.html">
-<meta name="description" content="Fixed-fixed PVC beam deflection experiment — hand calc, singularity functions, and FEA verified against physical measurements. 0.00% FEA error at highest load.">
-<meta property="og:title" content="Elastic Behaviour of Rigidly Constrained Structure — Ankit Dhital">
-<meta property="og:description" content="Fixed-fixed PVC beam deflection experiment — hand calc, singularity functions, and FEA verified against physical measurements. 0.00% FEA error at highest load.">
+<meta name="description" content="I compared beam-deflection calculations and SolidWorks FEA with measurements from a clamped PVC tube. The study also shows how fitting a material property to the measurements affects the interpretation of model agreement.">
+<meta property="og:title" content="Beam Deflection: Model and Measurement — Ankit Dhital">
+<meta property="og:description" content="I compared beam-deflection calculations and SolidWorks FEA with measurements from a clamped PVC tube. The study also shows how fitting a material property to the measurements affects the interpretation of model agreement.">
 <meta property="og:image" content="https://ankitdhital.com/assets/og-atlas-card.jpg">
 <meta property="og:url" content="https://ankitdhital.com/study-elastic-behaviour.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F0F4F8">
-<link rel="stylesheet" href="styles.css?v=42">
+<link rel="stylesheet" href="styles.css?v=43">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 </div>
 </header>
 <main class="">
-<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">ME 370 · Machine Design</p><h1 data-split-text>Elastic Behaviour of Rigidly Constrained Structure</h1></div><p class="lead reveal">Course: ME 370 Machine Design</p></div></section>
+<section class="page-hero"><div class="wrap page-hero__grid"><div><p class="kicker reveal">ME 370 · Machine Design</p><h1 data-split-text>Beam Deflection: Model and Measurement</h1></div><p class="lead reveal">I compared beam-deflection calculations and SolidWorks FEA with measurements from a clamped PVC tube. The study also shows how fitting a material property to the measurements affects the interpretation of model agreement.</p></div></section>
 <section class="section pt-0">
   <div class="wrap">
     <div class="reveal" style="max-width:860px;">
@@ -42,16 +42,16 @@
       </div>
       <div class="fact-grid reveal" style="margin-bottom:2rem;"><article><span>Course</span><b>ME 370 Machine Design</b></article><article><span>Topic</span><b>Beam Deflection &amp; Stress</b></article><article><span>Method</span><b>Experiment + FEA</b></article><article><span>Format</span><b>Research Paper</b></article></div>
     </div>
-    <iframe src="pdfs/elastic-behaviour-rigidly-constrained-structure.pdf" title="Elastic Behaviour of Rigidly Constrained Structure — Ankit Dhital" style="width:100%; height:600px; border:1px solid var(--line); border-radius:18px; margin-bottom:2rem;"></iframe>
+    <iframe src="pdfs/elastic-behaviour-rigidly-constrained-structure.pdf" title="Beam Deflection: Model and Measurement — Ankit Dhital" style="width:100%; height:600px; border:1px solid var(--line); border-radius:18px; margin-bottom:2rem;"></iframe>
     <div class="reveal" style="max-width:860px;">
-      <h2>Topic Overview</h2>
-      <p>A fixed-fixed structural member — a hollow PVC window-blinds wand — loaded at an off-center point develops both bending stress and deflection. Because the supports prevent rotation at both ends, the system is statically indeterminate: equilibrium alone can't solve it, and the fixed-end moments must be found from the constraint that the slope is zero at each support. This study analyzes that behavior across three methods and validates them against a physical experiment.</p>
-      <h2>Objective</h2>
-      <p>Calculate the maximum bending stress and midspan deflection of a rigidly constrained structural member under a transverse point load, then verify those predictions against measured experimental data to confirm that the fixed-fixed beam model accurately describes real elastic behavior.</p>
-      <h2>Method</h2>
-      <p>The member was a hollow PVC tube (OD = 0.397 in, ID = 0.272 in, L = 32.25 in, I = 0.000951 in⁴). Material was identified as PVC through a float/burn test; the modulus of elasticity was initially assumed at 400 kpsi, then back-solved to E = 668,000 psi to match experimental data. Both ends were clamped with clamps and 3D-printed v-blocks; steel washer masses were applied at a point 20.125 in from end A (4 inches from midspan), and deflection was measured with a zeroed dial indicator at three load levels (F₁ = 0.298 lb, F₂ = 0.553 lb, F₃ = 0.861 lb). Deflection was calculated three ways: hand calculations using Euler-Bernoulli beam theory and fixed-end moment formulas (yielding δ = −0.2327F), singularity functions, and a SolidWorks FEA simulation. Results from all three methods were compared against measured experimental deflections.</p>
-      <h2>Key Insights</h2>
-      <p>All three analytical methods agreed with experiment to within 10% error across all load levels. At the highest load, hand calculations gave δ = 0.2004 in vs. measured 0.201 in (−0.30% error); FEA predicted 0.201 in (0.00% error). The back-solved modulus of E = 668,000 psi fell within the known PVC range (200–800 kpsi) and explained the small error at lower loads. The beam behaved elastically throughout, confirming that fixed-fixed beam theory and FEA together reliably predict deflection in rigidly constrained structural members — and that the indeterminate solution is necessary and sufficient to model real behavior.</p>
+      <h2>Experiment overview</h2>
+      <p>I loaded a hollow PVC tube with both ends clamped and measured its deflection. The fixed-end constraints make the model statically indeterminate, so the calculation must include compatibility conditions as well as equilibrium.</p>
+      <h2>Question</h2>
+      <p>How closely do beam-theory calculations and FEA reproduce the measured deflection, and how sensitive is that agreement to the assumed material stiffness?</p>
+      <h2>Measurements and model fitting</h2>
+      <p>The tube was 32.25 inches long, with a 0.397-inch outer diameter and 0.272-inch inner diameter. I applied three loads—0.298, 0.553, and 0.861 lb—at 20.125 inches from one end and measured deflection with a dial indicator. I compared Euler–Bernoulli hand calculations, singularity functions, and SolidWorks FEA. The elastic modulus began at an assumed 400,000 psi and was then fitted to the measurements at 668,000 psi.</p>
+      <h2>Results and limitations</h2>
+      <p>At the highest load, the recorded deflection was 0.201 inches. The hand calculation gave 0.2004 inches and FEA gave 0.201 inches at the reported precision. Because the modulus was fitted using the experimental data, this agreement is a consistency check on the fitted model rather than independent validation. The study taught me to distinguish measured inputs, assumed properties, and calibrated parameters.</p>
       <div class="tag-row" style="margin-top:1.5rem;">
         <span>Machine Design</span><span>Beam Deflection</span><span>FEA</span><span>Structural Analysis</span>
       </div>
@@ -65,13 +65,13 @@
 </main><footer class="footer">
   <div class="wrap footer__grid">
     <div>
-      <p class="kicker">Open to internships and entry-level roles</p>
-      <h2>Got an engineering problem worth solving? Let's talk.</h2>
-      <p>Full PDFs are linked on every study. Happy to walk through the calcs.</p>
+      <p class="kicker">Available January 2027</p>
+      <h2>I’m looking for my next engineering team.</h2>
+      <p>Interested in mechanical design, mechatronics, or manufacturing engineering. Graduating December 2026; based in Rexburg, Idaho, and open to relocation.</p>
     </div>
     <div class="footer__actions">
-      <a class="btn btn--ink" href="contact.html">Contact</a>
-      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+      <a class="btn btn--ink" href="contact.html">Get in Touch</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">View Résumé PDF</a>
     </div>
   </div>
   <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Rexburg, ID · Open to relocation · Graduating December 2026</span></div>

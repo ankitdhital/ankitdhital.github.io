@@ -6,15 +6,15 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
 <title>Thermogate — Ankit Dhital</title>
 <link rel="canonical" href="https://ankitdhital.com/project-thermogate.html">
-<meta name="description" content="A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C.">
+<meta name="description" content="I designed and built an Arduino-controlled vent system, from the SolidWorks enclosure to the wiring and firmware. A thermistor provides temperature feedback, a servo positions the vent, and a fan drives airflow.">
 <meta property="og:title" content="Thermogate — Ankit Dhital">
-<meta property="og:description" content="A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C.">
+<meta property="og:description" content="I designed and built an Arduino-controlled vent system, from the SolidWorks enclosure to the wiring and firmware. A thermistor provides temperature feedback, a servo positions the vent, and a fan drives airflow.">
 <meta property="og:image" content="https://ankitdhital.com/assets/og-atlas-card.jpg">
 <meta property="og:url" content="https://ankitdhital.com/project-thermogate.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F0F4F8">
-<link rel="stylesheet" href="styles.css?v=42">
+<link rel="stylesheet" href="styles.css?v=43">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
@@ -33,8 +33,8 @@
 <main class="project-page">
 <section class="project-hero" style="--accent:#1B2631;">
   <div class="wrap project-hero__grid">
-    <div><p class="kicker reveal">Electronics Integration · Solo Build</p><h1 data-split-text>Thermogate</h1><p class="reveal" style="margin:.35rem 0 0;font:700 .8rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--muted);">Closed-Loop Thermal Control System</p><p class="lead reveal">A solo-built, temperature-controlled vent system: a thermistor reads ambient temperature and an Arduino drives a fan in a closed feedback loop to hold a setpoint within ±2°C. Designed in SolidWorks, 3D printed, and programmed end-to-end, with keypad control, an LCD, and color-coded feedback.</p><div class="tag-row reveal"><span>Temperature Sensing</span><span>Actuation</span><span>Control Logic</span><span>Arduino</span><span>SolidWorks</span><span>3D Printing</span></div></div>
-    <figure class="project-hero__image reveal"><img src="assets/webp/thermogate-front.webp" alt="Thermogate front view"><figcaption>±2°C setpoint accuracy</figcaption></figure>
+    <div><p class="kicker reveal">Electronics Integration · Solo Build</p><h1 data-split-text>Thermogate</h1><p class="reveal" style="margin:.35rem 0 0;font:700 .8rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--muted);">Temperature-Responsive Vent Prototype</p><p class="lead reveal">I designed and built an Arduino-controlled vent system, from the SolidWorks enclosure to the wiring and firmware. A thermistor provides temperature feedback, a servo positions the vent, and a fan drives airflow.</p><div class="tag-row reveal"><span>Temperature Sensing</span><span>Actuation</span><span>Control Logic</span><span>Arduino</span><span>SolidWorks</span><span>3D Printing</span></div></div>
+    <figure class="project-hero__image reveal"><img src="assets/webp/thermogate-front.webp" alt="Thermogate front view"><figcaption>Arduino-controlled vent prototype</figcaption></figure>
   </div>
 </section>
 <section class="section pt-0">
@@ -48,24 +48,24 @@
         <tr><td>Process</td><td>SolidWorks → FDM print → hand wiring</td></tr>
         <tr><td>Actuation</td><td>Servo-positioned vent + DC fan, one control loop</td></tr>
         <tr><td>Sensing</td><td>NTC thermistor, ±2 °C rated, mounted outboard of the enclosure</td></tr>
-        <tr><td>Key spec</td><td>Within ±2 °C on 90% of 120+ test runs</td></tr>
+        <tr><td>Key spec</td><td>Recorded sensor reading within ±2 °C of setpoint in 90% of 120+ runs</td></tr>
         <tr><td>Verification</td><td>Setpoint vs. achieved logged across 120+ runs; reading cross-checked against a reference thermometer</td></tr>
         <tr><td>Deliverables</td><td>Enclosure model, wiring layout, Arduino sketch</td></tr>
       </table></div>
     </div>
     <div class="reveal" style="max-width:72ch; line-height:1.8;">
-      <h2>Overview</h2>
-      <p>Thermogate is a temperature-controlled vent system I designed and built entirely on my own — from the SolidWorks enclosure and 3D-printed parts to the wiring and the Arduino code. A thermistor reads room temperature and the Arduino closes the loop on two actuators — a servo sets vent position to modulate airflow, and a DC fan drives it. Splitting authority between a positioner and a prime mover is what lets the system hold a setpoint instead of oscillating around it. The user sets the target on a keypad, an LCD shows the time, setpoint, and live reading, and an RGB LED signals status at a glance — red for hot, yellow as it approaches, green once it's at temperature. It's built to be useful anywhere temperature matters: room ventilation, electronics cooling, or greenhouse climate control.</p>
+      <h2>What I built</h2>
+      <p>Thermogate combines temperature sensing, airflow control, and a user interface in a PETG enclosure. The keypad sets the target, the LCD displays the setpoint and sensor reading, and an RGB LED indicates status. I handled the mechanical design, printing, wiring, and firmware, with AI assistance for coding and debugging.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/thermogate-annotated.webp" alt="Thermogate annotated component diagram"><figcaption>Annotated component layout</figcaption></figure>
-      <h2 style="margin-top:2rem;">Problem</h2>
-      <p>The goal was a single device that could sense temperature and respond to it automatically, accurately, and clearly enough for someone to actually use. That meant tying a live sensor reading to a physical action in a closed feedback loop, giving the user a simple way to set and monitor the target, and packing everything into a compact, serviceable enclosure.</p>
-      <h2 style="margin-top:2rem;">Process</h2>
-      <p>I started from a concept sketch, modeled the enclosure in SolidWorks, and 3D printed the parts with tolerances in mind. I wired roughly ten components around an Arduino Uno R3 — thermistor, DC fan, LCD, keypad, and RGB LED — and wrote the control logic myself, leaning on AI to write and debug code as I went. Beyond the core temperature control, I layered in extra features to make it more useful and engaging: a digital clock, an alarm, a music player, and a °C-to-°F converter, with the RGB LED also pulsing to the music's pitch.</p>
+      <h2 style="margin-top:2rem;">Design goal</h2>
+      <p>I wanted a compact device that could respond to a temperature reading and make its operation easy to follow. The enclosure needed room for the components and wiring, access for maintenance, and a sensor position that measured the surrounding air.</p>
+      <h2 style="margin-top:2rem;">Design and integration</h2>
+      <p>I started with a sketch, modeled the enclosure in SolidWorks, and printed the parts in PETG. I connected roughly ten components around an Arduino Uno R3 and developed the feedback logic. I also added a clock, alarm, music player, and Celsius-to-Fahrenheit conversion.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/thermogate-interior.webp" alt="Thermogate interior wiring"><figcaption>Interior wiring</figcaption></figure>
-      <h2 style="margin-top:2rem;">Verification</h2>
-      <p>I validated it in two passes. First the sensor: I compared Thermogate's reading against a reference thermometer in the same room, confirming it was tracking ambient rather than the heat building inside its own enclosure. Then the loop: across 120+ test runs I logged setpoint against the temperature the system actually settled at. Error stayed inside ±2 °C on 90% of them — which is also the thermistor's own rated tolerance, so the loop is holding to the limit of what it can sense. Tightening it further is a sensor problem, not a control problem.</p>
-      <h2 style="margin-top:2rem;">What I learned</h2>
-      <p>Three things turned out harder than they looked. Fitting all the wiring and components into a compact housing took careful planning. The thermistor had to stick out just far enough to read the room's temperature rather than the heat building up inside the enclosure — a small placement detail with a big effect on accuracy. And the closed-loop control had to spin the fan clockwise or counter-clockwise depending on whether the system needed to raise or lower the temperature. Getting all three right is what turned a wiring diagram into a device that actually holds a setpoint.</p>
+      <h2 style="margin-top:2rem;">Testing and scope</h2>
+      <p>I compared the thermistor reading with a reference thermometer and logged setpoint against achieved temperature across more than 120 runs in a test chamber. My recorded readings were within ±2 °C of the setpoint in 90% of those runs. This describes the recorded test results; it does not establish independent temperature accuracy or performance in other environments. The fan and vent control airflow, so the temperatures they can achieve depend on the surrounding air and heat sources.</p>
+      <h2 style="margin-top:2rem;">What testing changed</h2>
+      <p>The thermistor initially picked up heat inside the enclosure. Moving it outboard helped it measure the surrounding air. Packaging also took several iterations: the enclosure had to stay compact while leaving room for wiring and access to components. The build taught me to check sensor placement before drawing conclusions about the control logic.</p>
       <figure class="inline-figure reveal"><img src="assets/webp/thermogate-sketch.webp" alt="Thermogate concept sketch"><figcaption>Original concept sketch</figcaption></figure>
     </div>
   </div>
@@ -74,13 +74,13 @@
 </main><footer class="footer">
   <div class="wrap footer__grid">
     <div>
-      <p class="kicker">Open to internships and entry-level roles</p>
-      <h2>Got an engineering problem worth solving? Let's talk.</h2>
-      <p>Want the SolidWorks files or the drawing set for any of these? Ask and I'll send them.</p>
+      <p class="kicker">Available January 2027</p>
+      <h2>I’m looking for my next engineering team.</h2>
+      <p>Interested in mechanical design, mechatronics, or manufacturing engineering. Graduating December 2026; based in Rexburg, Idaho, and open to relocation.</p>
     </div>
     <div class="footer__actions">
-      <a class="btn btn--ink" href="contact.html">Contact</a>
-      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+      <a class="btn btn--ink" href="contact.html">Get in Touch</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">View Résumé PDF</a>
     </div>
   </div>
   <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Rexburg, ID · Open to relocation · Graduating December 2026</span></div>
