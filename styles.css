@@ -100,3 +100,20 @@
 }
 .experience-home .experience-summary{display:block;margin-top:.5rem;color:var(--muted);font:400 .95rem/1.5 Arial,sans-serif;text-transform:none;letter-spacing:normal;white-space:normal}
 .home-page .atlas-card--featured .atlas-card__body>span{-webkit-line-clamp:unset;overflow:visible}
+/* Testimonials */
+.testimonials-home .section-head{margin-bottom:2rem}
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.quote-card{display:flex;flex-direction:column;margin:0;border:1px solid var(--line);border-radius:18px;background:var(--paper-2);padding:1.6rem 1.5rem 1.4rem;box-shadow:0 12px 28px rgba(27,38,49,.14)}
+.quote-card[hidden]{display:none}
+.quote-card--more{animation:quote-in .5s var(--ease) both}
+.quote-card--more:nth-child(4){animation-delay:.08s}
+@keyframes quote-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.quote-card__mark{font:600 4rem/.6 'Fraunces',Georgia,serif;color:var(--accent);height:1.6rem;margin-bottom:.6rem}
+.quote-card blockquote{margin:0 0 1.4rem;flex:1;font:400 1.12rem/1.55 'Fraunces',Georgia,serif;color:var(--ink)}
+.quote-card blockquote strong{font-weight:600;background:linear-gradient(transparent 62%,rgba(165,200,214,.55) 62%)}
+.quote-card figcaption{display:flex;gap:.85rem;align-items:center;padding-top:1.1rem;border-top:1px solid var(--line)}
+.quote-card figcaption b{font-size:1rem}
+.quote-card__avatar{flex:none;display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;background:var(--accent);color:#fff;font:800 .8rem/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.quote-toggle{border-color:var(--ink)!important;display:flex;margin:1.6rem auto 0;cursor:pointer;font:inherit}
+@media (max-width:760px){.quote-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.quote-card--more{animation:none}}

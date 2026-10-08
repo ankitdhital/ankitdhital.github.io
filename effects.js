@@ -48,4 +48,22 @@
       }, 220);
     }, 2600);
   });
+
+  document.querySelectorAll("[data-quote-toggle]").forEach(function (btn) {
+    var grid = document.getElementById(btn.getAttribute("aria-controls"));
+    var extra = grid ? grid.querySelectorAll(".quote-card--more") : [];
+    if (!extra.length) {
+      btn.hidden = true;
+      return;
+    }
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      extra.forEach(function (card) {
+        card.hidden = !open;
+      });
+      btn.setAttribute("aria-expanded", String(open));
+      btn.textContent = open ? "Show less" : "View all testimonials";
+      if (!open) btn.closest("section").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 })();
