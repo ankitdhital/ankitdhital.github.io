@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Testimonials Preview</title>
+<link rel="stylesheet" href="styles.css?v=43">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+<style>
+.topbar{position:relative!important}
+.testimonials-home .section-head{margin-bottom:2.4rem}
+.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.quote-card{display:flex;flex-direction:column;margin:0;border:1px solid var(--line);border-radius:18px;background:var(--paper-2);padding:1.6rem 1.5rem 1.4rem;box-shadow:0 12px 28px rgba(27,38,49,.14)}
+.quote-card__mark{font:600 4rem/.6 'Fraunces',Georgia,serif;color:var(--accent);height:1.6rem;margin-bottom:.6rem}
+.quote-card blockquote{margin:0 0 1.4rem;flex:1;font:400 1.12rem/1.55 'Fraunces',Georgia,serif;color:var(--ink)}
+.quote-card blockquote strong{font-weight:600;background:linear-gradient(transparent 62%,rgba(165,200,214,.55) 62%)}
+.quote-card figcaption{display:flex;gap:.85rem;align-items:center;padding-top:1.1rem;border-top:1px solid var(--line)}
+.quote-card__avatar{flex:none;display:grid;place-items:center;width:2.8rem;height:2.8rem;border-radius:50%;background:var(--accent);color:#fff;font:800 .85rem/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.quote-card__who b{display:block;font-size:.98rem}
+.quote-card__who span{display:block;color:var(--muted);font-size:.86rem;line-height:1.35}
+.quote-card__tag{display:inline-block;margin-top:.35rem;font:700 .66rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2)}
+@media (max-width:900px){.quote-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="wrap">
+  <a class="brand" href="index.html"><span>AD</span><b>Ankit Dhital</b></a>
+  <nav class="site-menu"><a href="index.html" class="active">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="studies.html">Studies</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main class="home-page">
+<section class="section testimonials-home">
+  <div class="wrap">
+    <div class="section-head"><p class="kicker">In their words</p><h2>What the people I&#8217;ve worked with say.</h2><p>Supervisors and professors on what it was like to work with me.</p></div>
+    <div class="quote-grid">
+      <figure class="quote-card" style="--accent:#1B2631;">
+        <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+        <blockquote>Ankit took tribal knowledge from our most experienced operators and turned it into <strong>clear, revision-controlled SOPs</strong> that new hires actually use. He asked good questions and followed through without needing reminders.</blockquote>
+        <figcaption><span class="quote-card__avatar">FL</span><span class="quote-card__who"><b>First Last</b><span>Continuous Improvement Manager, Basic American Foods</span><em class="quote-card__tag">Supervised Ankit · 2026</em></span></figcaption>
+      </figure>
+      <figure class="quote-card" style="--accent:#4F6B75;">
+        <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+        <blockquote>On the plant floor, Ankit was <strong>the intern operators came to with problems</strong>. He listened, went to look at the machine himself, and came back with a fix that worked for the people running it.</blockquote>
+        <figcaption><span class="quote-card__avatar">FL</span><span class="quote-card__who"><b>First Last</b><span>Plant Manager, Basic American Foods</span><em class="quote-card__tag">Worked with Ankit · 2026</em></span></figcaption>
+      </figure>
+      <figure class="quote-card" style="--accent:#3F4E4F;">
+        <div class="quote-card__mark" aria-hidden="true">&ldquo;</div>
+        <blockquote>Ankit doesn&#8217;t stop at the CAD model. In my course he <strong>built, tested, and revised his designs</strong> until they worked, and as my CAD tutor he helped other students do the same.</blockquote>
+        <figcaption><span class="quote-card__avatar">FL</span><span class="quote-card__who"><b>Dr. First Last</b><span>Professor of Mechanical Engineering, BYU&#8211;Idaho</span><em class="quote-card__tag">Taught Ankit · ME 372</em></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+</main>
+</body>
+</html>
