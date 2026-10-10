@@ -100,7 +100,7 @@
 }
 .experience-home .experience-summary{display:block;margin-top:.5rem;color:var(--muted);font:400 .95rem/1.5 Arial,sans-serif;text-transform:none;letter-spacing:normal;white-space:normal}
 .home-page .atlas-card--featured .atlas-card__body>span{-webkit-line-clamp:unset;overflow:visible}
-.testimonial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .testimonial-card{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:1.75rem;border:1px solid var(--line);border-radius:18px;background:var(--paper-2);padding:2rem;box-shadow:0 12px 28px rgba(27,38,49,.1)}
 .testimonial-card blockquote{margin:0;position:relative;padding-top:2.2rem}
 .testimonial-card blockquote:before{content:"\201C";position:absolute;top:-.6rem;left:-.1rem;font:600 4.5rem/1 'Fraunces',Georgia,serif;color:var(--paper-3)}
@@ -109,4 +109,5 @@
 .testimonial-card figcaption img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--line)}
 .testimonial-card figcaption span{display:flex;flex-direction:column;gap:.2rem;color:var(--muted);font-size:.88rem;line-height:1.35}
 .testimonial-card figcaption strong{color:var(--ink);font-size:1rem}
+@media(max-width:980px){.testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:780px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{padding:1.5rem}}
