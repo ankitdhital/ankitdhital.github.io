@@ -102,7 +102,7 @@
 
 
 /* Compact reference panel; all content remains readable without JavaScript. */
-.testimonials-home.section{scroll-margin-top:90px;padding:3rem 0;background:var(--paper-2)}
+.testimonials-home.section{scroll-margin-top:90px;padding:5rem 0;background:var(--paper-2)}
 .testimonials-home>.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:1rem 3.5rem;align-items:start}
 .testimonials-home .section-head{display:block;margin:0;grid-row:1/4}
 .testimonials-home .section-head .kicker{margin:0 0 .8rem}
@@ -134,7 +134,7 @@
 .testimonials-home [hidden]{display:none!important}
 .testimonials-home .testimonial-grid.is-expanded{gap:1.75rem}
 @media(max-width:780px){
- .testimonials-home.section{padding:2rem 0}
+ .testimonials-home.section{padding:3rem 0}
  .testimonials-home>.wrap{grid-template-columns:1fr;gap:1.25rem}
  .testimonials-home .section-head{grid-row:auto;max-width:38rem}
  .testimonials-home .section-head h2{font-size:1.9rem;margin-bottom:.6rem}
