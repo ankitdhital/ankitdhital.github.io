@@ -150,3 +150,7 @@
 }
 @media(max-width:360px){.testimonial-picker{width:29px}.testimonial-arrow{width:32px}.testimonial-controls{gap:2px}}
 @media(prefers-reduced-motion:reduce){.testimonial-picker,.testimonial-picker img,.testimonial-arrow{transition:none}.testimonial-picker:hover{transform:none}}
+
+/* Equal spacing around references between the method strip and project heading. */
+.testimonials-home + .showcase{padding-top:0}
+.testimonials-home + .showcase .feature-fan__stage{justify-content:flex-start}
