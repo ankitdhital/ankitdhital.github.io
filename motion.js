@@ -40,6 +40,49 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   $$('.reveal, [data-split-text]').forEach(el => io.observe(el));
 
+  const tGrid = $('[data-testimonials]');
+  if (tGrid) {
+    const cards = $$('.testimonial-card', tGrid);
+    const more = $('[data-testimonials-toggle]');
+    const syncRead = () => cards.forEach(card => {
+      if (card.classList.contains('is-open') || !card.offsetParent) return;
+      const p = $('blockquote p', card);
+      $('.testimonial-card__read', card).hidden = p.scrollHeight <= p.clientHeight + 1;
+    });
+    const syncMore = () => {
+      if (!more) return;
+      more.hidden = !tGrid.classList.contains('is-expanded') && !cards.some(c => !c.offsetParent);
+    };
+    cards.forEach(card => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'testimonial-card__read';
+      btn.textContent = 'Read all';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.hidden = true;
+      btn.addEventListener('click', () => {
+        const open = card.classList.toggle('is-open');
+        btn.textContent = open ? 'Show less' : 'Read all';
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      $('blockquote', card).after(btn);
+    });
+    if (more) more.addEventListener('click', () => {
+      const open = tGrid.classList.toggle('is-expanded');
+      more.textContent = open ? 'Show fewer' : `See all ${cards.length} reviews`;
+      more.setAttribute('aria-expanded', String(open));
+      syncRead();
+      if (!open) {
+        const top = tGrid.getBoundingClientRect().top;
+        if (top < 0) window.scrollBy({ top: top - 120, behavior: reduce ? 'auto' : 'smooth' });
+      }
+    });
+    let raf = 0;
+    addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { syncRead(); syncMore(); }); });
+    if (document.fonts) document.fonts.ready.then(syncRead);
+    syncRead(); syncMore();
+  }
+
   $$('[data-filter]').forEach(btn => btn.addEventListener('click', () => {
     const f = btn.dataset.filter;
     $$('[data-filter]').forEach(b => b.classList.toggle('is-active', b === btn));
