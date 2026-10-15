@@ -167,3 +167,13 @@
  .atlas-card:not([data-fan-card]):hover,.project-row:hover{transform:none}
  .atlas-card img,.project-row img{transition:none}
 }
+
+.status-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .65rem;border-radius:999px;background:#E3F1E8;color:#1E6B3A;font-family:inherit;font-weight:800;font-size:.7rem;line-height:1;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;vertical-align:middle}
+.status-badge i{width:.5rem;height:.5rem;border-radius:50%;background:#2E9D57;box-shadow:0 0 0 0 rgba(46,157,87,.5);animation:status-pulse 2s infinite}
+@keyframes status-pulse{70%{box-shadow:0 0 0 .4rem rgba(46,157,87,0)}100%{box-shadow:0 0 0 0 rgba(46,157,87,0)}}
+@media(prefers-reduced-motion:reduce){.status-badge i{animation:none}}
+.kicker .status-badge{margin-right:.5rem}
+.project-list--current{margin-bottom:2.5rem}
+.inline-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.inline-pair .inline-figure{margin:0}
+@media(max-width:480px){.project-hero--long-title h1{font-size:2.15rem}}
