@@ -134,7 +134,7 @@
   }));
 
   const projectHover = matchMedia('(min-width:981px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
-  $$('.atlas-card, .project-row').forEach(card => {
+  $$('.atlas-grid--projects .atlas-card').forEach(card => {
     const figure = $('figure', card);
     if (!figure) return;
     card.addEventListener('pointermove', event => {

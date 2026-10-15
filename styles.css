@@ -155,13 +155,13 @@
 .testimonials-home + .showcase{padding-top:0}
 .testimonials-home + .showcase .feature-fan__stage{justify-content:flex-start}
 
-/* Project image reveal: desktop hover only; touch and reduced motion show images. */
+/* Projects-grid image reveal: desktop hover only; homepage and touch images stay visible. */
 .atlas-card figure,.atlas-card:hover figure{clip-path:none}
 .atlas-card img,.atlas-card:hover img,.project-row img,.project-row:hover img{transform:none;clip-path:none}
 @media(min-width:981px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
- .atlas-card figure{background:var(--paper-3)}
- .atlas-card img,.project-row img{clip-path:circle(0% at var(--reveal-x,50%) var(--reveal-y,50%));transition:clip-path .65s var(--ease)}
- .atlas-card:hover img,.atlas-card:focus-visible img,.project-row:hover img,.project-row:focus-visible img{clip-path:circle(150% at var(--reveal-x,50%) var(--reveal-y,50%))}
+ .atlas-grid--projects .atlas-card figure{background:var(--paper-3)}
+ .atlas-grid--projects .atlas-card img{clip-path:circle(0% at var(--reveal-x,50%) var(--reveal-y,50%));transition:clip-path .65s var(--ease)}
+ .atlas-grid--projects .atlas-card:hover img,.atlas-grid--projects .atlas-card:focus-visible img{clip-path:circle(150% at var(--reveal-x,50%) var(--reveal-y,50%))}
 }
 @media(max-width:980px),(hover:none),(pointer:coarse){
  .atlas-card:not([data-fan-card]):hover,.project-row:hover{transform:none}
