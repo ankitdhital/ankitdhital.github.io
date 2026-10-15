@@ -133,10 +133,29 @@
     });
   }));
 
+  const projectHover = matchMedia('(min-width:981px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
+  $$('.atlas-card, .project-row').forEach(card => {
+    const figure = $('figure', card);
+    if (!figure) return;
+    card.addEventListener('pointermove', event => {
+      if (!projectHover.matches) return;
+      const rect = figure.getBoundingClientRect();
+      const x = Math.max(0, Math.min(rect.width, event.clientX - rect.left));
+      const y = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
+      figure.style.setProperty('--reveal-x', `${x}px`);
+      figure.style.setProperty('--reveal-y', `${y}px`);
+    });
+  });
+  projectHover.addEventListener('change', () => {
+    if (projectHover.matches) return;
+    $$('.atlas-card:not([data-fan-card]), .method-card, .workbench-card').forEach(card => { card.style.transform = ''; });
+  });
+
   if (!reduce) {
     $$('.atlas-card:not([data-fan-card]), .method-card, .workbench-card').forEach((card, idx) => {
       card.style.setProperty('--tilt', `${(idx % 2 ? 1 : -1) * 0.8}deg`);
       card.addEventListener('pointermove', (e) => {
+        if (!projectHover.matches) return;
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - .5;
         const y = (e.clientY - r.top) / r.height - .5;
