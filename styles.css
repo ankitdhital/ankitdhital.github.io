@@ -76,7 +76,7 @@
    natural grid position at progress 1 — see motion.js. */
 .feature-fan{position:relative;height:200vh}
 .feature-fan__stage{position:sticky;top:88px;min-height:calc(100vh - 88px);display:flex;flex-direction:column;justify-content:center}
-.feature-fan__stage .atlas-grid--featured{margin:2.5rem 0 0}
+.feature-fan__stage .atlas-grid--featured{margin:1.25rem 0 0}
 [data-fan-card]{will-change:transform;transition:box-shadow .34s var(--ease)}
 
 /* Section intro paragraph reads as a subheading, not muted body copy */
@@ -85,7 +85,7 @@
 /* Featured-work heading stacks (kicker / title / subheading) instead of
    the 3-column layout used elsewhere, so there's clear blank space
    before the card row below it. */
-.feature-fan__stage .section-head{display:block}
+.feature-fan__stage .section-head{display:block;margin-bottom:0}
 .feature-fan__stage .section-head .kicker{margin-bottom:.9rem}
 .feature-fan__stage .section-head h2{margin:0 0 1rem}
 .feature-fan__stage .section-head p:last-child{max-width:680px}
