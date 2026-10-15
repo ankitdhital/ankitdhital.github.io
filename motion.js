@@ -44,43 +44,84 @@
   if (tGrid) {
     const cards = $$('.testimonial-card', tGrid);
     const more = $('[data-testimonials-toggle]');
-    const syncRead = () => cards.forEach(card => {
-      if (card.classList.contains('is-open') || !card.offsetParent) return;
-      const p = $('blockquote p', card);
-      $('.testimonial-card__read', card).hidden = p.scrollHeight <= p.clientHeight + 1;
+    const section = tGrid.closest('.testimonials-home');
+    const heading = $('h2', section);
+    heading.id = 'testimonials-heading';
+    section.setAttribute('aria-labelledby', heading.id);
+    let active = 0;
+    let expanded = false;
+    let animation;
+    const controls = document.createElement('div');
+    controls.className = 'testimonial-controls';
+    const pickers = document.createElement('div');
+    pickers.className = 'testimonial-pickers';
+    pickers.setAttribute('role', 'group');
+    pickers.setAttribute('aria-label', 'Choose a review');
+    controls.append(pickers);
+    const buttons = cards.map((card, i) => {
+      card.id = `testimonial-${i + 1}`;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'testimonial-picker';
+      button.setAttribute('aria-label', $('strong', card).textContent);
+      button.setAttribute('aria-controls', card.id);
+      const image = $('img', card).cloneNode();
+      image.alt = '';
+      button.append(image);
+      button.addEventListener('click', () => show(i));
+      pickers.append(button);
+      return button;
     });
-    const syncMore = () => {
-      if (!more) return;
-      more.hidden = !tGrid.classList.contains('is-expanded') && !cards.some(c => !c.offsetParent);
+    const count = document.createElement('span');
+    count.className = 'testimonial-count';
+    count.setAttribute('aria-hidden', 'true');
+    controls.append(count);
+    const show = (index, animate = true) => {
+      const previous = active;
+      active = (index + cards.length) % cards.length;
+      if (animation) animation.cancel();
+      cards.forEach((card, i) => { card.hidden = !expanded && i !== active; });
+      buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === active)));
+      count.textContent = `${String(active + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+      if (animate && !expanded && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        animation = cards[active].animate([
+          { opacity: 0, transform: `translateX(${active >= previous ? 12 : -12}px)` },
+          { opacity: 1, transform: 'translateX(0)' }
+        ], { duration: 320, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      }
     };
-    cards.forEach(card => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'testimonial-card__read';
-      btn.textContent = 'Read all';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.hidden = true;
-      btn.addEventListener('click', () => {
-        const open = card.classList.toggle('is-open');
-        btn.textContent = open ? 'Show less' : 'Read all';
-        btn.setAttribute('aria-expanded', String(open));
-      });
-      $('blockquote', card).after(btn);
+    [-1, 1].forEach(direction => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'testimonial-arrow';
+      button.textContent = direction < 0 ? '←' : '→';
+      button.setAttribute('aria-label', direction < 0 ? 'Previous review' : 'Next review');
+      button.setAttribute('aria-controls', tGrid.id);
+      button.addEventListener('click', () => show(active + direction));
+      controls.append(button);
     });
-    if (more) more.addEventListener('click', () => {
-      const open = tGrid.classList.toggle('is-expanded');
-      more.textContent = open ? 'Show fewer' : `See all ${cards.length} reviews`;
-      more.setAttribute('aria-expanded', String(open));
-      syncRead();
-      if (!open) {
-        const top = tGrid.getBoundingClientRect().top;
-        if (top < 0) window.scrollBy({ top: top - 120, behavior: reduce ? 'auto' : 'smooth' });
+    controls.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        show(active + (event.key === 'ArrowLeft' ? -1 : 1));
       }
     });
-    let raf = 0;
-    addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { syncRead(); syncMore(); }); });
-    if (document.fonts) document.fonts.ready.then(syncRead);
-    syncRead(); syncMore();
+    tGrid.after(controls);
+    tGrid.setAttribute('aria-live', 'polite');
+    tGrid.setAttribute('aria-atomic', 'true');
+    if (more) {
+      more.hidden = false;
+      more.addEventListener('click', () => {
+        expanded = !expanded;
+        tGrid.classList.toggle('is-expanded', expanded);
+        controls.hidden = expanded;
+        more.textContent = expanded ? 'Show fewer' : `See all ${cards.length} reviews`;
+        more.setAttribute('aria-expanded', String(expanded));
+        show(active, false);
+        if (!expanded) requestAnimationFrame(() => section.scrollIntoView({block:'start', behavior:'instant'}));
+      });
+    }
+    show(0, false);
   }
 
   $$('[data-filter]').forEach(btn => btn.addEventListener('click', () => {
