@@ -25,8 +25,11 @@
     let i = 0;
     el.innerHTML = raw.split(/(\s+)/).map(part => {
       if (/^\s+$/.test(part)) return part;
-      const chars = [...part].map(ch => `<span class="char" style="--i:${i++}" aria-hidden="true">${ch}</span>`).join('');
-      return `<span class="word" aria-hidden="true">${chars}</span>`;
+      // Split after hyphens too, so long compounds can wrap on narrow screens.
+      return part.split(/(?<=-)/).map(piece => {
+        const chars = [...piece].map(ch => `<span class="char" style="--i:${i++}" aria-hidden="true">${ch}</span>`).join('');
+        return `<span class="word" aria-hidden="true">${chars}</span>`;
+      }).join('');
     }).join('');
   });
 
