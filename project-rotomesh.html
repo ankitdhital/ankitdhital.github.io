@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>RotoMesh Vent Packing — Ankit Dhital</title>
+<link rel="canonical" href="https://ankitdhital.com/project-rotomesh.html">
+<meta name="description" content="An ongoing ME 490 special problem at BYU–Idaho (Fall 2026): I’m continuing RotoMesh vent-filter research for Athena Mechanical Supply, treating how the vent media is packed as the controlled variable and comparing materials before and after a rotational molding cycle.">
+<meta property="og:title" content="RotoMesh Vent Packing — Ankit Dhital">
+<meta property="og:description" content="An ongoing ME 490 special problem at BYU–Idaho (Fall 2026): I’m continuing RotoMesh vent-filter research for Athena Mechanical Supply, treating how the vent media is packed as the controlled variable and comparing materials before and after a rotational molding cycle.">
+<meta property="og:image" content="https://ankitdhital.com/assets/og-atlas-card.jpg">
+<meta property="og:url" content="https://ankitdhital.com/project-rotomesh.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F0F4F8">
+<link rel="stylesheet" href="styles.css?v=53">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+<div class="wrap">
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Home</a><a href="projects.html" class="active">Projects</a><a href="about.html" class="">About</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command" aria-label="Quick search"><span class="material-symbols-outlined" aria-hidden="true">search</span></button></nav>
+</div>
+</header>
+<main class="project-page">
+<section class="project-hero" style="--accent:#3D5A6C;">
+  <div class="wrap project-hero__grid">
+    <div><p class="kicker reveal"><span class="status-badge"><i aria-hidden="true"></i>Ongoing · Fall 2026</span> ME 490 Special Problem · BYU–Idaho</p><h1 data-split-text>RotoMesh Vent Packing</h1><p class="reveal" style="margin:.35rem 0 0;font:700 .8rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--muted);">Vent-Filter Permeability Research</p><p class="lead reveal">I’m continuing a capstone team’s vent-filter research for Athena Mechanical Supply, a rotational molding supplier. My focus is packing: I control how the vent media is packed and test whether different materials fall onto one permeability-vs-solidity curve, before and after a molding cycle.</p><div class="tag-row reveal"><span>Porous Media</span><span>Darcy–Forchheimer</span><span>Pressure-Drop Testing</span><span>Rotational Molding</span><span>Excel</span><span>Research</span></div></div>
+    <figure class="project-hero__image reveal"><img src="assets/webp/rotomesh-test-bench.webp" alt="Pressure-drop test bench: PVC flow tube on a DIN rail with a rotameter, differential manometer, and a row of 3D-printed tube adapters"><figcaption>Inherited test bench · Photo: prior capstone team</figcaption></figure>
+  </div>
+</section>
+<section class="section pt-0">
+  <div class="wrap split-layout">
+    <div class="reveal spec-panel">
+      <h2>Key Specs</h2>
+      <div class="spec-table-wrap"><table class="spec-table">
+        <tr><td>Role</td><td>Solo researcher, continuing a prior capstone team’s project</td></tr>
+        <tr><td>Course</td><td>ME 490 Special Problem, BYU–Idaho · Fall 2026</td></tr>
+        <tr><td>Sponsor</td><td>Athena Mechanical Supply</td></tr>
+        <tr><td>Controlled variable</td><td>Packing: sample mass, packed length, and solidity</td></tr>
+        <tr><td>Materials</td><td>RotoMesh, Scotch-Brite, insulation, steel wool, plastic bag</td></tr>
+        <tr><td>Analysis</td><td>Darcy–Forchheimer fit of ΔP/L vs. superficial velocity for permeability (k₁) and inertial resistance (k₂)</td></tr>
+        <tr><td>Status</td><td>Bench optimized, ~10 setups run across 0.75–2 in tubes, post-bake data collected. Results not yet published.</td></tr>
+        <tr><td>Last updated</td><td>October 2026</td></tr>
+      </table></div>
+    </div>
+    <div class="reveal" style="max-width:72ch; line-height:1.8;">
+      <h2>The problem</h2>
+      <p>Rotational molding heats powdered plastic inside a closed, spinning mold. The mold needs a vent so air can move as it heats and cools, and the vent is packed with filter media to keep powder in. If melted plastic blocks the vent during cooling, the part can pull in and form defects. Athena sells RotoMesh as a vent packing and wants to know how it compares with the materials molders commonly use.</p>
+      <h2 style="margin-top:2rem;">Where I started</h2>
+      <p>A capstone team (Kayden Staley, Hunter Fuller, Matthew Peffer, and David Vogel) built the pressure-drop test bench, the sample mold, and the first round of material comparisons. Their design and data are theirs. I took over the project to push it further and to fix the parts of the measurement chain I inherited before building on it.</p>
+      <h2 style="margin-top:2rem;">What I’m changing</h2>
+      <p>The earlier comparisons didn’t control how tightly each tube was packed, so differences between materials could come from packing rather than the material itself. I’m making packing the controlled variable: I record sample mass and packed length for every setup, compute solidity, and sweep packing density for each material. If the materials collapse onto one permeability-vs-solidity curve, packing matters more than material choice. If they don’t, the material does.</p>
+      <p>I reduce each run with a Darcy–Forchheimer fit of pressure gradient (ΔP/L) against superficial velocity. The linear term gives permeability (k₁) and the quadratic term gives inertial resistance (k₂). I built the calculation in Excel and I’m re-reducing the prior team’s data the same way so everything sits on one basis.</p>
+      <figure class="inline-figure reveal"><img src="assets/webp/rotomesh-sample-mold.webp" alt="Steel sample mold with rows of short white PTFE tubes packed with vent media, sitting on a shop floor next to a rotational molding machine" loading="lazy"><figcaption>Sample mold with packed vent tubes · Photo: prior capstone team</figcaption></figure>
+      <h2 style="margin-top:2rem;">Before and after molding</h2>
+      <p>Vent media sees heat and plastic vapor in service, so I test it both new and after a bake. I pack samples into tubes on the sample mold, run the mold through a full rotational molding cycle, and put the same samples back on the bench to compare.</p>
+      <figure class="inline-figure reveal"><img src="assets/webp/rotomesh-post-bake-samples.webp" alt="Collage of packed vent tubes after a molding cycle, showing discolored and partly melted RotoMesh, Scotch-Brite, steel wool, and insulation" loading="lazy"><figcaption>Vent samples after a molding cycle · Photo: prior capstone team</figcaption></figure>
+      <h2 style="margin-top:2rem;">Done so far</h2>
+      <p>I learned and optimized the pressure-drop bench, ran about ten setups across 0.75 to 2-inch tubes, ran the sample mold through a full molding cycle, collected post-bake data, and built the permeability calculation in Excel.</p>
+      <h2 style="margin-top:2rem;">What’s next</h2>
+      <p>Run density sweeps across all five materials, finish the before-and-after comparison, and present the work at the BYU–Idaho Research &amp; Creative Works Conference in December 2026. I’ll add results here once they’re ready to share.</p>
+    </div>
+  </div>
+</section>
+<section class="section pt-0"><div class="wrap next-grid reveal"><a class="next-link next-link--prev" href="project-inl-hydropower.html"><span class="next-link__eyebrow">&larr; Previous</span><span class="next-link__title">INL Hydropower-Battery Display</span></a><a class="next-link next-link--all" href="projects.html">All Projects</a><a class="next-link next-link--next" href="project-thermogate.html"><span class="next-link__eyebrow">Next &rarr;</span><span class="next-link__title">Thermogate</span></a></div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Available January 2027</p>
+      <h2>I’m looking for my next engineering team.</h2>
+      <p>Interested in mechanical design, mechatronics, or manufacturing engineering. Graduating December 2026; based in Rexburg, Idaho, and open to relocation.</p>
+    </div>
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Get in Touch</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">View Résumé PDF</a>
+    </div>
+  </div>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Rexburg, ID · Open to relocation · Graduating December 2026</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Index</b><button type="button" data-command-close>Close</button></div>
+    <div class="command__links"><a href="index.html"><strong>Home</strong></a><a href="projects.html"><strong>Projects</strong></a><a href="project-thermogate.html"><strong>Thermogate</strong></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong></a><a href="project-rat-trap.html"><strong>Briefcase Rat Trap</strong></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong></a><a href="contact.html"><strong>Contact</strong></a></div>
+  </div>
+</aside>
+<script src="motion.js?v=15" defer></script><script src="effects.js?v=5" defer></script>
+</body></html>
