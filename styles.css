@@ -181,5 +181,5 @@
 .atlas-grid--projects .atlas-card{flex-direction:column;align-items:stretch;min-height:0;background:var(--paper-2)}
 .atlas-grid--projects .atlas-card figure{position:relative;inset:auto;aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--line)}
 .atlas-grid--projects .atlas-card__body{flex:1;gap:.5rem;padding:1.15rem 1.3rem 1.5rem}
-.atlas-grid--projects .atlas-card__body>p{display:block;margin:0;font:800 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.atlas-grid--projects .atlas-card__body>p{display:block;margin:0;font-size:.85rem;font-weight:500;line-height:1.4;color:var(--muted)}
 .atlas-grid--projects .atlas-card__body h3{text-shadow:none;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.4rem;line-height:1.12;letter-spacing:-.01em}
