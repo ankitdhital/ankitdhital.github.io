@@ -33,14 +33,14 @@ export async function mountEnvelope3D(host, { url }) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 0.95;
+  renderer.toneMapping = THREE.NoToneMapping; // keep the red PETG close to the photographed #F21A25
   host.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(-300, 500, 700); scene.add(key);
+  const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(-300, 500, 700); scene.add(key);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xd8d8d8, 0.35));
 
   const camera = new THREE.PerspectiveCamera(28, 1, 5, 5000);
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -56,16 +56,17 @@ export async function mountEnvelope3D(host, { url }) {
   const gltf = await new GLTFLoader().loadAsync(url);
   const model = gltf.scene;
   const mats = {
-    plate: new THREE.MeshStandardMaterial({ color: 0xA80C14, roughness: 0.55, metalness: 0, envMapIntensity: 0.55, flatShading: true, transparent: true }),
-    house: new THREE.MeshStandardMaterial({ color: 0x7E0A10, roughness: 0.6, metalness: 0, envMapIntensity: 0.5, flatShading: true }),
-    steel: new THREE.MeshStandardMaterial({ color: 0xBCC3CB, roughness: 0.32, metalness: 0.55, flatShading: true }),
+    // Everything is printed in the same red PETG; trays and gearing are shaded slightly deeper so they read apart.
+    plate: new THREE.MeshStandardMaterial({ color: 0xF21A25, roughness: 0.62, metalness: 0, envMapIntensity: 0.45, flatShading: true, transparent: true }),
+    house: new THREE.MeshStandardMaterial({ color: 0xC9141D, roughness: 0.66, metalness: 0, envMapIntensity: 0.4, flatShading: true }),
+    gear: new THREE.MeshStandardMaterial({ color: 0xDA1620, roughness: 0.5, metalness: 0, envMapIntensity: 0.5, flatShading: true }),
   };
   const nodes = {};
   model.traverse(o => {
     if (o.name) nodes[o.name] = nodes[o.name] || o;
     if (!o.isMesh) return;
     const n = o.name || o.parent?.name || '';
-    o.material = /plate/.test(n) ? mats.plate : /house|top-wall/.test(n) ? mats.house : mats.steel;
+    o.material = /plate/.test(n) ? mats.plate : /house|top-wall/.test(n) ? mats.house : mats.gear;
   });
   scene.add(model);
 
@@ -76,12 +77,13 @@ export async function mountEnvelope3D(host, { url }) {
   // Soft contact shadow behind the frame.
   const sh = document.createElement('canvas'); sh.width = sh.height = 128;
   const sx = sh.getContext('2d'), gr = sx.createRadialGradient(64, 64, 8, 64, 64, 64);
-  gr.addColorStop(0, 'rgba(70,20,20,.35)'); gr.addColorStop(1, 'rgba(70,20,20,0)'); sx.fillStyle = gr; sx.fillRect(0, 0, 128, 128);
+  gr.addColorStop(0, 'rgba(20,24,30,.22)'); gr.addColorStop(1, 'rgba(20,24,30,0)'); sx.fillStyle = gr; sx.fillRect(0, 0, 128, 128);
   const shadow = new THREE.Mesh(new THREE.PlaneGeometry(520, 420), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sh), transparent: true, depthWrite: false }));
   shadow.position.set(0, -6, -14); scene.add(shadow);
 
-  const plateL = nodes['plate-left'], plateR = nodes['plate-right'], pinion = nodes['pinion'], crank = nodes['crank'];
-  const pinion0 = pinion.rotation.z, crank0 = crank.rotation.z;
+  // The pinion node carries Ankit's heart knob (gear, 5 mm shaft and knob in one printed part).
+  const plateL = nodes['plate-left'], plateR = nodes['plate-right'], pinion = nodes['pinion'];
+  const pinion0 = pinion.rotation.z;
 
   function fit() {
     const w = host.clientWidth, h = host.clientHeight;
@@ -114,7 +116,6 @@ export async function mountEnvelope3D(host, { url }) {
       const t = Math.min(TRAVEL_MAX, Math.max(0, mm));
       plateL.position.x = -t; plateR.position.x = t;
       pinion.rotation.z = pinion0 + t / PITCH_RADIUS;   // rack above the pinion moves left: counterclockwise from the front
-      crank.rotation.z = crank0 + t / PITCH_RADIUS;
       dirty = true;
     },
     setXray(on) {

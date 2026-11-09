@@ -24,20 +24,21 @@
 .env-hero__head{display:grid;grid-template-columns:1fr .85fr;gap:2.5rem;align-items:end}
 .env-hero h1{margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.5rem,5vw,4rem)}
 .env-hero .lead{margin:0}
-.env-stage{margin:2.5rem 0 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:radial-gradient(120% 90% at 50% 25%,#FFF8F5 0%,#F6E6E2 55%,#ECD7D3 100%);box-shadow:var(--shadow)}
+.env-stage{margin:2.5rem 0 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
 .env-stage__canvas{padding:clamp(.75rem,3vw,2.25rem) clamp(.5rem,3vw,2.5rem) 0}
 .env-svg{display:block;width:100%;height:auto;max-height:68vh;margin:0 auto;touch-action:pan-y}
 .env-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem 1.75rem;padding:1.1rem 1.25rem 1.4rem}
 .env-controls label{display:flex;align-items:center;gap:.9rem;font:800 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2)}
-.env-controls input[type=range]{width:min(320px,62vw);accent-color:#B5141B;cursor:grab}
+.env-controls input[type=range]{width:min(320px,62vw);accent-color:#F21A25;cursor:grab}
 .env-controls .btn{min-width:11rem}
 .env-stage figcaption{border-top:1px solid rgba(27,38,49,.12);padding:.75rem 1rem;text-align:center;font:800 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .env-pinion{cursor:pointer}
 .env-figs .inline-figure img{aspect-ratio:4/3;object-fit:cover}
+.env-photos .inline-figure img{aspect-ratio:1/1;object-fit:contain;background:#fff;padding:.9rem;box-sizing:border-box}
 .env-3d{position:relative;width:100%;aspect-ratio:16/10;max-height:72vh;cursor:grab}
 .env-3d:active{cursor:grabbing}
 .env-3d canvas{display:block;width:100%;height:100%}
-.env-3d__hint{position:absolute;left:50%;bottom:.5rem;transform:translateX(-50%);pointer-events:none;font:800 .66rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,248,245,.8);padding:.4rem .7rem;border-radius:999px}
+.env-3d__hint{position:absolute;left:50%;bottom:.5rem;transform:translateX(-50%);pointer-events:none;font:800 .66rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.92);padding:.4rem .7rem;border-radius:999px}
 .env-readout{font:800 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--ink-2);font-variant-numeric:tabular-nums;min-width:15rem;text-align:center}
 .env-controls [hidden],.env-stage [hidden]{display:none}
 @media(max-width:720px){.env-3d{aspect-ratio:4/3.4}}
@@ -57,7 +58,7 @@
 </div>
 </header>
 <main class="project-page">
-<section class="env-hero" style="--accent:#B5141B;">
+<section class="env-hero" style="--accent:#D3121C;">
   <div class="wrap">
     <div class="env-hero__head">
       <div><p class="kicker reveal">Personal project · SolidWorks · 3D printing</p><h1 data-split-text>Mechanical Envelope</h1></div>
@@ -71,19 +72,19 @@
           <title id="env-svg-title">Illustration of the envelope: turning the pinion slides the two halves of the heart-shaped face apart to reveal the letter inside.</title>
           <defs>
             <path id="env-heart" d="M500 340C430 290 370 240 370 185C370 145 400 120 435 120C465 120 490 140 500 165C510 140 535 120 565 120C600 120 630 145 630 185C630 240 570 290 500 340Z"/>
-            <linearGradient id="env-face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3242B"/><stop offset="1" stop-color="#B5141B"/></linearGradient>
+            <linearGradient id="env-face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F21A25"/><stop offset="1" stop-color="#DA1620"/></linearGradient>
             <linearGradient id="env-steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9DDE2"/><stop offset="1" stop-color="#A9B0B8"/></linearGradient>
             <clipPath id="env-clip-l" clipPathUnits="userSpaceOnUse"><rect x="200" y="36" width="299" height="388" rx="10"/></clipPath>
             <clipPath id="env-clip-r" clipPathUnits="userSpaceOnUse"><rect x="501" y="36" width="299" height="388" rx="10"/></clipPath>
-            <filter id="env-drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#5A1A1A" flood-opacity=".22"/></filter>
+            <filter id="env-drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1B2631" flood-opacity=".22"/></filter>
           </defs>
 
-          <ellipse cx="500" cy="452" rx="330" ry="22" fill="#5A1A1A" opacity=".10"/>
+          <ellipse cx="500" cy="452" rx="330" ry="22" fill="#1B2631" opacity=".10"/>
 
           <!-- letter inside -->
           <g filter="url(#env-drop)">
             <rect x="322" y="62" width="356" height="338" rx="6" fill="#FBF6EC" stroke="#E6DCC8"/>
-            <path d="M500 132C487 122 474 112 474 101C474 93 480 88 487 88C493 88 498 92 500 97C502 92 507 88 513 88C520 88 526 93 526 101C526 112 513 122 500 132Z" fill="#C4161C" opacity=".85"/>
+            <path d="M500 132C487 122 474 112 474 101C474 93 480 88 487 88C493 88 498 92 500 97C502 92 507 88 513 88C520 88 526 93 526 101C526 112 513 122 500 132Z" fill="#F21A25" opacity=".85"/>
             <g fill="none" stroke="#9AA3AD" stroke-width="2.4" stroke-linecap="round" opacity=".75">
               <path d="M360 168c18-6 30 6 48 0s30-6 48 0 30 6 48 0 30-6 48 0 30 6 48 0 22-4 40 0"/>
               <path d="M360 200c18-6 30 6 48 0s30-6 48 0 30 6 48 0 30-6 48 0 30 6 48 0"/>
@@ -99,10 +100,10 @@
           <g data-env-right>
             <g clip-path="url(#env-clip-r)" filter="url(#env-drop)">
               <rect x="501" y="36" width="299" height="388" fill="url(#env-face)"/>
-              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
-              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
-              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
-              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#A80E16" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#FF4A52" stroke-width="7" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#A80E16" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#FF4A52" stroke-width="7" stroke-linejoin="round"/>
             </g>
             <path data-rack="up" fill="url(#env-steel)" stroke="#6E7680" stroke-width="1.2" stroke-linejoin="round"/>
           </g>
@@ -111,18 +112,18 @@
           <g data-env-left>
             <g clip-path="url(#env-clip-l)" filter="url(#env-drop)">
               <rect x="200" y="36" width="299" height="388" fill="url(#env-face)"/>
-              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
-              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
-              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
-              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#A80E16" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#FF4A52" stroke-width="7" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#A80E16" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#FF4A52" stroke-width="7" stroke-linejoin="round"/>
             </g>
             <path data-rack="down" fill="url(#env-steel)" stroke="#6E7680" stroke-width="1.2" stroke-linejoin="round"/>
           </g>
 
           <!-- pinion -->
           <g class="env-pinion" data-env-pinion>
-            <path data-pinion fill="#C4161C" stroke="#7E0C11" stroke-width="1.4" stroke-linejoin="round"/>
-            <circle cx="500" cy="470" r="13" fill="#9E1016"/>
+            <path data-pinion fill="#F21A25" stroke="#A80E16" stroke-width="1.4" stroke-linejoin="round"/>
+            <circle cx="500" cy="470" r="13" fill="#B8121A"/>
             <path d="M500 478C496 475 492 472 492 468C492 465.5 494 464 496 464C498 464 499.4 465.2 500 466.6C500.6 465.2 502 464 504 464C506 464 508 465.5 508 468C508 472 504 475 500 478Z" fill="#F4C7C9"/>
           </g>
         </svg>
@@ -138,7 +139,7 @@
   </div>
 </section>
 
-<section class="section pt-0" style="--accent:#B5141B;">
+<section class="section pt-0" style="--accent:#D3121C;">
   <div class="wrap split-layout">
     <div class="reveal spec-panel">
       <h2>Key Specs</h2>
@@ -149,7 +150,7 @@
         <tr><td>Material</td><td>PETG</td></tr>
         <tr><td>Parts</td><td>5</td></tr>
         <tr><td>Mechanism</td><td>1 pinion driving 2 racks</td></tr>
-        <tr><td>Pinion (CAD)</td><td>Module 1 · 20 teeth · 20° pressure angle · 5 mm face</td></tr>
+        <tr><td>Pinion (CAD)</td><td>Module 1 · 20 teeth · 20° pressure angle · 5 mm face, with a heart knob on a 5 mm shaft</td></tr>
         <tr><td>Racks (CAD)</td><td>90 mm long · module 1</td></tr>
         <tr><td>Face plates (CAD)</td><td>2 × 144.7 × 246 mm</td></tr>
         <tr><td>Travel (calculated)</td><td>About 70 mm per half before the rack leaves the pinion</td></tr>
@@ -165,7 +166,7 @@
       <h2 style="margin-top:2rem;">From CAD to print</h2>
       <div class="inline-pair env-figs reveal" style="margin-top:1.5rem;"><figure class="inline-figure"><img src="assets/webp/envelope-cad.webp" alt="SolidWorks assembly of the envelope face with the heart outline, a rack, and a pinion gear" loading="lazy"><figcaption>SolidWorks assembly</figcaption></figure><figure class="inline-figure"><img src="assets/webp/envelope-prototype.webp" alt="Red 3D-printed envelope with a heart-shaped face split down the middle" loading="lazy"><figcaption>Printed prototype</figcaption></figure></div>
       <h2 style="margin-top:2rem;">Finished build</h2>
-      <div class="inline-pair reveal" style="margin-top:1.5rem;"><figure class="inline-figure"><img src="assets/webp/envelope-final-front.webp" alt="Finished red envelope from the front, with patterned paper showing through the double heart cutout" loading="lazy"><figcaption>Front, closed</figcaption></figure><figure class="inline-figure"><img src="assets/webp/envelope-final-angle.webp" alt="Finished red envelope at an angle, standing on a fold-out stand" loading="lazy"><figcaption>Standing on its stand</figcaption></figure></div>
+      <div class="inline-pair env-photos reveal" style="margin-top:1.5rem;"><figure class="inline-figure"><img src="assets/webp/envelope-final-front.webp" alt="Finished red envelope from the front, with patterned paper showing through the double heart cutout" loading="lazy"><figcaption>Front, closed</figcaption></figure><figure class="inline-figure"><img src="assets/webp/envelope-final-angle.webp" alt="Finished red envelope at an angle, standing on a fold-out stand" loading="lazy"><figcaption>Standing on its stand</figcaption></figure></div>
     </div>
   </div>
 </section>
@@ -258,17 +259,17 @@
 })();
 </script>
 <script type="module">
-import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=1';
+import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=2';
 const host = document.querySelector('[data-env-3d]');
 try {
   host.hidden = false;
-  const api = await mountEnvelope3D(host, { url: 'assets/models/envelope.glb?v=3' });
+  const api = await mountEnvelope3D(host, { url: 'assets/models/envelope.glb?v=4' });
   document.querySelector('[data-env]').style.display = 'none';
   const xray = document.querySelector('[data-env-xray]'), readout = document.querySelector('[data-env-readout]'), hint = document.querySelector('[data-env-hint]');
   xray.hidden = false; readout.hidden = false;
   xray.addEventListener('click', () => { const on = xray.getAttribute('aria-pressed') !== 'true'; xray.setAttribute('aria-pressed', String(on)); xray.textContent = on ? 'Show the face' : 'See the mechanism'; api.setXray(on); });
   host.addEventListener('pointerdown', () => { hint.hidden = true; }, { once: true });
-  document.querySelector('[data-env-caption]').textContent = '3D model built from my SolidWorks parts · how the parts sit together is my best guess';
+  document.querySelector('[data-env-caption]').remove();
   window.envelope.subscribe(v => {
     const t = v * TRAVEL_MAX;
     api.setTravel(t);
