@@ -34,9 +34,17 @@
 .env-stage figcaption{border-top:1px solid rgba(27,38,49,.12);padding:.75rem 1rem;text-align:center;font:800 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .env-pinion{cursor:pointer}
 .env-figs .inline-figure img{aspect-ratio:4/3;object-fit:cover}
+.env-3d{position:relative;width:100%;aspect-ratio:16/10;max-height:72vh;cursor:grab}
+.env-3d:active{cursor:grabbing}
+.env-3d canvas{display:block;width:100%;height:100%}
+.env-3d__hint{position:absolute;left:50%;bottom:.5rem;transform:translateX(-50%);pointer-events:none;font:800 .66rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,248,245,.8);padding:.4rem .7rem;border-radius:999px}
+.env-readout{font:800 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--ink-2);font-variant-numeric:tabular-nums;min-width:15rem;text-align:center}
+.env-controls [hidden],.env-stage [hidden]{display:none}
+@media(max-width:720px){.env-3d{aspect-ratio:4/3.4}}
 @media(max-width:980px){.env-hero__head{grid-template-columns:1fr;gap:1.25rem}}
 @media(max-width:720px){.env-hero{padding-top:6rem}.env-controls{flex-direction:column}}
 </style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 </head>
 <body>
 <div class="paper-grain" aria-hidden="true"></div>
@@ -58,6 +66,7 @@
 
     <figure class="env-stage reveal">
       <div class="env-stage__canvas">
+        <div class="env-3d" data-env-3d hidden><span class="env-3d__hint" data-env-hint>Drag to rotate · scroll to zoom</span></div>
         <svg class="env-svg" viewBox="0 0 1000 540" role="img" aria-labelledby="env-svg-title" data-env>
           <title id="env-svg-title">Illustration of the envelope: turning the pinion slides the two halves of the heart-shaped face apart to reveal the letter inside.</title>
           <defs>
@@ -121,8 +130,10 @@
       <div class="env-controls">
         <button class="btn btn--ink" type="button" data-env-toggle aria-pressed="false">Open the envelope</button>
         <label>Turn the pinion <input type="range" min="0" max="1000" value="0" data-env-range></label>
+        <button class="btn btn--paper" type="button" data-env-xray aria-pressed="false" hidden>See the mechanism</button>
+        <span class="env-readout" data-env-readout hidden></span>
       </div>
-      <figcaption>Illustration of the mechanism · not to scale</figcaption>
+      <figcaption data-env-caption>Illustration of the mechanism · not to scale</figcaption>
     </figure>
   </div>
 </section>
@@ -137,9 +148,13 @@
         <tr><td>Process</td><td>3D printing</td></tr>
         <tr><td>Material</td><td>PETG</td></tr>
         <tr><td>Parts</td><td>5</td></tr>
-        <tr><td>Mechanism</td><td>2 rack-and-pinion gears</td></tr>
+        <tr><td>Mechanism</td><td>1 pinion driving 2 racks</td></tr>
+        <tr><td>Pinion (CAD)</td><td>Module 1 · 20 teeth · 20° pressure angle · 5 mm face</td></tr>
+        <tr><td>Racks (CAD)</td><td>90 mm long · module 1</td></tr>
+        <tr><td>Face plates (CAD)</td><td>2 × 144.7 × 246 mm</td></tr>
+        <tr><td>Travel (calculated)</td><td>About 70 mm per half before the rack leaves the pinion</td></tr>
         <tr><td>Paper slots</td><td>3, letter-size</td></tr>
-        <tr><td>Dimensions</td><td>Not measured</td></tr>
+        <tr><td>Size (measured)</td><td>Not measured</td></tr>
       </table></div>
     </div>
     <div class="reveal" style="max-width:72ch; line-height:1.8;">
@@ -213,7 +228,10 @@
     const open = v > 0.5;
     toggle.textContent = open ? 'Close the envelope' : 'Open the envelope';
     toggle.setAttribute('aria-pressed', String(open));
+    subs.forEach(fn => fn(v));
   }
+  const subs = [];
+  window.envelope = { subscribe(fn) { subs.push(fn); fn(v); } };
   function animateTo(target, ms = 1600) {
     cancelAnimationFrame(raf);
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { set(target); return; }
@@ -231,10 +249,32 @@
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
       if (entries.some(e => e.isIntersecting)) { io.disconnect(); setTimeout(() => { if (v === 0) animateTo(1, 2200); }, 700); }
-    }, { threshold: 0.6 });
-    io.observe(svg);
+    }, { threshold: 0.45 });
+    io.observe(svg.closest('figure'));
   }
 })();
+</script>
+<script type="module">
+import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=1';
+const host = document.querySelector('[data-env-3d]');
+try {
+  host.hidden = false;
+  const api = await mountEnvelope3D(host, { url: 'assets/models/envelope.glb?v=2' });
+  document.querySelector('[data-env]').style.display = 'none';
+  const xray = document.querySelector('[data-env-xray]'), readout = document.querySelector('[data-env-readout]'), hint = document.querySelector('[data-env-hint]');
+  xray.hidden = false; readout.hidden = false;
+  xray.addEventListener('click', () => { const on = xray.getAttribute('aria-pressed') !== 'true'; xray.setAttribute('aria-pressed', String(on)); xray.textContent = on ? 'Show the face' : 'See the mechanism'; api.setXray(on); });
+  host.addEventListener('pointerdown', () => { hint.hidden = true; }, { once: true });
+  document.querySelector('[data-env-caption]').textContent = '3D model built from my SolidWorks parts · how the parts sit together is my best guess';
+  window.envelope.subscribe(v => {
+    const t = v * TRAVEL_MAX;
+    api.setTravel(t);
+    readout.textContent = `Rack travel ${t.toFixed(1)} mm · pinion ${Math.round(t / PITCH_RADIUS * 180 / Math.PI)}°`;
+  });
+} catch (e) {
+  host.hidden = true;
+  host.querySelector('canvas')?.remove();
+}
 </script>
 <script src="motion.js?v=17" defer></script><script src="effects.js?v=5" defer></script>
 </body></html>
