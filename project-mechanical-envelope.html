@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8J2Y06LGE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R8J2Y06LGE');document.documentElement.classList.add('js');</script>
+<title>Mechanical Envelope — Ankit Dhital</title>
+<link rel="canonical" href="https://ankitdhital.com/project-mechanical-envelope.html">
+<meta name="description" content="A personal project: a 3D-printed PETG envelope that doubles as a frame. Two rack-and-pinion gears open its heart-shaped face. 5 parts, 3 slots for letter-size paper.">
+<meta property="og:title" content="Mechanical Envelope — Ankit Dhital">
+<meta property="og:description" content="A personal project: a 3D-printed PETG envelope that doubles as a frame. Two rack-and-pinion gears open its heart-shaped face. 5 parts, 3 slots for letter-size paper.">
+<meta property="og:image" content="https://ankitdhital.com/assets/og-atlas-card.jpg">
+<meta property="og:url" content="https://ankitdhital.com/project-mechanical-envelope.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F0F4F8">
+<link rel="stylesheet" href="styles.css?v=57">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<style>
+.env-hero{padding:8.2rem 0 4rem;background:linear-gradient(135deg,var(--paper),var(--paper-2))}
+.env-hero__head{display:grid;grid-template-columns:1fr .85fr;gap:2.5rem;align-items:end}
+.env-hero h1{margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.5rem,5vw,4rem)}
+.env-hero .lead{margin:0}
+.env-stage{margin:2.5rem 0 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:radial-gradient(120% 90% at 50% 25%,#FFF8F5 0%,#F6E6E2 55%,#ECD7D3 100%);box-shadow:var(--shadow)}
+.env-stage__canvas{padding:clamp(.75rem,3vw,2.25rem) clamp(.5rem,3vw,2.5rem) 0}
+.env-svg{display:block;width:100%;height:auto;max-height:68vh;margin:0 auto;touch-action:pan-y}
+.env-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem 1.75rem;padding:1.1rem 1.25rem 1.4rem}
+.env-controls label{display:flex;align-items:center;gap:.9rem;font:800 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2)}
+.env-controls input[type=range]{width:min(320px,62vw);accent-color:#B5141B;cursor:grab}
+.env-controls .btn{min-width:11rem}
+.env-stage figcaption{border-top:1px solid rgba(27,38,49,.12);padding:.75rem 1rem;text-align:center;font:800 .68rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.env-pinion{cursor:pointer}
+.env-figs .inline-figure img{aspect-ratio:4/3;object-fit:cover}
+@media(max-width:980px){.env-hero__head{grid-template-columns:1fr;gap:1.25rem}}
+@media(max-width:720px){.env-hero{padding-top:6rem}.env-controls{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="paper-grain" aria-hidden="true"></div>
+<div class="scroll-ruler" data-scroll-ruler aria-hidden="true"><span></span></div>
+<header class="topbar" data-topbar>
+<div class="wrap">
+  <a class="brand" href="index.html" aria-label="Ankit Dhital home"><span>AD</span><b>Ankit Dhital</b></a>
+  <button class="menu-button" type="button" data-menu-button aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-menu"><i></i><i></i></button>
+  <nav class="site-menu" data-site-menu id="site-menu"><a href="index.html" class="">Home</a><a href="projects.html" class="active">Projects</a><a href="about.html" class="">About</a><a href="studies.html" class="">Studies</a><a href="resume.html" class="">Resume</a><a href="contact.html" class="">Contact</a><button class="atlas-open" type="button" data-command-open aria-haspopup="dialog" aria-controls="atlas-command" aria-label="Quick search"><span class="material-symbols-outlined" aria-hidden="true">search</span></button></nav>
+</div>
+</header>
+<main class="project-page">
+<section class="env-hero" style="--accent:#B5141B;">
+  <div class="wrap">
+    <div class="env-hero__head">
+      <div><p class="kicker reveal">Personal project · SolidWorks · 3D printing</p><h1 data-split-text>Mechanical Envelope</h1></div>
+      <div><p class="lead reveal">An envelope that doubles as a frame. Two rack-and-pinion gears open its heart-shaped face.</p><div class="tag-row reveal"><span>SolidWorks</span><span>3D printing</span><span>PETG</span><span>Rack and pinion</span></div></div>
+    </div>
+
+    <figure class="env-stage reveal">
+      <div class="env-stage__canvas">
+        <svg class="env-svg" viewBox="0 0 1000 540" role="img" aria-labelledby="env-svg-title" data-env>
+          <title id="env-svg-title">Illustration of the envelope: turning the pinion slides the two halves of the heart-shaped face apart to reveal the letter inside.</title>
+          <defs>
+            <path id="env-heart" d="M500 340C430 290 370 240 370 185C370 145 400 120 435 120C465 120 490 140 500 165C510 140 535 120 565 120C600 120 630 145 630 185C630 240 570 290 500 340Z"/>
+            <linearGradient id="env-face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3242B"/><stop offset="1" stop-color="#B5141B"/></linearGradient>
+            <linearGradient id="env-steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9DDE2"/><stop offset="1" stop-color="#A9B0B8"/></linearGradient>
+            <clipPath id="env-clip-l" clipPathUnits="userSpaceOnUse"><rect x="200" y="36" width="299" height="388" rx="10"/></clipPath>
+            <clipPath id="env-clip-r" clipPathUnits="userSpaceOnUse"><rect x="501" y="36" width="299" height="388" rx="10"/></clipPath>
+            <filter id="env-drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#5A1A1A" flood-opacity=".22"/></filter>
+          </defs>
+
+          <ellipse cx="500" cy="452" rx="330" ry="22" fill="#5A1A1A" opacity=".10"/>
+
+          <!-- letter inside -->
+          <g filter="url(#env-drop)">
+            <rect x="322" y="62" width="356" height="338" rx="6" fill="#FBF6EC" stroke="#E6DCC8"/>
+            <path d="M500 132C487 122 474 112 474 101C474 93 480 88 487 88C493 88 498 92 500 97C502 92 507 88 513 88C520 88 526 93 526 101C526 112 513 122 500 132Z" fill="#C4161C" opacity=".85"/>
+            <g fill="none" stroke="#9AA3AD" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+              <path d="M360 168c18-6 30 6 48 0s30-6 48 0 30 6 48 0 30-6 48 0 30 6 48 0 22-4 40 0"/>
+              <path d="M360 200c18-6 30 6 48 0s30-6 48 0 30 6 48 0 30-6 48 0 30 6 48 0"/>
+              <path d="M360 232c18-6 30 6 48 0s30-6 48 0 30 6 48 0 30-6 48 0 30 6 48 0 22-4 40 0"/>
+              <path d="M360 264c18-6 30 6 48 0s30-6 48 0 30 6 48 0 30-6 48 0"/>
+              <path d="M360 296c18-6 30 6 48 0s30-6 48 0 30 6 48 0 30-6 48 0 30 6 48 0 22-4 40 0"/>
+              <path d="M540 340c14-6 24 6 38 0s24-6 38 0 18 4 30 0"/>
+            </g>
+            <text x="500" y="384" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="800" letter-spacing="1.5" fill="#7A828C">3 SLOTS · LETTER-SIZE PAPER</text>
+          </g>
+
+          <!-- right half (rack below the pinion, teeth up) -->
+          <g data-env-right>
+            <g clip-path="url(#env-clip-r)" filter="url(#env-drop)">
+              <rect x="501" y="36" width="299" height="388" fill="url(#env-face)"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
+            </g>
+            <path data-rack="up" fill="url(#env-steel)" stroke="#6E7680" stroke-width="1.2" stroke-linejoin="round"/>
+          </g>
+
+          <!-- left half (rack above the pinion, teeth down) -->
+          <g data-env-left>
+            <g clip-path="url(#env-clip-l)" filter="url(#env-drop)">
+              <rect x="200" y="36" width="299" height="388" fill="url(#env-face)"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 228) scale(1.32) translate(-500 -228)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#7E0C11" stroke-width="15" stroke-linejoin="round"/>
+              <use href="#env-heart" transform="translate(500 238) scale(.86) translate(-500 -238)" fill="none" stroke="#E2464C" stroke-width="7" stroke-linejoin="round"/>
+            </g>
+            <path data-rack="down" fill="url(#env-steel)" stroke="#6E7680" stroke-width="1.2" stroke-linejoin="round"/>
+          </g>
+
+          <!-- pinion -->
+          <g class="env-pinion" data-env-pinion>
+            <path data-pinion fill="#C4161C" stroke="#7E0C11" stroke-width="1.4" stroke-linejoin="round"/>
+            <circle cx="500" cy="470" r="13" fill="#9E1016"/>
+            <path d="M500 478C496 475 492 472 492 468C492 465.5 494 464 496 464C498 464 499.4 465.2 500 466.6C500.6 465.2 502 464 504 464C506 464 508 465.5 508 468C508 472 504 475 500 478Z" fill="#F4C7C9"/>
+          </g>
+        </svg>
+      </div>
+      <div class="env-controls">
+        <button class="btn btn--ink" type="button" data-env-toggle aria-pressed="false">Open the envelope</button>
+        <label>Turn the pinion <input type="range" min="0" max="1000" value="0" data-env-range></label>
+      </div>
+      <figcaption>Illustration of the mechanism · not to scale</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section pt-0" style="--accent:#B5141B;">
+  <div class="wrap split-layout">
+    <div class="reveal spec-panel">
+      <h2>Key Specs</h2>
+      <div class="spec-table-wrap"><table class="spec-table">
+        <tr><td>Type</td><td>Personal project</td></tr>
+        <tr><td>Design</td><td>SolidWorks assembly</td></tr>
+        <tr><td>Process</td><td>3D printing</td></tr>
+        <tr><td>Material</td><td>PETG</td></tr>
+        <tr><td>Parts</td><td>5</td></tr>
+        <tr><td>Mechanism</td><td>2 rack-and-pinion gears</td></tr>
+        <tr><td>Paper slots</td><td>3, letter-size</td></tr>
+        <tr><td>Dimensions</td><td>Not measured</td></tr>
+      </table></div>
+    </div>
+    <div class="reveal" style="max-width:72ch; line-height:1.8;">
+      <h2>Why I built it</h2>
+      <p>Engineers are creative. Instead of sending my girlfriend a love letter the old, boring way, I designed an envelope that doubles as a frame. Two rack-and-pinion gears open a heart-shaped face, and three internal slots hold letter-size paper, like a letter or photos.</p>
+      <p>I printed it in PETG for durability. It made her feel special, and I got to build it doing something I enjoy.</p>
+      <h2 style="margin-top:2rem;">From CAD to print</h2>
+      <div class="inline-pair env-figs reveal" style="margin-top:1.5rem;"><figure class="inline-figure"><img src="assets/webp/envelope-cad.webp" alt="SolidWorks assembly of the envelope face with the heart outline, a rack, and a pinion gear" loading="lazy"><figcaption>SolidWorks assembly</figcaption></figure><figure class="inline-figure"><img src="assets/webp/envelope-prototype.webp" alt="Red 3D-printed envelope with a heart-shaped face split down the middle" loading="lazy"><figcaption>Printed prototype</figcaption></figure></div>
+    </div>
+  </div>
+</section>
+<section class="section pt-0"><div class="wrap next-grid reveal"><a class="next-link next-link--prev" href="project-laser-cut-pattern.html"><span class="next-link__eyebrow">&larr; Previous</span><span class="next-link__title">Laser-Cut Steel Tiger</span></a><a class="next-link next-link--all" href="projects.html">All Projects</a><a class="next-link next-link--next" href="project-inl-hydropower.html"><span class="next-link__eyebrow">Next &rarr;</span><span class="next-link__title">INL Hydropower-Battery Display</span></a></div></section>
+</main><footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="kicker">Available January 2027</p>
+      <h2>I’m looking for my next engineering team.</h2>
+      <p>I’m looking to join a mechanical engineering team where I can bring my skills and mindset to the team’s goals, and where learning and growth are part of the job. Graduating December 2026; based in Rexburg, Idaho, and open to relocation.</p>
+    </div>
+    <div class="footer__actions">
+      <a class="btn btn--ink" href="contact.html">Get in Touch</a>
+      <a class="btn btn--paper" href="pdfs/resume.pdf" target="_blank" rel="noopener">View Résumé PDF</a>
+    </div>
+  </div>
+  <div class="wrap footer__fine"><span>© 2026 Ankit Dhital · BYU–Idaho · Mechanical Engineering</span><span>Rexburg, ID · Open to relocation · Graduating December 2026</span></div>
+</footer>
+<aside class="command" data-command id="atlas-command" role="dialog" aria-modal="true" aria-label="Site quick navigation" aria-hidden="true">
+  <div class="command__panel">
+    <div class="command__head"><b>Index</b><button type="button" data-command-close>Close</button></div>
+    <div class="command__links"><a href="index.html"><strong>Home</strong></a><a href="projects.html"><strong>Projects</strong></a><a href="project-thermogate.html"><strong>Thermogate</strong></a><a href="project-planetary-gear.html"><strong>Planetary Gear</strong></a><a href="project-rat-trap.html"><strong>Briefcase Rat Trap</strong></a><a href="pdfs/resume.pdf"><strong>Resume PDF</strong></a><a href="contact.html"><strong>Contact</strong></a></div>
+  </div>
+</aside>
+<script>
+(() => {
+  const svg = document.querySelector('[data-env]');
+  if (!svg) return;
+  // Pinion: pitch radius 24, 12 teeth (module 4). Racks share the same pitch,
+  // so rack travel = pinion radius × rotation angle and the teeth stay in mesh.
+  const CX = 500, CY = 470, R = 24, N = 12, M = 2 * R / N, P = Math.PI * M, TRAVEL = 185;
+  const RT = R + M, RR = R - 1.25 * M;
+  const pts = [];
+  for (let i = 0; i < N; i++) {
+    const c = -Math.PI / 2 + i * 2 * Math.PI / N;
+    [[RR, -0.2], [RT, -0.085], [RT, 0.085], [RR, 0.2]].forEach(([r, d]) => pts.push((CX + r * Math.cos(c + d)).toFixed(2) + ' ' + (CY + r * Math.sin(c + d)).toFixed(2)));
+  }
+  svg.querySelector('[data-pinion]').setAttribute('d', 'M' + pts.join('L') + 'Z');
+
+  // Rack: body plus trapezoid teeth, with a tooth gap centred on the pinion's top/bottom tooth.
+  function rack(x0, x1, pitchY, dir) {
+    const tip = pitchY + dir * M, root = pitchY - dir * 1.25 * M, back = root - dir * 16;
+    let d = `M${x0} ${back}L${x1} ${back}L${x1} ${root}`;
+    const first = CX + P / 2 + Math.ceil((x0 - CX - P / 2) / P) * P;
+    const teeth = [];
+    for (let x = first; x < x1 - P / 2; x += P) teeth.push(x);
+    teeth.reverse().forEach(x => { d += `L${(x + 4.4).toFixed(2)} ${root}L${(x + 2.1).toFixed(2)} ${tip}L${(x - 2.1).toFixed(2)} ${tip}L${(x - 4.4).toFixed(2)} ${root}`; });
+    return d + `L${x0} ${root}Z`;
+  }
+  svg.querySelector('[data-rack="down"]').setAttribute('d', rack(300, 740, CY - R, 1));
+  svg.querySelector('[data-rack="up"]').setAttribute('d', rack(260, 700, CY + R, -1));
+
+  const left = svg.querySelector('[data-env-left]'), right = svg.querySelector('[data-env-right]'), pinion = svg.querySelector('[data-env-pinion]');
+  const range = document.querySelector('[data-env-range]'), toggle = document.querySelector('[data-env-toggle]');
+  let v = 0, raf = 0;
+  function set(t) {
+    v = Math.min(1, Math.max(0, t));
+    const x = TRAVEL * v, deg = (x / R) * 180 / Math.PI;
+    left.setAttribute('transform', `translate(${-x} 0)`);
+    right.setAttribute('transform', `translate(${x} 0)`);
+    pinion.setAttribute('transform', `rotate(${-deg} ${CX} ${CY})`);
+    range.value = Math.round(v * 1000);
+    const open = v > 0.5;
+    toggle.textContent = open ? 'Close the envelope' : 'Open the envelope';
+    toggle.setAttribute('aria-pressed', String(open));
+  }
+  function animateTo(target, ms = 1600) {
+    cancelAnimationFrame(raf);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { set(target); return; }
+    const from = v, start = performance.now();
+    const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const step = now => { const t = Math.min(1, (now - start) / ms); set(from + (target - from) * ease(t)); if (t < 1) raf = requestAnimationFrame(step); };
+    raf = requestAnimationFrame(step);
+  }
+  range.addEventListener('input', () => { cancelAnimationFrame(raf); set(range.value / 1000); });
+  toggle.addEventListener('click', () => animateTo(v > 0.5 ? 0 : 1));
+  pinion.addEventListener('click', () => animateTo(v > 0.5 ? 0 : 1));
+  set(0);
+
+  // Open once, the first time the envelope scrolls into view.
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { io.disconnect(); setTimeout(() => { if (v === 0) animateTo(1, 2200); }, 700); }
+    }, { threshold: 0.6 });
+    io.observe(svg);
+  }
+})();
+</script>
+<script src="motion.js?v=17" defer></script><script src="effects.js?v=5" defer></script>
+</body></html>
