@@ -261,7 +261,7 @@
 })();
 </script>
 <script type="module">
-import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=3';
+import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=5';
 const host = document.querySelector('[data-env-3d]');
 try {
   host.hidden = false;
@@ -269,7 +269,7 @@ try {
   document.querySelector('[data-env]').style.display = 'none';
   const xray = document.querySelector('[data-env-xray]'), readout = document.querySelector('[data-env-readout]'), hint = document.querySelector('[data-env-hint]');
   xray.hidden = false; readout.hidden = false;
-  xray.addEventListener('click', () => { const on = xray.getAttribute('aria-pressed') !== 'true'; xray.setAttribute('aria-pressed', String(on)); xray.textContent = on ? 'Show the face' : 'See the mechanism'; api.setXray(on); });
+  xray.addEventListener('click', () => { const on = xray.getAttribute('aria-pressed') !== 'true'; xray.setAttribute('aria-pressed', String(on)); xray.textContent = on ? 'Assemble' : 'See the mechanism'; api.setExplode(on); });
   host.addEventListener('pointerdown', () => { hint.hidden = true; }, { once: true });
   // + / − : tap for one step, press and hold to keep zooming. Keyboard (Enter/Space) gives one step.
   document.querySelectorAll('[data-env-zoom]').forEach(b => {

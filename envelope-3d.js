@@ -87,7 +87,54 @@ export async function mountEnvelope3D(host, { url }) {
 
   // The pinion node carries Ankit's heart knob (gear, 5 mm shaft and knob in one printed part).
   const plateL = nodes['plate-left'], plateR = nodes['plate-right'], pinion = nodes['pinion'];
-  const pinion0 = pinion.rotation.z;
+  const rackL = nodes['rack-left'], rackR = nodes['rack-right'];
+  const houseL = nodes['house-left'], houseR = nodes['house-right'], topWall = nodes['top-wall'];
+  const pinion0 = pinion.rotation.z, pinionZ0 = pinion.position.z;
+
+  // ---- Exploded view -------------------------------------------------------------------------
+  // Layers separate along the depth axis in sequence: trays + letter back, top wall up and back,
+  // face plates forward, then racks and pinion settle in the middle layer with the racks pulled
+  // off the gear. Offsets in mm; delay is the share of the timeline before a layer starts moving.
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const SPAN = 0.62;  // each layer's own move takes this share of the timeline
+  let travel = 0, plateZ = 0, plateX = 0;
+  const LAYERS = [
+    { delay: 0.00, apply: e => { houseL.position.set(-16 * e, 0, -70 * e); houseR.position.set(16 * e, 0, -70 * e); sheet.position.z = 3.2 - 70 * e; shadow.position.z = -14 - 70 * e; } },
+    { delay: 0.08, apply: e => { topWall.position.set(0, 30 * e, -70 * e); } },
+    // Plates come forward and swing out sideways to open a window onto the gearing.
+    { delay: 0.16, apply: e => { plateZ = 70 * e; plateX = 95 * e; } },
+    // Racks are children of the plates: cancel the plates' sideways move so they stay centred,
+    // pull them up and down off the pinion, and park them in the middle layer with it.
+    { delay: 0.30, apply: e => { rackL.position.set(95 * e, 16 * e, -40 * e); rackR.position.set(-95 * e, -16 * e, -40 * e); pinion.position.z = pinionZ0 + 30 * e; axis.material.opacity = 0.9 * e; } },
+    { delay: 0.38, apply: e => { knobLift = 14 * e; } },
+  ];
+  let knobLift = 0;
+  const knob = nodes['knob'];
+  // Dashed assembly axis through the pinion, visible only while exploded.
+  const axis = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, pinion.position.y, -90), new THREE.Vector3(0, pinion.position.y, 150)]),
+    new THREE.LineDashedMaterial({ color: 0x8A939E, dashSize: 4, gapSize: 3, transparent: true, opacity: 0 }));
+  axis.computeLineDistances(); scene.add(axis);
+
+  let ex = 0, exTarget = 0;              // timeline position 0 (assembled) .. 1 (exploded)
+  function applyPose() {
+    LAYERS.forEach(L => L.apply(ease(THREE.MathUtils.clamp((ex - L.delay) / SPAN, 0, 1))));
+    plateL.position.set(-travel - plateX, 0, plateZ); plateR.position.set(travel + plateX, 0, plateZ);
+    if (knob) knob.position.z = knobLift;
+    pinion.rotation.z = pinion0 + travel / PITCH_RADIUS;   // rack above the pinion moves left: counterclockwise from the front
+    dirty = true;
+  }
+
+  // Camera eases to a 3/4 view while exploding, and back home when assembling (cancelled if the visitor drags).
+  let camTween = null;
+  const EXPLODE_DIR = new THREE.Vector3(0.5, -0.3, 0.81).normalize();
+  const HOME_DIR = new THREE.Vector3(0.36, -0.22, 0.9).normalize();
+  const HOME_TARGET = new THREE.Vector3(0, -12, 20), EXPLODE_TARGET = new THREE.Vector3(0, -30, 25);
+  controls.addEventListener('start', () => { camTween = null; });
+  function tweenCamera(dir, dist, target) {
+    const from = camera.position.clone().sub(controls.target);
+    camTween = { from, fromLen: from.length(), to: dir.clone(), toLen: dist, t: 0, tFrom: controls.target.clone(), tTo: target.clone() };
+  }
 
   function fit() {
     const w = host.clientWidth, h = host.clientHeight;
@@ -110,22 +157,51 @@ export async function mountEnvelope3D(host, { url }) {
 
   controls.addEventListener('change', () => { dirty = true; });
   new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(host);
-  renderer.setAnimationLoop(() => {
+  const DURATION = 1.6; // s, whole explode / assemble sequence
+  function step(dt) {
+    let moving = false;
+    if (ex !== exTarget) {
+      ex = exTarget > ex ? Math.min(exTarget, ex + dt / DURATION) : Math.max(exTarget, ex - dt / DURATION);
+      applyPose(); moving = true;
+    }
+    if (camTween) {
+      camTween.t = Math.min(1, camTween.t + dt / (DURATION * 0.9));
+      const k = ease(camTween.t);
+      const dir = camTween.from.clone().normalize().lerp(camTween.to, k).normalize();
+      controls.target.lerpVectors(camTween.tFrom, camTween.tTo, k);
+      camera.position.copy(controls.target).add(dir.multiplyScalar(THREE.MathUtils.lerp(camTween.fromLen, camTween.toLen, k)));
+      if (camTween.t >= 1) camTween = null;
+      moving = true;
+    }
+    return moving;
+  }
+  let last = performance.now();
+  renderer.setAnimationLoop(now => {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
     if (!visible) return;
-    if (controls.update() || dirty) { renderer.render(scene, camera); dirty = false; }
+    const moving = step(dt);
+    if (controls.update() || dirty || moving) { renderer.render(scene, camera); dirty = false; }
   });
 
   return {
     setTravel(mm) {
-      const t = Math.min(TRAVEL_MAX, Math.max(0, mm));
-      plateL.position.x = -t; plateR.position.x = t;
-      pinion.rotation.z = pinion0 + t / PITCH_RADIUS;   // rack above the pinion moves left: counterclockwise from the front
-      dirty = true;
+      travel = Math.min(TRAVEL_MAX, Math.max(0, mm));
+      applyPose();
     },
-    setXray(on) {
-      mats.plate.opacity = on ? 0.16 : 1; mats.plate.depthWrite = !on; mats.plate.needsUpdate = true;
-      dirty = true;
+    // Exploded view on/off. `instant` skips the animation (used for reduced motion and tests).
+    setExplode(on, { instant = false } = {}) {
+      exTarget = on ? 1 : 0;
+      const dist = (camera.userData.dist || 700) * (on ? 1.45 : 1);
+      const target = on ? EXPLODE_TARGET : HOME_TARGET;
+      if (instant || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        ex = exTarget; applyPose();
+        controls.target.copy(target);
+        camera.position.copy(target).add((on ? EXPLODE_DIR : HOME_DIR).clone().multiplyScalar(dist));
+        camTween = null; dirty = true; return;
+      }
+      tweenCamera(on ? EXPLODE_DIR : HOME_DIR, dist, target);
     },
+    setXray(on) { this.setExplode(on); },
     zoomBy(f) {
       const d = camera.position.clone().sub(controls.target);
       d.setLength(THREE.MathUtils.clamp(d.length() * f, controls.minDistance, controls.maxDistance));
@@ -134,6 +210,7 @@ export async function mountEnvelope3D(host, { url }) {
     },
     reset() { home(); dirty = true; },
     renderNow() { controls.update(); renderer.render(scene, camera); return renderer.domElement; },
+    seekExplode(v) { ex = exTarget = THREE.MathUtils.clamp(v, 0, 1); applyPose(); }, // tests: pose at a timeline point
     camera, controls,
   };
 }
