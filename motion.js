@@ -134,6 +134,9 @@
       const show = f === 'all' || card.dataset.cat.split(/\s+/).includes(f);
       card.style.display = show ? '' : 'none';
     });
+    $$('[data-filter-group]').forEach(group => {
+      group.hidden = !$$('[data-filter-card]', group).some(card => card.style.display !== 'none');
+    });
   }));
 
   const projectHover = matchMedia('(min-width:981px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
