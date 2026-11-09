@@ -48,6 +48,8 @@ export async function mountEnvelope3D(host, { url }) {
   controls.enableDamping = true; controls.dampingFactor = 0.08;
   controls.enablePan = false;
   controls.minDistance = 160; controls.maxDistance = 1200;
+  // The wheel scrolls the page, not the model; zoom goes through zoomBy() (the page's + / − buttons).
+  controls.enableZoom = false;
   controls.minPolarAngle = 0.25; controls.maxPolarAngle = Math.PI - 0.25;
   // One finger scrolls the page on phones; two fingers rotate and zoom the model.
   controls.touches = { ONE: -1, TWO: THREE.TOUCH.DOLLY_ROTATE };
@@ -59,14 +61,16 @@ export async function mountEnvelope3D(host, { url }) {
     // Everything is printed in the same red PETG; trays and gearing are shaded slightly deeper so they read apart.
     plate: new THREE.MeshStandardMaterial({ color: 0xF21A25, roughness: 0.62, metalness: 0, envMapIntensity: 0.45, flatShading: true, transparent: true }),
     house: new THREE.MeshStandardMaterial({ color: 0xC9141D, roughness: 0.66, metalness: 0, envMapIntensity: 0.4, flatShading: true }),
-    gear: new THREE.MeshStandardMaterial({ color: 0xDA1620, roughness: 0.5, metalness: 0, envMapIntensity: 0.5, flatShading: true }),
+    knob: new THREE.MeshStandardMaterial({ color: 0xF21A25, roughness: 0.5, metalness: 0, envMapIntensity: 0.5, flatShading: true }),
+    steel: new THREE.MeshStandardMaterial({ color: 0xC4CAD2, roughness: 0.3, metalness: 0.7, envMapIntensity: 1.1, flatShading: true }),
   };
   const nodes = {};
   model.traverse(o => {
     if (o.name) nodes[o.name] = nodes[o.name] || o;
     if (!o.isMesh) return;
     const n = o.name || o.parent?.name || '';
-    o.material = /plate/.test(n) ? mats.plate : /house|top-wall/.test(n) ? mats.house : mats.gear;
+    // Racks and the pinion render silver; the heart knob, plates and trays stay red.
+    o.material = /plate/.test(n) ? mats.plate : /house|top-wall/.test(n) ? mats.house : /knob/.test(n) ? mats.knob : mats.steel;
   });
   scene.add(model);
 
@@ -120,6 +124,12 @@ export async function mountEnvelope3D(host, { url }) {
     },
     setXray(on) {
       mats.plate.opacity = on ? 0.16 : 1; mats.plate.depthWrite = !on; mats.plate.needsUpdate = true;
+      dirty = true;
+    },
+    zoomBy(f) {
+      const d = camera.position.clone().sub(controls.target);
+      d.setLength(THREE.MathUtils.clamp(d.length() * f, controls.minDistance, controls.maxDistance));
+      camera.position.copy(controls.target).add(d);
       dirty = true;
     },
     reset() { home(); dirty = true; },

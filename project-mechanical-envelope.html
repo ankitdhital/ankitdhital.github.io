@@ -39,6 +39,10 @@
 .env-3d:active{cursor:grabbing}
 .env-3d canvas{display:block;width:100%;height:100%}
 .env-3d__hint{position:absolute;left:50%;bottom:.5rem;transform:translateX(-50%);pointer-events:none;font:800 .66rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.92);padding:.4rem .7rem;border-radius:999px}
+.env-zoom{position:absolute;right:.75rem;top:.75rem;display:flex;flex-direction:column;gap:.45rem}
+.env-zoom button{width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font:600 1.35rem/1 system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 12px rgba(27,38,49,.12);touch-action:none;user-select:none;-webkit-user-select:none}
+.env-zoom button:hover{border-color:var(--ink)}
+.env-zoom button:active{background:var(--paper-2)}
 .env-readout{font:800 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--ink-2);font-variant-numeric:tabular-nums;min-width:15rem;text-align:center}
 .env-controls [hidden],.env-stage [hidden]{display:none}
 @media(max-width:720px){.env-3d{aspect-ratio:4/3.4}}
@@ -67,7 +71,7 @@
 
     <figure class="env-stage reveal">
       <div class="env-stage__canvas">
-        <div class="env-3d" data-env-3d hidden><span class="env-3d__hint" data-env-hint>Drag to rotate · scroll to zoom</span></div>
+        <div class="env-3d" data-env-3d hidden><div class="env-zoom"><button type="button" data-env-zoom="in" aria-label="Zoom in">+</button><button type="button" data-env-zoom="out" aria-label="Zoom out">−</button></div><span class="env-3d__hint" data-env-hint>Drag to rotate</span></div>
         <svg class="env-svg" viewBox="0 0 1000 540" role="img" aria-labelledby="env-svg-title" data-env>
           <title id="env-svg-title">Illustration of the envelope: turning the pinion slides the two halves of the heart-shaped face apart to reveal the letter inside.</title>
           <defs>
@@ -257,16 +261,31 @@
 })();
 </script>
 <script type="module">
-import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=2';
+import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=3';
 const host = document.querySelector('[data-env-3d]');
 try {
   host.hidden = false;
-  const api = await mountEnvelope3D(host, { url: 'assets/models/envelope.glb?v=4' });
+  const api = await mountEnvelope3D(host, { url: 'assets/models/envelope.glb?v=5' });
   document.querySelector('[data-env]').style.display = 'none';
   const xray = document.querySelector('[data-env-xray]'), readout = document.querySelector('[data-env-readout]'), hint = document.querySelector('[data-env-hint]');
   xray.hidden = false; readout.hidden = false;
   xray.addEventListener('click', () => { const on = xray.getAttribute('aria-pressed') !== 'true'; xray.setAttribute('aria-pressed', String(on)); xray.textContent = on ? 'Show the face' : 'See the mechanism'; api.setXray(on); });
   host.addEventListener('pointerdown', () => { hint.hidden = true; }, { once: true });
+  // + / − : tap for one step, press and hold to keep zooming. Keyboard (Enter/Space) gives one step.
+  document.querySelectorAll('[data-env-zoom]').forEach(b => {
+    const dir = b.dataset.envZoom === 'in' ? -1 : 1;
+    let raf = 0, t0 = 0;
+    const stop = () => { cancelAnimationFrame(raf); raf = 0; };
+    b.addEventListener('pointerdown', e => {
+      e.preventDefault(); b.setPointerCapture(e.pointerId); t0 = performance.now();
+      const hold = now => { if (now - t0 > 220) api.zoomBy(1 + dir * 0.018); raf = requestAnimationFrame(hold); };
+      raf = requestAnimationFrame(hold);
+    });
+    b.addEventListener('pointerup', () => { if (performance.now() - t0 <= 220) api.zoomBy(1 + dir * 0.18); stop(); });
+    b.addEventListener('pointercancel', stop);
+    b.addEventListener('lostpointercapture', stop);
+    b.addEventListener('click', e => { if (e.detail === 0) api.zoomBy(1 + dir * 0.18); });
+  });
   document.querySelector('[data-env-caption]').remove();
   window.envelope.subscribe(v => {
     const t = v * TRAVEL_MAX;
