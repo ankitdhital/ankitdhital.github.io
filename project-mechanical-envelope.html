@@ -154,6 +154,7 @@
         <tr><td>Face plates (CAD)</td><td>2 × 144.7 × 246 mm</td></tr>
         <tr><td>Travel (calculated)</td><td>About 70 mm per half before the rack leaves the pinion</td></tr>
         <tr><td>Paper slots</td><td>3, letter-size</td></tr>
+        <tr><td>Overall size</td><td>About 289 × 246 × 28 mm (face from CAD; 28 mm depth estimated)</td></tr>
         <tr><td>Size (measured)</td><td>Not measured</td></tr>
       </table></div>
     </div>
@@ -163,6 +164,8 @@
       <p>I printed it in PETG for durability. It made her feel special, and I got to build it doing something I enjoy.</p>
       <h2 style="margin-top:2rem;">From CAD to print</h2>
       <div class="inline-pair env-figs reveal" style="margin-top:1.5rem;"><figure class="inline-figure"><img src="assets/webp/envelope-cad.webp" alt="SolidWorks assembly of the envelope face with the heart outline, a rack, and a pinion gear" loading="lazy"><figcaption>SolidWorks assembly</figcaption></figure><figure class="inline-figure"><img src="assets/webp/envelope-prototype.webp" alt="Red 3D-printed envelope with a heart-shaped face split down the middle" loading="lazy"><figcaption>Printed prototype</figcaption></figure></div>
+      <h2 style="margin-top:2rem;">Finished build</h2>
+      <div class="inline-pair reveal" style="margin-top:1.5rem;"><figure class="inline-figure"><img src="assets/webp/envelope-final-front.webp" alt="Finished red envelope from the front, with patterned paper showing through the double heart cutout" loading="lazy"><figcaption>Front, closed</figcaption></figure><figure class="inline-figure"><img src="assets/webp/envelope-final-angle.webp" alt="Finished red envelope at an angle, standing on a fold-out stand" loading="lazy"><figcaption>Standing on its stand</figcaption></figure></div>
     </div>
   </div>
 </section>
@@ -259,7 +262,7 @@ import { mountEnvelope3D, TRAVEL_MAX, PITCH_RADIUS } from './envelope-3d.js?v=1'
 const host = document.querySelector('[data-env-3d]');
 try {
   host.hidden = false;
-  const api = await mountEnvelope3D(host, { url: 'assets/models/envelope.glb?v=2' });
+  const api = await mountEnvelope3D(host, { url: 'assets/models/envelope.glb?v=3' });
   document.querySelector('[data-env]').style.display = 'none';
   const xray = document.querySelector('[data-env-xray]'), readout = document.querySelector('[data-env-readout]'), hint = document.querySelector('[data-env-hint]');
   xray.hidden = false; readout.hidden = false;
